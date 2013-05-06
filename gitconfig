@@ -1,0 +1,22 @@
+[user]
+	name = ap4y
+	email = lod@pisem.net
+[core]
+	excludesfile = /Users/ap4y/.gitignore_global
+[apply]
+	whitespace = nowarn
+[push]
+	default = tracking
+[color]
+    diff = auto
+	status = auto
+	branch = auto
+[alias]
+	lc = log @{1}.. --stat --no-merges
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ar)%Creset' --abbrev-commit --date=relative
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
