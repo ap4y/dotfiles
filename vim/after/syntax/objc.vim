@@ -28,7 +28,7 @@ syn region objc2Block transparent matchgroup=objc2BlockBraces start="\(\^.*\)\@<
 
 syn match objcMessageName "\s\@<=\w*\(]\|:\)\@=" contained
 syn match objcMessageClass "\(\[\s*\)\@<=\u\w*" contained
-syn region objcCorrectMessage transparent matchgroup=objCorrectMessage start="\[" end="\]" contains=objc.*, cConditional, cStatement
+syn region objcCorrectMessage transparent matchgroup=objCorrectMessage start="\[" end="\]" contains=objc.*,cConditional,cStatement,cComment.*
 
 syn keyword objcWrappedConstant YES NO nil NULL
 syn keyword objcIBRWords IBAction IBOutlet
