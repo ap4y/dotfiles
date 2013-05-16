@@ -20,6 +20,7 @@ syn match objcDotProperty "\(\.\)\@<=\h\+"
 syn match objcInstanceVariable "\(*\|\[\| \)\@<=_\h\+"
 
 syn match objcCFunction "\w\+[(]\@="
+syn match objcPrimitives "NSInteger\|NSUInteger\|CGFloat\|NSTimeInterval"
 
 syn region objc2Hash transparent matchgroup=objc2HashBraces start="@{" end="}"
 syn region objc2Array transparent matchgroup=objc2ArrayBraces start="@\[" end="]"
@@ -28,7 +29,7 @@ syn region objc2Block transparent matchgroup=objc2BlockBraces start="\(\^.*\)\@<
 
 syn match objcMessageName "\s\@<=\w*\(]\|:\)\@=" contained
 syn match objcMessageClass "\(\[\s*\)\@<=\u\w*" contained
-syn region objcCorrectMessage transparent matchgroup=objCorrectMessage start="\[" end="\]" contains=objc.*,cConditional,cStatement,cComment.*
+syn region objcCorrectMessage transparent matchgroup=objCorrectMessage start="\[" end="\]" contains=objc.*,cConditional,cStatement,cComment.*,cNumber,cFloat
 
 syn keyword objcWrappedConstant YES NO nil NULL
 syn keyword objcIBRWords IBAction IBOutlet
@@ -51,3 +52,4 @@ hi def link objcSpecial                              String
 hi def link objcWrappedConstant                      Statement
 hi def link objcIBRWords                             Statement
 hi def link objcPointer                              Type
+hi def link objcPrimitives                           cType
