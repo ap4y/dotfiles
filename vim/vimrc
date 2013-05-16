@@ -75,6 +75,15 @@ if has("autocmd")
 
   " Treat JSON files like JavaScript
   au BufNewFile,BufRead *.json set ft=javascript
+  
+  " set .h, .m file types to Objective-C
+  au BufNewFile,BufRead *.{h,m} set ft=objc
+
+  " set .podspec, .podfile file types to ruby
+  au BufNewFile,BufRead *.podspec,Podfile set ft=ruby
+
+  " Objective-C identation settings
+  au FileType objc set softtabstop=4 tabstop=4 shiftwidth=4 
 
   " Remember last location in file, but not for commit messages.
   " see :help last-position-jump
@@ -111,12 +120,6 @@ let g:clang_snippets_engine = 'ultisnips'
 nnoremap <Leader>q :call g:ClangUpdateQuickFix()<CR>
 let g:clang_complete_copen = 1
 :nnoremap <leader>c :cc<cr>
-
-" set .h, .m file types to objc
-au BufNewFile,BufRead *.h,*.m    set filetype=objc
-
-" set .podspec, .podfile file types to ruby
-au BufNewFile,BufRead *.podspec,Podfile  set filetype=ruby
 
 " ctrl-p settings
 " http://vimcasts.org/e/14
