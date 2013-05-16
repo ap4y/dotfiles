@@ -172,11 +172,6 @@ vmap <Leader>a= :Tabularize /=<CR>
 nmap <Leader>a: :Tabularize /:\zs<CR>
 vmap <Leader>a: :Tabularize /:\zs<CR>
 
-" Custom config for project folders
-if filereadable(".vim.custom")
-    so .vim.custom
-endif
-
 " smart square brackets for objc methods
 imap <C-]> <Esc>yss]$i
 
@@ -185,3 +180,9 @@ nmap <leader>g :Gstatus<CR>
 
 " Code completion
 inoremap <C-k> <C-x><C-u>
+
+" Objective-C related tasks bindings
+nmap <leader>b :!rake xcode_build<CR>
+nmap <leader>r :!rake simulator<CR>
+nmap <leader>d :!rake lldb<CR>
+nmap <leader>cl :!rake clang_db<CR>
