@@ -42,9 +42,8 @@ set nowritebackup                 " And again.
 set updatecount=0
 
 set expandtab                     " Use spaces, not tabs
-set tabstop=4                     " A tab is two spaces
-set shiftwidth=4                  " An autoindent (with <<) is two spaces
-"set softtabstop=4                 " An autoindent (with <<) is two spaces, insert mode
+set tabstop=2                     " A tab is two spaces
+set shiftwidth=2                  " An autoindent (with <<) is two spaces
 
 " Indicator chars
 set listchars=tab:▸\ ,trail:•,extends:❯,precedes:❮
@@ -57,7 +56,7 @@ set autoread
 set shell=/bin/sh
 
 " Do not highlight syntax for long lines
-set synmaxcol=200
+set synmaxcol=300
 " set colorcolumn=120
 
 " ESC to shift zsh issue fix
