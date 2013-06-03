@@ -119,7 +119,7 @@ let g:clang_snippets_engine = 'ultisnips'
 " show diagnostics
 nnoremap <Leader>q :call g:ClangUpdateQuickFix()<CR>
 let g:clang_complete_copen = 1
-:nnoremap <leader>c :cc<cr>
+nnoremap <leader>c :cc<cr>
 
 " ctrl-p settings
 " http://vimcasts.org/e/14
@@ -130,7 +130,7 @@ let g:ctrlp_custom_ignore = { 'dir': '\v(build|Pods)$' }
 let g:ctrlp_root_markers = ['.git']
 
 " clear the search buffer when hitting return
-:nnoremap <CR> :nohlsearch<cr>
+nnoremap <CR> :nohlsearch<cr>
 
 " toggle between last open buffers
 nnoremap <leader><leader> <c-^>
@@ -182,7 +182,15 @@ nmap <leader>g :Gstatus<CR>
 inoremap <C-k> <C-x><C-u>
 
 " Objective-C related tasks bindings
-nmap <leader>b :!rake xcode_build<CR>
+nmap <leader>x :!rake xcode_build<CR>
 nmap <leader>r :!rake simulator<CR>
-nmap <leader>d :!rake lldb<CR>
+nmap <leader>ll :!rake debug<CR>
 nmap <leader>cl :!rake clang_db<CR>
+
+" vim-lldb mappings
+noremap <leader>po :Lpo<CR>
+noremap <leader>pO :LpO<CR>
+noremap <leader>lb :Lbreakpoint<CR>
+noremap <leader>lc :Lcontinue<CR>
+noremap <leader>ls :Lstep<CR>
+noremap <leader>ln :Lnext <CR>
