@@ -47,10 +47,12 @@ module XcodeUtils
       @bundle_path = "#{path_handler.build_path}/#{scheme_name}.app"
     end
 
-    def run_on_simulator(family=nil)
+    def run_on_simulator(family=nil, exit_on_launch=true)
       arguments = []
       arguments << "--family #{family}" if family
-      arguments << "--exit --verbose"
+      arguments << "--exit" if exit_on_launch
+      arguments << "--verbose"
+      puts "ios-sim launch #{@bundle_path} " + arguments.join(' ')
       system("ios-sim launch #{@bundle_path} " + arguments.join(' '))
     end
 
@@ -67,12 +69,12 @@ module XcodeUtils
 
       desc 'Run build on iphone simulator'
       task :simulator => :xcode_build do
-        run_on_simulator(@family)
+        run_on_simulator(@family, true)
       end
 
-      desc 'Run build and attach process to lldb'
-      task :lldb => :simulator do
-        attach_lldb
+      desc 'Run build on iphone simulator and show output'
+      task :debug => :xcode_build do
+        run_on_simulator(@family, false)
       end
 
       desc 'Create compile_commands.json'
