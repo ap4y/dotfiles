@@ -1,3 +1,50 @@
-snippet snp "@property(strong, nonatomic) Class *name"
-@property (strong, nonatomic) ${1:class} *${2:name};
+snippet snp "@property(nonatomic, strong) Class *name"
+@property (nonatomic, strong) ${1:class} *${2:name};
+endsnippet
+
+snippet cnp "@property(nonatomic, copy) Class *name"
+@property (nonatomic, copy) ${1:class} *${2:name};
+endsnippet
+
+snippet np "@property(nonatomic) Class name"
+@property (nonatomic) ${1:class} ${2:name};
+endsnippet
+
+snippet singleton "GCD singleton (singleton)"
++ (${1:class} *)${2:name}
+{
+    static $1 *_$2;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _$2 = [[$1 alloc] init$3];
+    });
+    return _$2;
+}
+endsnippet
+
+snippet inits "Initialized (inits)"
+- (id)init${1:method}
+{
+    self = [super init$1];
+    if (!self) return nil;
+
+    $2
+
+    return self;
+}
+endsnippet
+
+snippet action "IBAction (action)"
+- (IBAction)${1:actionName}:(id)sender
+{
+    $2
+}
+endsnippet
+
+snippet outlet "weak IBOutlet (outlet)"
+@property (weak, nonatomic) IBOutlet ${1:class} *${2:name};
+endsnippet
+
+snippet sconst "NSString constant (sconst)"
+NSString * const ${1:name} = @"$1";
 endsnippet
