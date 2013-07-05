@@ -28,3 +28,15 @@ integration/tmp
 # vim objc integration
 .vim.custom
 compile_commands.json
+.ctrlp
+
+# grunt, bower, node.js, javascript
+node_modules
+temp
+dist
+.sass-cache
+.tmp
+**/bower_components
+
+#rbenv bundle
+vendor/bundle

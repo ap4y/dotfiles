@@ -126,8 +126,8 @@ nnoremap <leader>c :cc<cr>
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <leader>F :CtrlP %%<cr>
 map <leader>b :CtrlPBuffer<cr>
-let g:ctrlp_custom_ignore = { 'dir': '\v(build|Pods)$' }
-let g:ctrlp_root_markers = ['.git']
+let g:ctrlp_custom_ignore = { 'dir': '\v(build|Pods|node_modules|components|bundle)$' }
+let g:ctrlp_root_markers = ['.git', '.ctrlp']
 
 " clear the search buffer when hitting return
 nnoremap <CR> :nohlsearch<cr>
