@@ -37,13 +37,7 @@ plugins=(git github gem brew rvm osx sublime)
 # Customize to your needs...
 source $ZSH/oh-my-zsh.sh
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-export PATH=/usr/local/bin:$PATH
-
-alias vim='mvim -v'
+alias mvimv='mvim -v'
 
 # 10ms for key sequences
 KEYTIMEOUT=1
