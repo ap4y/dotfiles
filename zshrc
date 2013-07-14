@@ -38,6 +38,14 @@ plugins=(git github gem brew rvm osx sublime)
 source $ZSH/oh-my-zsh.sh
 
 alias mvimv='mvim -v'
+# tmux clipboard fix
+if [[ "$(uname)" = "Darwin" ]]; then
+  alias tmux='tmux -2 -f ~/.tmux-osx.conf'
+else
+  alias tmux='tmux -2'
+fi
+alias t1='tmux a -t 1'
+alias t2='tmux a -t 2'
 
 # 10ms for key sequences
 KEYTIMEOUT=1
