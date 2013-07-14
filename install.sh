@@ -1,13 +1,15 @@
 #!/usr/bin/env bash
 
-ln -sf ~/.dotfiles/gemrc ~/.gemrc
-ln -sf ~/.dotfiles/gitconfig ~/.gitconfig
-ln -sf ~/.dotfiles/gitignore ~/.gitignore_global
-ln -sf ~/.dotfiles/gitk ~/.gitk
-ln -sf ~/.dotfiles/jshintrc ~/.jshintrc
-ln -sf ~/.dotfiles/tmux.conf ~/.tmux.conf
-ln -sf ~/.dotfiles/zshrc ~/.zshrc
+SOURCE_PATH="$HOME/.dotfiles"
 
-ln -sf ~/.dotfiles/vim ~/.vim
-ln -sf ~/.dotfiles/vim/gvimrc ~/.gvimrc
-ln -sf ~/.dotfiles/vim/vimrc ~/.vimrc
+ln -sf $SOURCE_PATH/gemrc $HOME/.gemrc
+ln -sf $SOURCE_PATH/gitconfig $HOME/.gitconfig
+ln -sf $SOURCE_PATH/gitignore $HOME/.gitignore_global
+ln -sf $SOURCE_PATH/gitk $HOME/.gitk
+ln -sf $SOURCE_PATH/jshintrc $HOME/.jshintrc
+ln -sf $SOURCE_PATH/tmux.conf $HOME/.tmux.conf
+ln -sf $SOURCE_PATH/zshrc $HOME/.zshrc
+
+ln -sf $SOURCE_PATH/vim $HOME/.vim
+ln -sf $SOURCE_PATH/vim/gvimrc $HOME/.gvimrc
+ln -sf $SOURCE_PATH/vim/vimrc $HOME/.vimrc
