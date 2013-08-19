@@ -61,3 +61,9 @@
 [submodule "vim/bundle/vim-handlebars"]
 	path = vim/bundle/vim-handlebars
 	url = https://github.com/nono/vim-handlebars.git
+[submodule "jslhint.vim"]
+	path = jslhint.vim
+	url = https://github.com/FuDesign2008/jslhint.vim.git
+[submodule "vim/bundle/jslhint.vim"]
+	path = vim/bundle/jslhint.vim
+	url = https://github.com/FuDesign2008/jslhint.vim.git
