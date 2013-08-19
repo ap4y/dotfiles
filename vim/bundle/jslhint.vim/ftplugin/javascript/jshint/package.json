@@ -1,8 +1,0 @@
-{
-  "name": "jshint.vim",
-  "version": "1.0.0",
-  "dependencies": {
-    "jshint": "~2.1.2"
-  },
-  "license": "BSD"
-}
