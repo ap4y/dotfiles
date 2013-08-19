@@ -55,15 +55,9 @@
 [submodule "vim/bundle/vim-surround"]
 	path = vim/bundle/vim-surround
 	url = https://github.com/tpope/vim-surround.git
-[submodule "vim/bundle/jshint.vim"]
-	path = vim/bundle/jshint.vim
-	url = https://github.com/wookiehangover/jshint.vim.git
 [submodule "vim/bundle/vim-handlebars"]
 	path = vim/bundle/vim-handlebars
 	url = https://github.com/nono/vim-handlebars.git
-[submodule "jslhint.vim"]
-	path = jslhint.vim
-	url = https://github.com/FuDesign2008/jslhint.vim.git
 [submodule "vim/bundle/jslhint.vim"]
 	path = vim/bundle/jslhint.vim
 	url = https://github.com/FuDesign2008/jslhint.vim.git
