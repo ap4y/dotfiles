@@ -61,3 +61,6 @@
 [submodule "vim/bundle/jslhint.vim"]
 	path = vim/bundle/jslhint.vim
 	url = https://github.com/FuDesign2008/jslhint.vim.git
+[submodule "vim/bundle/lightline.vim"]
+	path = vim/bundle/lightline.vim
+	url = https://github.com/itchyny/lightline.vim.git

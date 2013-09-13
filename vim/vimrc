@@ -126,7 +126,7 @@ nnoremap <leader>c :cc<cr>
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <leader>F :CtrlP %%<cr>
 map <leader>b :CtrlPBuffer<cr>
-let g:ctrlp_custom_ignore = { 'dir': '\v(build|Pods|node_modules|components|bundle)$' }
+let g:ctrlp_custom_ignore = { 'dir': '\v(build|Pods|node_modules|components|bundle|vendor)$' }
 let g:ctrlp_root_markers = ['.git', '.ctrlp']
 
 " clear the search buffer when hitting return
@@ -194,3 +194,22 @@ noremap <leader>lb :Lbreakpoint<CR>
 noremap <leader>lc :Lcontinue<CR>
 noremap <leader>ls :Lstep<CR>
 noremap <leader>ln :Lnext <CR>
+
+" ligthline
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component': {
+      \   'readonly': '%{&filetype=="help"?"":&readonly?"x":""}',
+      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+      \ },
+      \ 'component_visible_condition': {
+      \   'readonly': '(&filetype!="help"&& &readonly)',
+      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+      \ }
+      \ }
