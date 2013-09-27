@@ -1,0 +1,4 @@
+--ignore-dir=vendor
+--ignore-dir=bower-components
+--ignore-dir=node-modules
+--ignore-dir=.tmp

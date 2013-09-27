@@ -10,6 +10,7 @@ ln -sf $SOURCE_PATH/jshintrc $HOME/.jshintrc
 ln -sf $SOURCE_PATH/tmux.conf $HOME/.tmux.conf
 ln -sf $SOURCE_PATH/tmux-osx.conf $HOME/.tmux-osx.conf
 ln -sf $SOURCE_PATH/zshrc $HOME/.zshrc
+ln -sf $SOURCE_PATH/ackrc $HOME/.ackrc
 
 ln -sf $SOURCE_PATH/vim $HOME/.vim
 ln -sf $SOURCE_PATH/vim/gvimrc $HOME/.gvimrc
