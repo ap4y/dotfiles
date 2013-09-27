@@ -32,14 +32,14 @@ ZSH_THEME="robbyrussell"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(git rvm github gem brew osx sublime)
-plugins=(git github gem brew rvm osx sublime)
+plugins=(git github gem brew osx)
 
 # Customize to your needs...
 source $ZSH/oh-my-zsh.sh
 
-alias mvimv='mvim -v'
 # tmux clipboard fix
 if [[ "$(uname)" = "Darwin" ]]; then
+  alias vim='mvim -v'
   alias tmux='tmux -2 -f ~/.tmux-osx.conf'
 else
   alias tmux='tmux -2'
@@ -49,3 +49,5 @@ alias t2='tmux a -t 2'
 
 # 10ms for key sequences
 KEYTIMEOUT=1
+
+eval "$(rbenv init -)"
