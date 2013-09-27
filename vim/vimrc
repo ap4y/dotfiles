@@ -213,3 +213,7 @@ let g:lightline = {
       \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
       \ }
       \ }
+
+" trailing whitespace
+set list listchars=tab:→\ ,trail:·
+set list
