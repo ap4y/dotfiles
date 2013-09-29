@@ -64,3 +64,6 @@
 [submodule "vim/bundle/ag.vim"]
 	path = vim/bundle/ag.vim
 	url = https://github.com/rking/ag.vim.git
+[submodule "vim/bundle/vim-tmux-navigator"]
+	path = vim/bundle/vim-tmux-navigator
+	url = https://github.com/christoomey/vim-tmux-navigator.git
