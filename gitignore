@@ -42,7 +42,3 @@ dist
 vendor/bundle
 vendor/assets/components
 .bundle
-
-# zeus 
-custom_plan.rb
-zeus.json
