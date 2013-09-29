@@ -2,7 +2,7 @@
 	name = ap4y
 	email = lod@pisem.net
 [core]
-	excludesfile = /Users/ap4y/.gitignore_global
+	excludesfile = /home/vagrant/.gitignore_global
 [apply]
 	whitespace = nowarn
 [push]

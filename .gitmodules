@@ -1,9 +1,6 @@
 [submodule "vim/bundle/a.vim"]
 	path = vim/bundle/a.vim
 	url = https://github.com/vim-scripts/a.vim.git
-[submodule "vim/bundle/ack.vim"]
-	path = vim/bundle/ack.vim
-	url = https://github.com/mileszs/ack.vim.git
 [submodule "vim/bundle/clang_complete"]
 	path = vim/bundle/clang_complete
 	url = https://github.com/Rip-Rip/clang_complete.git
