@@ -14,3 +14,5 @@
 [alias]
 	lc = log @{1}.. --stat --no-merges
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ar)%Creset' --abbrev-commit --date=relative
+[pull]
+	rebase = true
