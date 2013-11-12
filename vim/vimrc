@@ -75,7 +75,7 @@ if has("autocmd")
 
   " Treat JSON files like JavaScript
   au BufNewFile,BufRead *.json set ft=javascript
-  
+
   " set .h, .m file types to Objective-C
   au BufNewFile,BufRead *.{h,m} set ft=objc
 
@@ -83,7 +83,7 @@ if has("autocmd")
   au BufNewFile,BufRead *.podspec,Podfile set ft=ruby
 
   " Objective-C identation settings
-  au FileType objc set softtabstop=4 tabstop=4 shiftwidth=4 
+  au FileType objc set softtabstop=4 tabstop=4 shiftwidth=4
 
   " Remember last location in file, but not for commit messages.
   " see :help last-position-jump
@@ -96,6 +96,9 @@ if has("autocmd")
   au BufLeave *.{css,scss,sass} exe "normal! mS"
   au BufLeave *.{js,coffee}     exe "normal! mJ"
   au BufLeave *.{rb}            exe "normal! mC"
+
+  " Automatically removing all trailing whitespace
+  au BufWritePre * :%s/\s\+$//
 endif
 
 " Spell check
