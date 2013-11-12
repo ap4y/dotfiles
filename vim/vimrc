@@ -98,7 +98,7 @@ if has("autocmd")
   au BufLeave *.{rb}            exe "normal! mC"
 
   " Automatically removing all trailing whitespace
-  au BufWritePre * :%s/\s\+$//
+  au BufWritePre * :%s/\s\+$//e
 endif
 
 " Spell check
