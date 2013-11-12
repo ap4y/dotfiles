@@ -39,7 +39,7 @@ source $ZSH/oh-my-zsh.sh
 
 # tmux clipboard fix
 if [[ "$(uname)" = "Darwin" ]]; then
-  alias vim='mvim -v'
+  alias vim='reattach-to-user-namespace mvim -v'
   alias tmux='tmux -2 -f ~/.tmux-osx.conf'
 else
   alias tmux='tmux -2'
