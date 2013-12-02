@@ -49,3 +49,6 @@ alias t2='tmux a -t 2'
 
 # 10ms for key sequences
 KEYTIMEOUT=1
+
+# vim keybindings for zsh
+bindkey -v
