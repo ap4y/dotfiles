@@ -1,9 +1,9 @@
 snippet snp "@property(nonatomic, strong) Class *name"
-@property (nonatomic, strong) ${1:class} *${2:name};
+@property (strong, nonatomic) ${1:class} *${2:name};
 endsnippet
 
 snippet cnp "@property(nonatomic, copy) Class *name"
-@property (nonatomic, copy) ${1:class} *${2:name};
+@property (copy, nonatomic) ${1:class} *${2:name};
 endsnippet
 
 snippet np "@property(nonatomic) Class name"
