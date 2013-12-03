@@ -52,15 +52,9 @@
 [submodule "vim/bundle/vim-handlebars"]
 	path = vim/bundle/vim-handlebars
 	url = https://github.com/nono/vim-handlebars.git
-[submodule "vim/bundle/jslhint.vim"]
-	path = vim/bundle/jslhint.vim
-	url = https://github.com/FuDesign2008/jslhint.vim.git
 [submodule "vim/bundle/lightline.vim"]
 	path = vim/bundle/lightline.vim
 	url = https://github.com/itchyny/lightline.vim.git
-[submodule "vim/bundle/vim-rubocop"]
-	path = vim/bundle/vim-rubocop
-	url = https://github.com/ngmy/vim-rubocop.git
 [submodule "vim/bundle/ag.vim"]
 	path = vim/bundle/ag.vim
 	url = https://github.com/rking/ag.vim.git
