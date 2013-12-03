@@ -49,9 +49,6 @@
 [submodule "vim/bundle/vim-surround"]
 	path = vim/bundle/vim-surround
 	url = https://github.com/tpope/vim-surround.git
-[submodule "vim/bundle/vim-handlebars"]
-	path = vim/bundle/vim-handlebars
-	url = https://github.com/nono/vim-handlebars.git
 [submodule "vim/bundle/lightline.vim"]
 	path = vim/bundle/lightline.vim
 	url = https://github.com/itchyny/lightline.vim.git
