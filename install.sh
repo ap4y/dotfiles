@@ -15,3 +15,5 @@ ln -sf $SOURCE_PATH/ctags $HOME/.ctags
 ln -sf $SOURCE_PATH/vim $HOME/.vim
 ln -sf $SOURCE_PATH/vim/gvimrc $HOME/.gvimrc
 ln -sf $SOURCE_PATH/vim/vimrc $HOME/.vimrc
+
+ln -sf $SOURCE_PATH/emacs.d $HOME/.emacs.d
