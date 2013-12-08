@@ -190,6 +190,9 @@ nmap <leader>r :!rake simulator<CR>
 nmap <leader>ll :!rake debug<CR>
 nmap <leader>cl :!rake clang_db<CR>
 
+" Rail.vim bindings
+nmap <leader>t :Rrunner<CR>
+
 " vim-lldb mappings
 noremap <leader>po :Lpo<CR>
 noremap <leader>pO :LpO<CR>
@@ -220,3 +223,9 @@ let g:lightline = {
 " trailing whitespace
 set list listchars=tab:→\ ,trail:·
 set list
+
+" syntastic
+let g:syntastic_enable_signs  = 1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_ruby_checkers = ['rubocop']
+let syntastic_mode_map = { 'passive_filetypes': ['html'] }
