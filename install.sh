@@ -16,4 +16,8 @@ ln -sf $SOURCE_PATH/vim $HOME/.vim
 ln -sf $SOURCE_PATH/vim/gvimrc $HOME/.gvimrc
 ln -sf $SOURCE_PATH/vim/vimrc $HOME/.vimrc
 
-ln -sf $SOURCE_PATH/emacs.d $HOME/.emacs.d
+# emacs with prelude
+# curl -L http://git.io/epre | sh
+rm -rf $HOME/.emacs.d/personal
+ln -sf $SOURCE_PATH/personal $HOME/.emacs.d/personal
+cp prelude-modules.el $HOME/.emacs.d
