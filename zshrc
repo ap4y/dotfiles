@@ -50,4 +50,12 @@ alias t2='tmux a -t 2'
 # 10ms for key sequences
 KEYTIMEOUT=1
 
+# locale settings
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+# mac os ruby 2 path
 export PATH=$PATH:$HOME/.gem/ruby/2.0.0/bin
+
+# homebrew path
+export PATH=/usr/local/bin:$PATH
