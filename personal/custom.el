@@ -8,6 +8,7 @@
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
 (add-to-list 'default-frame-alist '(font . "Inconsolata dz-14"))
+(setq-default line-spacing 4)
 
 ;; mac os meta rebind
 ;; (setq mac-command-modifier 'meta)
@@ -26,6 +27,7 @@
 ;; js2-mode settings
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (setq js2-basic-offset 2)
+(add-hook 'js2-mode-hook 'subword-mode)
 
 ;; don't use rake in rspec-mode
 (setq rspec-use-rake-when-possible nil)
@@ -68,6 +70,9 @@
   (irony-mode 1))
 
 (add-hook 'objc-mode-hook 'custom-objc-hook)
+
+;; sass-mode
+(add-hook 'scss-mode-hook 'whitespace-mode)
 
 ;; Local Variables:
 ;; byte-compile-warnings: (not cl-functions)
