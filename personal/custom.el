@@ -16,8 +16,8 @@
 
 ;; additional packages
 (prelude-ensure-module-deps '(dash-at-point multi-term
-                                            handlebars-mode auto-complete
-                                            yasnippet elixir-mode ag
+                                            handlebars-mode
+                                            elixir-mode ag
                                             rspec-mode js2-mode))
 
 ;; multi-term settings
@@ -51,25 +51,6 @@
 (defun align-hash (beg end)
   (interactive "r")
   (align-regexp beg end "\\(\\s-*\\)\=\>\\(\\s-*\\)" 1 1 t))
-
-;; irony-mode
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/personal/irony-mode/elisp"))
-
-(require 'auto-complete-config)
-(ac-config-default)
-
-(require 'auto-complete)
-(require 'yasnippet)
-(require 'irony)
-
-(irony-enable '(ac))
-
-(defun custom-objc-hook ()
-  (yas/minor-mode-on)
-  (auto-complete-mode 1)
-  (irony-mode 1))
-
-(add-hook 'objc-mode-hook 'custom-objc-hook)
 
 ;; sass-mode
 (add-hook 'scss-mode-hook 'whitespace-mode)
