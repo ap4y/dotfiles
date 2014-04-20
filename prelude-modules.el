@@ -9,7 +9,7 @@
 ;; (require 'prelude-common-lisp)
 (require 'prelude-css)
 (require 'prelude-emacs-lisp)
-;; (require 'prelude-erc) ;; Emacs IRC client
+(require 'prelude-erc) ;; Emacs IRC client
 (require 'prelude-erlang)
 ;; (require 'prelude-haskell)
 (require 'prelude-js)
@@ -24,5 +24,6 @@
 ;; (require 'prelude-scala)
 ;; (require 'prelude-scheme)
 (require 'prelude-scss)
+(require 'prelude-shell)
 (require 'prelude-web) ;; Emacs mode for web templates
 ;; (require 'prelude-xml)

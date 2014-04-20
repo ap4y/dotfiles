@@ -54,6 +54,14 @@
 ;; sass-mode
 (add-hook 'scss-mode-hook 'whitespace-mode)
 
+;; erc
+(require 'erc-dcc)
+(setq erc-nick "ap4y")
+(setq erc-autojoin-channels-alist
+      '(("freenode.net" "#emberjs" "##objc" "#macdev"
+         "#iphonedev" "#coreaudio" "#ruby-lang" "#mongodb"
+         "#hbase" "#RubyOnRails" "#broccolijs")))
+
 ;; Local Variables:
 ;; byte-compile-warnings: (not cl-functions)
 ;; End:
