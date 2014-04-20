@@ -17,7 +17,8 @@
 ;; additional packages
 (prelude-ensure-module-deps '(dash-at-point handlebars-mode
                                             elixir-mode ag
-                                            rspec-mode js2-mode))
+                                            rspec-mode js2-mode
+                                            rust-mode))
 
 ;; multi-term settings
 (setq multi-term-program "/bin/zsh")
