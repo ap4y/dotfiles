@@ -7,16 +7,15 @@
 ;; visual settings
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
-(add-to-list 'default-frame-alist '(font . "Inconsolata dz-14"))
-(setq-default line-spacing 4)
+(setq default-frame-alist '((font . "Anonymous Pro-14")))
+(setq-default line-spacing 3)
 
 ;; mac os meta rebind
 ;; (setq mac-command-modifier 'meta)
 ;; (setq mac-option-modifier 'super)
 
 ;; additional packages
-(prelude-ensure-module-deps '(dash-at-point multi-term
-                                            handlebars-mode
+(prelude-ensure-module-deps '(dash-at-point handlebars-mode
                                             elixir-mode ag
                                             rspec-mode js2-mode))
 
