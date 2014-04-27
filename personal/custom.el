@@ -63,6 +63,9 @@
          "#iphonedev" "#coreaudio" "#ruby-lang" "#mongodb"
          "#hbase" "#RubyOnRails" "#broccolijs")))
 
+;; rust-mode
+(add-hook 'rust-mode-hook 'subword-mode)
+
 ;; Local Variables:
 ;; byte-compile-warnings: (not cl-functions)
 ;; End:
