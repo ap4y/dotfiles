@@ -66,6 +66,12 @@
 ;; rust-mode
 (add-hook 'rust-mode-hook 'subword-mode)
 
+;; web-mode
+(defun custom-web-mode-hook ()
+  "Hooks for Web mode."
+  (setq web-mode-markup-indent-offset 2))
+(add-hook 'web-mode-hook  'custom-web-mode-hook)
+
 ;; Local Variables:
 ;; byte-compile-warnings: (not cl-functions)
 ;; End:
