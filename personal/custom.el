@@ -62,6 +62,7 @@
       '(("freenode.net" "#emberjs" "##objc" "#macdev"
          "#iphonedev" "#coreaudio" "#ruby-lang" "#mongodb"
          "#hbase" "#RubyOnRails" "#broccolijs")))
+(setq erc-hide-list '("JOIN" "PART" "QUIT"))
 
 ;; rust-mode
 (add-hook 'rust-mode-hook 'subword-mode)
