@@ -63,15 +63,22 @@
          "#iphonedev" "#coreaudio" "#ruby-lang" "#mongodb"
          "#hbase" "#RubyOnRails" "#broccolijs")))
 (setq erc-hide-list '("JOIN" "PART" "QUIT"))
-
-;; rust-mode
-(add-hook 'rust-mode-hook 'subword-mode)
+; Make erc tracking come after everything else
+(setq erc-track-position-in-mode-line 'after-modes)
 
 ;; web-mode
 (defun custom-web-mode-hook ()
   "Hooks for Web mode."
   (setq web-mode-markup-indent-offset 2))
-(add-hook 'web-mode-hook  'custom-web-mode-hook)
+(add-hook 'web-mode-hook 'custom-web-mode-hook)
+(add-to-list 'auto-mode-alist '("\\.hbs\\'" . web-mode))
+
+;; setting line width to 120 for rust and objc modes
+(defun custom-ws-line-column-hook ()
+  "Setting whitespace column to 120."
+  (setq whitespace-line-column 120))
+(add-hook 'rust-mode-hook 'custom-ws-line-column-hook)
+(add-hook 'objc-mode-hook 'custom-ws-line-column-hook)
 
 ;; Local Variables:
 ;; byte-compile-warnings: (not cl-functions)
