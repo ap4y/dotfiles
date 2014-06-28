@@ -10,6 +10,9 @@
 (setq default-frame-alist '((font . "Anonymous Pro-14")))
 (setq-default line-spacing 3)
 
+;; tabs settings (mostly for go)
+(setq-default tab-width 2)
+
 ;; mac os meta rebind
 ;; (setq mac-command-modifier 'meta)
 ;; (setq mac-option-modifier 'super)
