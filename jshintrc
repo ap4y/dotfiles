@@ -19,5 +19,6 @@
   "strict": false,
   "trailing": true,
   "smarttabs": true,
-  "-W117": true
+  "-W117": true,
+  "esnext": true
 }
