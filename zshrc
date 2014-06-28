@@ -29,3 +29,7 @@ export PATH=/usr/local/bin:$PATH
 # emacs
 alias e='emacsclient -t'
 alias ec='emacsclient -c'
+
+# golang
+export GOPATH=$HOME/golang
+export PATH=$GOPATH/bin:$PATH
