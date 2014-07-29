@@ -3,16 +3,6 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-# tmux clipboard fix
-if [[ "$(uname)" = "Darwin" ]]; then
-  alias vim='reattach-to-user-namespace mvim -v'
-  alias tmux='tmux -2 -f ~/.tmux-osx.conf'
-else
-  alias tmux='tmux -2'
-fi
-alias t1='tmux a -t 1'
-alias t2='tmux a -t 2'
-
 # 10ms for key sequences
 KEYTIMEOUT=1
 
