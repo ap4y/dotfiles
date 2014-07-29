@@ -62,9 +62,9 @@
 (require 'erc-dcc)
 (setq erc-nick "ap4y")
 (setq erc-autojoin-channels-alist
-      '(("freenode.net" "#emberjs" "##objc" "#macdev"
+      '(("freenode.net" "#emberjs" "##objc" "#macdev" "#swift-lang"
          "#iphonedev" "#coreaudio" "#ruby-lang" "#mongodb"
-         "#hbase" "#RubyOnRails" "#broccolijs")))
+         "#coreos" "#RubyOnRails" "#go-nuts")))
 (setq erc-hide-list '("JOIN" "PART" "QUIT"))
 ; Make erc tracking come after everything else
 (setq erc-track-position-in-mode-line 'after-modes)
@@ -83,6 +83,26 @@
 (add-hook 'rust-mode-hook 'custom-ws-line-column-hook)
 (add-hook 'objc-mode-hook 'custom-ws-line-column-hook)
 
+;; swift-mode
+(add-hook 'swift-mode-hook 'subword-mode)
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(flycheck-swift-executable nil)
+ '(flycheck-swift-linked-source "/Users/arthurevstifeev/github/Leaf/Leaf/**/*.swift")
+ '(flycheck-swift-linked-sources "/Users/arthurevstifeev/github/Leaf/Leaf/**/*.swift")
+ '(flycheck-swift-sdk-path
+   (quote
+    ("/Users/arthurevstifeev/Downloads/Xcode6-Beta3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk"))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
 ;; Local Variables:
 ;; byte-compile-warnings: (not cl-functions)
 ;; End:
