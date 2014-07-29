@@ -12,6 +12,7 @@ ln -sf $SOURCE_PATH/tmux-osx.conf $HOME/.tmux-osx.conf
 ln -sf $SOURCE_PATH/zshrc $HOME/.zshrc
 ln -sf $SOURCE_PATH/zpreztorc $HOME/.zpreztorc
 ln -sf $SOURCE_PATH/ctags $HOME/.ctags
+ln -sf $SOURCE_PATH/bash_profile $HOME/.bash_profile
 
 ln -sf $SOURCE_PATH/vim $HOME/.vim
 ln -sf $SOURCE_PATH/vim/gvimrc $HOME/.gvimrc
