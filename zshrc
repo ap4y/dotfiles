@@ -11,7 +11,7 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 # mac os ruby 2 path
-export PATH=$PATH:$HOME/.gem/ruby/2.0.0/bin
+export PATH=$HOME/.gem/ruby/2.1.0/bin:$PATH
 
 # homebrew path
 export PATH=/usr/local/bin:$PATH
