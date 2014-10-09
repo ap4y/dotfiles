@@ -7,8 +7,8 @@
 ;; visual settings
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
-(setq default-frame-alist '((font . "Anonymous Pro-14")))
-(setq-default line-spacing 3)
+(setq default-frame-alist '((font . "Ubuntu Mono-13")))
+;; (setq-default line-spacing 3)
 
 ;; tabs settings (mostly for go)
 (setq-default tab-width 2)
