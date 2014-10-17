@@ -1,0 +1,44 @@
+(source gnu)
+(source melpa)
+
+(depends-on "init-loader")
+
+;; utils
+(depends-on "projectile")
+(depends-on "flycheck")
+(depends-on "smartparens")
+(depends-on "ag")
+(depends-on "diminish")
+(depends-on "volatile-highlights")
+(depends-on "expand-region")
+(depends-on "anzu")
+(depends-on "browse-kill-ring")
+(depends-on "easy-kill")
+(depends-on "diff-hl")
+(depends-on "rainbow-delimiters")
+(depends-on "ido-ubiquitous")
+(depends-on "flx-ido")
+(depends-on "smex")
+(depends-on "magit")
+(depends-on "undo-tree")
+(depends-on "company-go")
+(depends-on "go-eldoc")
+(depends-on "gotest")
+
+;; minor modes
+(depends-on "nyan-mode")
+(depends-on "rspec-mode")
+(depends-on "company")
+(depends-on "rainbow-mode")
+
+;; major modes
+(depends-on "rust-mode")
+(depends-on "go-mode")
+(depends-on "js2-mode")
+(depends-on "yaml-mode")
+(depends-on "web-mode")
+(depends-on "scss-mode")
+
+;; themes
+(depends-on "zenburn-theme")
+(depends-on "base16-theme")
