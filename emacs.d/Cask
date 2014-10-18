@@ -38,5 +38,6 @@
 (depends-on "yaml-mode")
 (depends-on "web-mode")
 (depends-on "scss-mode")
+(depends-on "swift-mode")
 
 ;; themes
