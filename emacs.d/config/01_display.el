@@ -14,7 +14,7 @@
 (set-frame-font "Source Code Pro-11")
 
 ;; theme
-(load-theme 'base16-eighties t)
+(load-theme 'base16-eighties-dark t)
 
 ;; highlight the current line
 (global-hl-line-mode +1)

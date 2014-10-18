@@ -40,5 +40,3 @@
 (depends-on "scss-mode")
 
 ;; themes
-(depends-on "zenburn-theme")
-(depends-on "base16-theme")

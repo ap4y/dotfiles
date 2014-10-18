@@ -8,6 +8,8 @@
 (defvar custom-savefile-dir (expand-file-name "savefile" emacs-config-dir)
   "This folder stores all the automatically generated save/history-files.")
 
+(add-to-list 'custom-theme-load-path (expand-file-name "themes" emacs-config-dir))
+
 (unless (file-exists-p custom-savefile-dir)
   (make-directory custom-savefile-dir))
 
