@@ -1,5 +1,5 @@
 ;; Compilation from Emacs
-(defun prelude-colorize-compilation-buffer ()
+(defun colorize-compilation-buffer ()
   "Colorize a compilation mode buffer."
   (interactive)
   ;; we don't want to mess with child modes such as grep-mode, ack, ag, etc
@@ -18,4 +18,4 @@
 ;; Colorize output of Compilation Mode, see
 ;; http://stackoverflow.com/a/3072831/355252
 (require 'ansi-color)
-(add-hook 'compilation-filter-hook #'prelude-colorize-compilation-buffer)
+(add-hook 'compilation-filter-hook #'colorize-compilation-buffer)

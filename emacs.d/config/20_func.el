@@ -39,7 +39,7 @@ Repeated invocations toggle between the two most recently open buffers."
   (delete-indentation 1))
 
 (defun auto-save-command ()
-  "Save the current buffer if `prelude-auto-save' is not nil."
+  "Save the current buffer."
   (when (and buffer-file-name
              (buffer-modified-p (current-buffer))
              (file-writable-p buffer-file-name))

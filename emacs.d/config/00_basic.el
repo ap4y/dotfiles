@@ -1,3 +1,10 @@
+;; reduce the frequency of garbage collection by making it happen on
+;; each 50MB of allocated data (the default is on every 0.76MB)
+(setq gc-cons-threshold 50000000)
+
+;; warn when opening files bigger than 100MB
+(setq large-file-warning-threshold 100000000)
+
 ;; nice scrolling
 (setq scroll-margin 0
       scroll-conservatively 100000
@@ -119,3 +126,20 @@ The body of the advice is in BODY."
 ;; sensible undo
 (global-undo-tree-mode)
 (diminish 'undo-tree-mode)
+
+;; saveplace remembers your location in a file when saving files
+(require 'saveplace)
+(setq save-place-file (expand-file-name "saveplace" custom-savefile-dir))
+(setq-default save-place t) ;; activate it for all buffers
+
+;; savehist keeps track of some history
+(require 'savehist)
+(setq savehist-additional-variables
+      '(search-ring regexp-search-ring) ;; search entries
+      savehist-autosave-interval 60     ;; save every minute
+      savehist-file (expand-file-name "savehist" custom-savefile-dir))
+(savehist-mode +1)
+
+;; Use different save directory for eshell
+(require 'eshell)
+(setq eshell-directory-name (expand-file-name "eshell" custom-savefile-dir))

@@ -1,4 +1,4 @@
-(defun prelude-local-comment-auto-fill ()
+(defun enable-local-comment-auto-fill ()
   (set (make-local-variable 'comment-auto-fill-only-comments) t))
 
 ;; show the name of the current function definition in the modeline
@@ -10,8 +10,8 @@
   (when (executable-find ispell-program-name)
     (flyspell-prog-mode))
   (smartparens-mode +1)
-  (prelude-enable-whitespace)
-  (prelude-local-comment-auto-fill))
+  (enable-whitespace-mode)
+  (enable-local-comment-auto-fill))
 
 (add-hook 'prog-mode-hook 'prog-mode-defaults)
 

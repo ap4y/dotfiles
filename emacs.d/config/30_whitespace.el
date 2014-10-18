@@ -1,9 +1,9 @@
-(defun prelude-enable-whitespace ()
-  "Enable `whitespace-mode' if `prelude-whitespace' is not nil."
+(defun enable-whitespace-mode ()
+  "Enable `whitespace-mode'."
   (add-hook 'before-save-hook 'whitespace-cleanup nil t)
   (whitespace-mode +1))
 
-(add-hook 'text-mode-hook 'prelude-enable-whitespace)
+(add-hook 'text-mode-hook 'enable-whitespace-mode)
 
 ;; whitespace-mode config
 (require 'whitespace)

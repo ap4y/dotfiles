@@ -3,9 +3,9 @@
 (setq ispell-program-name "aspell" ; use aspell instead of ispell
       ispell-extra-args '("--sug-mode=ultra"))
 
-(defun prelude-enable-flyspell ()
+(defun enable-flyspell-mode ()
   "Enable command `flyspell-mode' if is not nil."
   (when (executable-find ispell-program-name)
     (flyspell-mode +1)))
 
-(add-hook 'text-mode-hook 'prelude-enable-flyspell)
+(add-hook 'text-mode-hook 'enable-flyspell-mode)
