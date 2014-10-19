@@ -11,7 +11,9 @@
 (setq ns-pop-up-frames nil)
 
 ;; font
-(set-frame-font "Source Code Pro-11")
+(set-face-attribute 'default nil
+                    :family "Source Code Pro"
+                    :height 110)
 
 ;; theme
 (load-theme 'base16-eighties-dark t)
