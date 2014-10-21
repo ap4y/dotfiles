@@ -11,9 +11,15 @@
 (setq ns-pop-up-frames nil)
 
 ;; font
-(set-face-attribute 'default nil
-                    :family "Source Code Pro"
-                    :height 110)
+(if (featurep 'ns)
+    (progn
+      (set-face-attribute 'default nil
+                          :family "Source Code Pro"
+                          :height 140))
+  (progn
+    (set-face-attribute 'default nil
+                        :family "Source Code Pro"
+                        :height 110)))
 
 ;; theme
 (load-theme 'base16-eighties-dark t)
