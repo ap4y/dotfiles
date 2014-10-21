@@ -24,6 +24,7 @@
 (depends-on "company-go")
 (depends-on "go-eldoc")
 (depends-on "gotest")
+(depends-on "git-timemachine")
 
 ;; minor modes
 (depends-on "nyan-mode")
