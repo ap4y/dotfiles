@@ -7,19 +7,14 @@
 ;; hide scroll bar
 (set-scroll-bar-mode nil)
 
-;; suppress create new frame when open file from Finder.app
-(setq ns-pop-up-frames nil)
-
 ;; font
 (if (featurep 'ns)
     (progn
-      (set-face-attribute 'default nil
-                          :family "Source Code Pro"
-                          :height 140))
+      (set-face-attribute 'default nil :font "Source Code Pro-14")
+      (set-frame-font "Source Code Pro-14" nil t))
   (progn
-    (set-face-attribute 'default nil
-                        :family "Source Code Pro"
-                        :height 110)))
+    (set-face-attribute 'default nil :font "Source Code Pro-11")
+    (set-frame-font "Source Code Pro-11" nil t)))
 
 ;; theme
 (load-theme 'base16-eighties-dark t)
