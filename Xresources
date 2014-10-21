@@ -1,4 +1,4 @@
-! urxvt
+!! urxvt
 URxvt*depth: 32
 URxvt*background:  #3f3f3f
 URxvt*foreground:  #dcdccc
@@ -39,9 +39,12 @@ URxvt.boldFont: xft:UbuntuMono:bold:size=12:antialias=false
 *color14:     #93e0e3
 *color15:     #ffffff
 
-! fonts
+!! fonts
 Xft.dpi:        96
 Xft.antialias:  1
 Xft.rgba:       rgb
 Xft.hinting:    1
 xft.hintstyle:  hintslight
+
+!! emacs
+Emacs.font: SourceCodePro-11
