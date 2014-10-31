@@ -67,3 +67,16 @@ point reaches the beginning or end of the buffer, stop there."
     (back-to-indentation)
     (when (= orig-point (point))
       (move-beginning-of-line 1))))
+
+;; custom align-regexp rules
+(defun  align-commas (beg end)
+  (interactive "r")
+  (align-regexp beg end ",\\(\\s-*\\)" 1 1 t))
+
+(defun align-colons (beg end)
+  (interactive "r")
+  (align-regexp beg end ":\\(\\s-*\\)" 1 1 t))
+
+(defun align-hash (beg end)
+  (interactive "r")
+  (align-regexp beg end "\\(\\s-*\\)\=\>\\(\\s-*\\)" 1 1 t))
