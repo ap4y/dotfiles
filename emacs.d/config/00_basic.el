@@ -143,3 +143,6 @@ The body of the advice is in BODY."
 ;; Use different save directory for eshell
 (require 'eshell)
 (setq eshell-directory-name (expand-file-name "eshell" custom-savefile-dir))
+
+;; Set some common auto-modes
+(add-to-list 'auto-mode-alist '("\\.service\\'" . conf-mode))
