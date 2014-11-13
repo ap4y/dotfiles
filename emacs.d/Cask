@@ -40,5 +40,6 @@
 (depends-on "web-mode")
 (depends-on "scss-mode")
 (depends-on "swift-mode")
+(depends-on "dockerfile-mode")
 
 ;; themes
