@@ -31,73 +31,17 @@
     (mkdir erc-log-channels-directory t))
 
 (setq erc-save-buffer-on-part t)
-;; FIXME - this advice is wrong and is causing problems on Emacs exit
-;; (defadvice save-buffers-kill-emacs (before save-logs (arg) activate)
-;;   (save-some-buffers t (lambda () (when (eq major-mode 'erc-mode) t))))
 
 ;; truncate long irc buffers
 (erc-truncate-mode +1)
 
 ;; enable spell checking
 (erc-spelling-mode 1)
-;; set different dictionaries by different servers/channels
-;;(setq erc-spelling-dictionaries '(("#emacs" "american")))
-
-;; TODO - replace this with use of notify.el
-;; Notify my when someone mentions my nick.
-(defun call-libnotify (matched-type nick msg)
-  (let* ((cmsg  (split-string (clean-message msg)))
-         (nick   (first (split-string nick "!")))
-         (msg    (mapconcat 'identity (rest cmsg) " ")))
-    (shell-command-to-string
-     (format "notify-send -u critical '%s says:' '%s'" nick msg))))
-
-(when (eq system-type 'linux)
-  (add-hook 'erc-text-matched-hook 'call-libnotify))
-
-(defvar erc-notify-nick-alist nil
-  "Alist of nicks and the last time they tried to trigger a
-notification")
-
-(defvar erc-notify-timeout 10
-  "Number of seconds that must elapse between notifications from
-the same person.")
-
-(defun erc-notify-allowed-p (nick &optional delay)
-  "Return non-nil if a notification should be made for NICK.
-If DELAY is specified, it will be the minimum time in seconds
-that can occur between two notifications.  The default is
-`erc-notify-timeout'."
-  (unless delay (setq delay erc-notify-timeout))
-  (let ((cur-time (time-to-seconds (current-time)))
-        (cur-assoc (assoc nick erc-notify-nick-alist))
-        (last-time nil))
-    (if cur-assoc
-        (progn
-          (setq last-time (cdr cur-assoc))
-          (setcdr cur-assoc cur-time)
-          (> (abs (- cur-time last-time)) delay))
-      (push (cons nick cur-time) erc-notify-nick-alist)
-      t)))
-
-;; private message notification
-(defun erc-notify-on-private-msg (proc parsed)
-  (let ((nick (car (erc-parse-user (erc-response.sender parsed))))
-        (target (car (erc-response.command-args parsed)))
-        (msg (erc-response.contents parsed)))
-    (when (and (erc-current-nick-p target)
-               (not (erc-is-message-ctcp-and-not-action-p msg))
-               (erc-notify-allowed-p nick))
-      (shell-command-to-string
-       (format "notify-send -u critical '%s says:' '%s'" nick msg))
-      nil)))
-
-(add-hook 'erc-server-PRIVMSG-functions 'erc-notify-on-private-msg)
 
 ;; autoaway setup
 (setq erc-auto-discard-away t)
 (setq erc-autoaway-idle-seconds 600)
-(setq erc-autoaway-use-emacs-idle t)
+(setq erc-autoaway-idle-method 'emacs)
 
 ;; utf-8 always and forever
 (setq erc-server-coding-system '(utf-8 . utf-8))
@@ -127,7 +71,7 @@ that can occur between two notifications.  The default is
       '(("freenode.net" "#emberjs" "##objc" "#macdev" "#swift-lang"
          "#iphonedev" "#coreaudio" "#ruby-lang" "#mongodb"
          "#coreos" "#RubyOnRails" "#go-nuts")))
-(setq erc-hide-list '("JOIN" "PART" "QUIT"))
+(setq erc-hide-list '("JOIN" "PART" "QUIT" "MODE"))
 
 ;; Make erc tracking come after everything else
 (setq erc-track-position-in-mode-line 'after-modes)
