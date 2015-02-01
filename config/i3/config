@@ -29,6 +29,9 @@ set $sup Mod1
 # Don't follow cursor
 focus_follows_mouse no
 
+# remove window borders
+new_window none
+
 # use these keys for focus, movement, and resize directions when reaching for
 # the arrows is not convenient
 set $up l
