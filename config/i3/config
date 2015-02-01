@@ -183,3 +183,4 @@ exec nitrogen --restore
 # Custom app bindings
 bindsym $mod+Return  exec sakura
 bindsym $sup+e       exec emacsclient -c
+bindsym $mod+b       exec firefox-developer
