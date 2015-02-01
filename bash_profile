@@ -39,7 +39,7 @@ _success_status() {
 PS1='\[\e[0;31m\]\w\[\e[m\]$(_git_prompt) \[\e[1;31m\]$(_failed_status)\[\e[m\]$(_success_status) '
 
 # mac os ruby 2 path
-export PATH=$HOME/.gem/ruby/2.1.0/bin:$PATH
+export PATH=$HOME/.gem/ruby/2.2.0/bin:$PATH
 
 # homebrew path
 export PATH=/usr/local/bin:$PATH
