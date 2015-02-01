@@ -73,5 +73,20 @@
          "#coreos" "#RubyOnRails" "#go-nuts")))
 (setq erc-hide-list '("JOIN" "PART" "QUIT" "MODE"))
 
+;; alert in fringe
+(alert-add-rule :status   '(buried visible idle)
+                :severity '(moderate high urgent)
+                :mode     'erc-mode
+                :persistent
+                #'(lambda (info)
+                    ;; If the buffer is buried, or the user has been
+                    ;; idle for `alert-reveal-idle-time' seconds,
+                    ;; make this alert persistent.  Normally, alerts
+                    ;; become persistent after
+                    ;; `alert-persist-idle-time' seconds.
+                    (memq (plist-get info :status) '(buried idle)))
+                :style 'fringe
+                :continue t)
+
 ;; Make erc tracking come after everything else
 (setq erc-track-position-in-mode-line 'after-modes)
