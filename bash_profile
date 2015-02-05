@@ -51,3 +51,6 @@ alias ec='emacsclient -c'
 # golang
 export GOPATH=$HOME/golang
 export PATH=$GOPATH/bin:$PATH
+
+# dircolors
+eval $(dircolors -b $HOME/.config/dircolors)
