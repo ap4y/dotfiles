@@ -4,7 +4,7 @@ fi
 
 export CLICOLOR=1
 export HISTCONTROL=ignoredups
-export EDITOR=emacs
+export EDITOR=~/bin/edit
 
 PATH=~/bin:"$PATH"
 PATH=bin:"$PATH"
