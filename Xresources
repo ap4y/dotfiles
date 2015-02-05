@@ -1,17 +1,13 @@
 #include "/home/ap4y/.colors/hybrid"
 
 !! urxvt
-URxvt.font:     xft:Source\ Code\ Pro:size=11
-URxvt.boldFont: xft:Source\ Code\ Pro:size=11
+URxvt.font:        xft:Source\ Code\ Pro:size=10
+URxvt.boldFont:    xft:Source\ Code\ Pro:size=10
+URxvt.letterSpace: -1
 
-URxvt.geometry: 86x23
 URxvt.depth:                  32
 URxvt.scrollBar:              false
 URxvt.buffered:               true
-URxvt.tabbed.tabbar-fg:       8
-URxvt.tabbed.tabbar-bg:       0
-URxvt.tabbed.tab-fg:          15
-URxvt.tabbed.tab-bg:          0
 URxvt.tabbed.autohide:        true
 URXvt.tabbed.reopen-on-close: yes
 
