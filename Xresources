@@ -1,17 +1,23 @@
-!! urxvt
-URxvt*depth: 32
-URxvt*background:  #3f3f3f
-URxvt*foreground:  #dcdccc
-URxvt.cursorColor: #395573
-URxvt.borderColor: #101010
-URxvt.colorUL: #31658C
-URxvt.borderless: false
-URxvt.internalBorder: 3
-URxvt.externalBorder: 3
-URxvt.scrollBar: false
-URxvt.font: xft:UbuntuMono:size=12:antialias=false
-URxvt.boldFont: xft:UbuntuMono:bold:size=12:antialias=false
+#include "/home/ap4y/.colors/hybrid"
 
+!! urxvt
+URxvt.font:     xft:Source\ Code\ Pro:size=11
+URxvt.boldFont: xft:Source\ Code\ Pro:size=11
+
+URxvt.geometry: 86x23
+URxvt.depth:                  32
+URxvt.scrollBar:              false
+URxvt.buffered:               true
+URxvt.tabbed.tabbar-fg:       8
+URxvt.tabbed.tabbar-bg:       0
+URxvt.tabbed.tab-fg:          15
+URxvt.tabbed.tab-bg:          0
+URxvt.tabbed.autohide:        true
+URXvt.tabbed.reopen-on-close: yes
+
+URxvt.perl-ext-common: default,matcher
+URxvt.matcher.button:  1
+URxvt.url-launcher:    /usr/bin/firefox-developer
 
 !! fonts
 Xft.dpi:        96
@@ -19,6 +25,7 @@ Xft.antialias:  1
 Xft.rgba:       rgb
 Xft.hinting:    1
 xft.hintstyle:  hintslight
+Xft.lcdfilter:  lcddefault
 
 !! emacs
 Emacs.font: SourceCodePro-11
