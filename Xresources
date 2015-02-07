@@ -1,8 +1,8 @@
 #include "/home/ap4y/.colors/hybrid"
 
 !! urxvt
-URxvt.font:        xft:Source\ Code\ Pro:size=10
-URxvt.boldFont:    xft:Source\ Code\ Pro:size=10
+URxvt.font:        xft:Source\ Code\ Pro:size=11
+URxvt.boldFont:    xft:Source\ Code\ Pro:size=11
 URxvt.letterSpace: -1
 
 URxvt.depth:                  32
