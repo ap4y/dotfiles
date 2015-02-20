@@ -28,15 +28,7 @@ _git_prompt() {
   fi
 }
 
-_failed_status() {
-  [ "$PIPESTATUS" -ne 0 ] && printf "$"
-}
-
-_success_status() {
-  [ "$PIPESTATUS" -eq 0 ] && printf "$"
-}
-
-PS1='\[\e[0;31m\]\w\[\e[m\]$(_git_prompt) \[\e[1;31m\]$(_failed_status)\[\e[m\]$(_success_status) '
+PS1='\[$(tput setaf 0)\]\W$(_git_prompt)\[$(tput sgr0)\]\[$(tput setaf 1)\] » \[$(tput sgr0)\]'
 
 # mac os ruby 2 path
 export PATH=$HOME/.gem/ruby/2.2.0/bin:$PATH
