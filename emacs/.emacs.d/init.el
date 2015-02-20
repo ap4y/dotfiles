@@ -16,6 +16,6 @@
 ;; Load configuration files
 (require 'init-loader)
 (custom-set-variables
- ;; '(init-loader-byte-compile 't)
+ '(init-loader-byte-compile 't)
  '(init-loader-show-log-after-init 'error-only))
 (init-loader-load (expand-file-name "config" emacs-config-dir))

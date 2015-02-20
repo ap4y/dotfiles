@@ -4,9 +4,9 @@ fi
 
 export CLICOLOR=1
 export HISTCONTROL=ignoredups
-export EDITOR=~/bin/edit
+export EDITOR=~/.bin/edit
 
-PATH=~/bin:"$PATH"
+PATH=~/.bin:"$PATH"
 PATH=bin:"$PATH"
 export PATH
 
