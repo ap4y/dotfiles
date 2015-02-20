@@ -1,9 +1,8 @@
 #include "/home/ap4y/.colors/hybrid"
 
 !! urxvt
-URxvt.font:        xft:Source\ Code\ Pro:size=11
-URxvt.boldFont:    xft:Source\ Code\ Pro:size=11
-URxvt.letterSpace: -1
+URxvt.font:        -*-tamsyn-medium-*-*-*-14-*-*-*-*-*-*-*
+URxvt.boldFont:    -*-tamsyn-medium-*-*-*-14-*-*-*-*-*-*-*
 
 URxvt.depth:                  32
 URxvt.scrollBar:              false
@@ -22,6 +21,3 @@ Xft.rgba:       rgb
 Xft.hinting:    1
 xft.hintstyle:  hintslight
 Xft.lcdfilter:  lcddefault
-
-!! emacs
-Emacs.font: SourceCodePro-11

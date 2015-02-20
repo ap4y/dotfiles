@@ -13,8 +13,8 @@
       (set-face-attribute 'default nil :font "Source Code Pro-14")
       (set-frame-font "Source Code Pro-14" nil t))
   (progn
-    (set-face-attribute 'default nil :font "Source Code Pro-11")
-    (set-frame-font "Source Code Pro-11" nil t)))
+    (set-face-attribute 'default nil :font "-*-tamsyn-medium-*-*-*-14-*-*-*-*-*-*-*")
+    (set-frame-font "-*-tamsyn-medium-*-*-*-14-*-*-*-*-*-*-*" nil t)))
 
 ;; theme
 (load-theme 'base16-eighties-dark t)
