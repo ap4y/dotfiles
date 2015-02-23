@@ -7,12 +7,6 @@
 [submodule "vim/.vim/bundle/ctrlp.vim"]
 	path = vim/.vim/bundle/ctrlp.vim
 	url = https://github.com/kien/ctrlp.vim.git
-[submodule "vim/.vim/bundle/funcoo.vim"]
-	path = vim/.vim/bundle/funcoo.vim
-	url = https://github.com/rizzatti/funcoo.vim.git
-[submodule "vim/.vim/bundle/dash"]
-	path = vim/.vim/bundle/dash
-	url = https://github.com/rizzatti/dash.vim.git
 [submodule "vim/.vim/bundle/tabular"]
 	path = vim/.vim/bundle/tabular
 	url = https://github.com/godlygeek/tabular.git
@@ -31,39 +25,18 @@
 [submodule "vim/.vim/bundle/vim-javascript"]
 	path = vim/.vim/bundle/vim-javascript
 	url = https://github.com/pangloss/vim-javascript.git
-[submodule "vim/.vim/bundle/vim-markdown"]
-	path = vim/.vim/bundle/vim-markdown
-	url = https://github.com/tpope/vim-markdown.git
-[submodule "vim/.vim/bundle/vim-rails"]
-	path = vim/.vim/bundle/vim-rails
-	url = https://github.com/tpope/vim-rails.git
 [submodule "vim/.vim/bundle/vim-railscasts"]
 	path = vim/.vim/bundle/vim-railscasts
 	url = https://github.com/jgdavey/vim-railscasts.git
-[submodule "vim/.vim/bundle/vim-repeate"]
-	path = vim/.vim/bundle/vim-repeate
-	url = https://github.com/tpope/vim-repeat.git
 [submodule "vim/.vim/bundle/vim-ruby"]
 	path = vim/.vim/bundle/vim-ruby
 	url = https://github.com/vim-ruby/vim-ruby.git
-[submodule "vim/.vim/bundle/vim-surround"]
-	path = vim/.vim/bundle/vim-surround
-	url = https://github.com/tpope/vim-surround.git
 [submodule "vim/.vim/bundle/lightline.vim"]
 	path = vim/.vim/bundle/lightline.vim
 	url = https://github.com/itchyny/lightline.vim.git
 [submodule "vim/.vim/bundle/ag.vim"]
 	path = vim/.vim/bundle/ag.vim
 	url = https://github.com/rking/ag.vim.git
-[submodule "vim/.vim/bundle/vim-tmux-navigator"]
-	path = vim/.vim/bundle/vim-tmux-navigator
-	url = https://github.com/christoomey/vim-tmux-navigator.git
-[submodule "vim/.vim/bundle/vim-elixir"]
-	path = vim/.vim/bundle/vim-elixir
-	url = https://github.com/elixir-lang/vim-elixir.git
 [submodule "vim/.vim/bundle/syntastic"]
 	path = vim/.vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
-[submodule "vim/.vim/bundle/vim-mustache-handlebars"]
-	path = vim/.vim/bundle/vim-mustache-handlebars
-	url = https://github.com/mustache/vim-mustache-handlebars.git
