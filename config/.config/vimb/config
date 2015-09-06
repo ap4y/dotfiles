@@ -1,0 +1,29 @@
+nnoremap H <C-O>
+nnoremap L <C-I>
+nnoremap d :q<CR>
+nnoremap pk :eval! javascript:location.href='http://fivefilters.org/kindle-it/send.php?url='+encodeURIComponent(document.location.href);<CR>
+
+shortcut-add du=https://duckduckgo.com/?q=$0&ia=images
+shortcut-add go=https://encrypted.google.com/search?q=$0
+
+set fontsize=12px
+set download-path=/tmp/vimb
+set webinspector=true
+set smooth-scrolling=true
+set statusbar=false
+set spell-checking=true
+
+set input-font-normal=Tamsyn 10
+set input-bg-normal=#1f1f1f
+set input-fg-normal=#c0b18b
+set input-font-error=Tamsyn 10
+set input-bg-error=#1f1f1f
+set input-fg-error=#775759
+
+set completion-font=Tamsyn 10
+set completion-bg-normal=#1f1f1f
+set completion-fg-normal=#817267
+set completion-bg-active=#1f1f1f
+set completion-fg-active=#c0b18b
+
+set proxy=true
