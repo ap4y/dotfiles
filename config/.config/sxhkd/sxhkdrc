@@ -108,11 +108,11 @@ super + d
 super + Escape
 	pkill -USR1 -x sxhkd
 
-alt+e
+super+e
   emacsclient -c
   
 super+b
-  firefox-developer
+  tabbed -c vimb -e
   
 super+c
   urxvtc -e weechat
