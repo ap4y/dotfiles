@@ -1,8 +1,8 @@
 #include "/home/ap4y/.colors/s3r0"
 
 !! urxvt
-URxvt.font:        -*-tamsyn-medium-*-*-*-14-*-*-*-*-*-*-*
-URxvt.boldFont:    -*-tamsyn-medium-*-*-*-14-*-*-*-*-*-*-*
+URxvt.font:        -*-tamsyn-medium-*-*-*-13-*-*-*-*-*-*-*
+URxvt.boldFont:    -*-tamsyn-medium-*-*-*-13-*-*-*-*-*-*-*
 
 URxvt.depth:                  32
 URxvt.scrollBar:              false
