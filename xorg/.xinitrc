@@ -21,6 +21,9 @@ xset fp rehash
 # Load Xmodmap
 [[ -f ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
 
+# color profile
+xcalib -d :0 ~/.color/icc/dell_u2412m_custom.icc
+
 # Daemons
 compton -b
 
