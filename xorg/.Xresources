@@ -12,7 +12,7 @@ URXvt.tabbed.reopen-on-close: yes
 
 URxvt.perl-ext-common: default,matcher
 URxvt.matcher.button:  1
-URxvt.url-launcher:    /usr/bin/firefox-developer
+URxvt.url-launcher:    /usr/bin/vimb
 
 !! fonts
 Xft.dpi:        96
