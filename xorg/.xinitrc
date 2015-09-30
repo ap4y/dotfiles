@@ -15,6 +15,9 @@ fi
 xset +fp /usr/share/fonts/local
 xset fp rehash
 
+# Mouse Settings
+xset m 0 0
+
 # Load Xresources
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 
