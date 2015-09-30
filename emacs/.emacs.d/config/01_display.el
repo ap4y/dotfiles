@@ -13,11 +13,17 @@
       (set-face-attribute 'default nil :font "Source Code Pro-14")
       (set-frame-font "Source Code Pro-14" nil t))
   (progn
-    (set-face-attribute 'default nil :font "-*-tamsyn-medium-*-*-*-13-*-*-*-*-*-*-*")
-    (set-frame-font "-*-tamsyn-medium-*-*-*-13-*-*-*-*-*-*-*" nil t)))
+    (set-face-attribute 'default nil :font "-*-tewi-medium-*-*-*-11-*-*-*-*-*-*-*")
+    (set-frame-font "-*-tewi-medium-*-*-*-11-*-*-*-*-*-*-*" nil t)
+    (set-fontset-font "fontset-default"
+                      'japanese-jisx0208
+                      (font-spec :family "Source Han Sans JP" :size 12))
+    (set-fontset-font "fontset-default"
+                      'symbol
+                      (font-spec :family "Symbola" :size 16))))
 
 ;; theme
-(load-theme 'base16-eighties-dark t)
+(load-theme 'base16-ocean-dark t)
 
 ;; highlight the current line
 (global-hl-line-mode +1)

@@ -13,17 +13,17 @@ set smooth-scrolling=true
 set statusbar=false
 set spell-checking=true
 
-set input-font-normal=Tamsyn 10
-set input-bg-normal=#1f1f1f
-set input-fg-normal=#c0b18b
-set input-font-error=Tamsyn 10
-set input-bg-error=#1f1f1f
+set input-font-normal=tewi 9
+set input-bg-normal=#2b303b
+set input-fg-normal=#a7adba
+set input-font-error=tewi 9
+set input-bg-error=#2b303b
 set input-fg-error=#775759
 
-set completion-font=Tamsyn 10
-set completion-bg-normal=#1f1f1f
-set completion-fg-normal=#817267
-set completion-bg-active=#1f1f1f
-set completion-fg-active=#c0b18b
+set completion-font=tewi 9
+set completion-bg-normal=#2b303b
+set completion-fg-normal=#4f5b66
+set completion-bg-active=#4f5b66
+set completion-fg-active=#c0c5ce
 
 set proxy=true

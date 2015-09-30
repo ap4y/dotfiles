@@ -1,11 +1,11 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const char font[]        = "-*-*-medium-*-*-*-13-*-*-*-*-*-*-*";
-static const char* normbgcolor  = "#1f1f1f";
-static const char* normfgcolor  = "#775759";
-static const char* selbgcolor   = "#1f1f1f";
-static const char* selfgcolor   = "#c0b18b";
+static const char font[]        = "tewi-9";
+static const char* normbgcolor  = "#2b303b";
+static const char* normfgcolor  = "#4f5b66";
+static const char* selbgcolor   = "#2b303b";
+static const char* selfgcolor   = "#a7adba";
 static const char before[]      = "<";
 static const char after[]       = ">";
 static const int  tabwidth      = 200;
@@ -55,4 +55,3 @@ static Key keys[] = { \
 
 	{ 0,                            XK_F11,    fullscreen,     { 0 } },
 };
-
