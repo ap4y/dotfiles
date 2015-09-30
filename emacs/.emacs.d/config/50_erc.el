@@ -68,9 +68,8 @@
 
 (setq erc-nick "ap4y")
 (setq erc-autojoin-channels-alist
-      '(("freenode.net" "#emberjs" "##objc" "#macdev" "#swift-lang"
-         "#iphonedev" "#coreaudio" "#ruby-lang" "#mongodb"
-         "#coreos" "#RubyOnRails" "#go-nuts")))
+      '(("freenode.net" "#ruby-lang" "#mongodb" "##c++"
+         "#archlinux" "#RubyOnRails" "##opengl" "#emacs")))
 (setq erc-hide-list '("JOIN" "PART" "QUIT" "MODE"))
 
 ;; alert in fringe
