@@ -14,7 +14,7 @@
 (depends-on "anzu")
 (depends-on "browse-kill-ring")
 (depends-on "easy-kill")
-(depends-on "diff-hl")
+(depends-on "git-gutter-fringe+")
 (depends-on "rainbow-delimiters")
 (depends-on "ido-ubiquitous")
 (depends-on "flx-ido")

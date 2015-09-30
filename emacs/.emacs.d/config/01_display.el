@@ -42,8 +42,7 @@
 
 ;; make the fringe (gutter) smaller
 ;; the argument is a width in pixels (the default is 8)
-(if (fboundp 'fringe-mode)
-    (fringe-mode 4))
+(fringe-mode '(8 . 0))
 
 ;; more useful frame title, that show either a file or a
 ;; buffer name (if the buffer isn't visiting a file)
