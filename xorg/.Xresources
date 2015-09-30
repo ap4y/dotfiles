@@ -1,8 +1,14 @@
 #include "/home/ap4y/.colors/ocean"
 
 !! urxvt
-URxvt.font:        -*-tamsyn-medium-*-*-*-13-*-*-*-*-*-*-*
-URxvt.boldFont:    -*-tamsyn-medium-*-*-*-13-*-*-*-*-*-*-*
+#define normal xft:tewi:pixelsize=11, \,
+               xft:Source Han Sans JP:antialias=false, \
+               xft:Symbola
+
+URxvt.font:           normal
+URxvt.boldFont:       normal
+URxvt.italicFont:     normal
+URxvt.bolditalicFont: normal
 
 URxvt.depth:                  32
 URxvt.scrollBar:              false
