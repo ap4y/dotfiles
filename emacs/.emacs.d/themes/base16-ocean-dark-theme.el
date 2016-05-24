@@ -252,6 +252,7 @@
    `(term-color-cyan ((t (:foreground ,base0C :background ,base0C))))
    `(term-color-blue ((t (:foreground ,base0D :background ,base0D))))
    `(term-color-magenta ((t (:foreground ,base0E :background ,base0E))))
+   `(term-bold ((t (:weight normal))))
 
    ;; eshell
    `(eshell-prompt ((t (:foreground ,base08 :weight normal))))
