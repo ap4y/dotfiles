@@ -15,12 +15,6 @@ if [ -r "$bash_completion" ]; then
   source "$bash_completion"
 fi
 unset bash_completion
-
-# Set terminal title
-title() {
-  echo -n -e "\033]0;${@}\007"
-}
-
 _git_prompt() {
   local ref="$(command git symbolic-ref -q HEAD 2>/dev/null)"
   if [ -n "$ref" ]; then
@@ -30,8 +24,8 @@ _git_prompt() {
 
 PS1='\[$(tput setaf 0)\]\W$(_git_prompt)\[$(tput sgr0)\]\[$(tput setaf 1)\] » \[$(tput sgr0)\]'
 
-# mac os ruby 2 path
-export PATH=$HOME/.gem/ruby/2.2.0/bin:$PATH
+# ruby 2 path
+export PATH=$HOME/.gem/ruby/2.3.0/bin:$PATH
 
 # homebrew path
 export PATH=/usr/local/bin:$PATH
@@ -43,6 +37,9 @@ alias ec='emacsclient -c'
 # golang
 export GOPATH=$HOME/golang
 export PATH=$GOPATH/bin:$PATH
+
+# cask
+export PATH=$HOME/.cask/bin:$PATH
 
 # dircolors
 eval $(dircolors -b $HOME/.config/dircolors)
@@ -60,3 +57,5 @@ export LESS_TERMCAP_mb=$(printf '\e[1;32m')
 export LESS_TERMCAP_md=$(printf '\e[1;34m')
 export LESS_TERMCAP_us=$(printf '\e[1;32m')
 export LESS_TERMCAP_so=$(printf '\e[1;44;1m')
+
+[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
