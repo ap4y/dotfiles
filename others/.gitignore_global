@@ -17,10 +17,6 @@ xcuserdata
 profile
 *.moved-aside
 
-# Pods
-Pods
-**/Pods
-
 # bwoken
 integration/github
 integration/tmp

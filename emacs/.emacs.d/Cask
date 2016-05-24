@@ -26,8 +26,8 @@
 (depends-on "gotest")
 (depends-on "git-timemachine")
 (depends-on "alert")
-(depends-on "google-c-style")
-(depends-on "flycheck-google-cpplint")
+(depends-on "clang-format")
+(depends-on "elfeed")
 
 ;; minor modes
 (depends-on "nyan-mode")

@@ -1,6 +1,3 @@
-# Sample minimal config file.  Copy this to ~/.offlineimaprc and edit to
-# get started fast.
-
 [general]
 accounts = ap4y
 pythonfile = ~/.offlineimap.py
