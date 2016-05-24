@@ -34,7 +34,7 @@ compton -b
 sh ~/.fehbg
 
 # urxvt daemon
-urxvtd &
+urxvtd -q -f -o &
 
 # start wm
 sxhkd &
