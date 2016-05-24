@@ -25,7 +25,8 @@ xset m 0 0
 [[ -f ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
 
 # color profile
-xcalib -d :0 ~/.color/icc/dell_u2412m_custom.icc
+xcalib -d :0 ~/.color/icc/macbook.icc
+xcalib -d :1 ~/.color/icc/dell_u2515h.icc
 
 # Daemons
 compton -b
