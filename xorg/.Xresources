@@ -1,7 +1,7 @@
 #include "/home/ap4y/.colors/ocean"
 
 !! urxvt
-#define normal xft:tewi:pixelsize=11, \,
+#define normal xft:Source Code Pro:size=9:antialias=false, \,
                xft:Source Han Sans JP:antialias=false, \
                xft:Symbola
 
@@ -9,6 +9,8 @@ URxvt.font:           normal
 URxvt.boldFont:       normal
 URxvt.italicFont:     normal
 URxvt.bolditalicFont: normal
+URxvt.letterSpace:    -1
+URxvt.internalBorder: 15
 
 URxvt.depth:                  32
 URxvt.scrollBar:              false
