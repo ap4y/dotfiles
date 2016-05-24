@@ -15,8 +15,8 @@ fi
 xset +fp /usr/share/fonts/local
 xset fp rehash
 
-# Mouse Settings
-xset m 0 0
+# Mouse Acceleration Settings
+# xset m 0 0
 
 # Load Xresources
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
@@ -28,7 +28,7 @@ xset m 0 0
 xcalib -d :0 ~/.color/icc/macbook.icc
 xcalib -d :1 ~/.color/icc/dell_u2515h.icc
 
-# Daemons
+# Composite manager
 compton -b
 
 # Background
