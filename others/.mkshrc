@@ -1,0 +1,40 @@
+export CLICOLOR=1
+export HISTFILE=~/.mksh-history
+export EDITOR=~/.bin/edit
+
+[ -d "$HOME/.bin" ] && export PATH="$HOME/.bin:$PATH"
+
+PS1='$(tput setaf 0)$(pwd | rev | cut -d/ -f1 | rev)$(tput sgr0)$(tput setaf 1) » $(tput sgr0)'
+
+# ruby 2 path
+export PATH=$HOME/.gem/ruby/2.3.0/bin:$PATH
+
+# emacs
+alias e='emacsclient -t'
+alias ec='emacsclient -c'
+
+# golang
+export GOPATH=$HOME/golang
+export PATH=$GOPATH/bin:$PATH
+
+# cask
+export PATH=$HOME/.cask/bin:$PATH
+
+# dircolors
+eval $(dircolors -b $HOME/.config/dircolors)
+
+# aliases
+alias ls='ls -h --color=auto'
+alias rm='rm -iv'
+
+# colored pager
+export LESS=-R
+export LESS_TERMCAP_me=$(printf '\e[0m')
+export LESS_TERMCAP_se=$(printf '\e[0m')
+export LESS_TERMCAP_ue=$(printf '\e[0m')
+export LESS_TERMCAP_mb=$(printf '\e[1;32m')
+export LESS_TERMCAP_md=$(printf '\e[1;34m')
+export LESS_TERMCAP_us=$(printf '\e[1;32m')
+export LESS_TERMCAP_so=$(printf '\e[1;44;1m')
+
+[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
