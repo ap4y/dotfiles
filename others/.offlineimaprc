@@ -1,0 +1,24 @@
+# Sample minimal config file.  Copy this to ~/.offlineimaprc and edit to
+# get started fast.
+
+[general]
+accounts = ap4y
+pythonfile = ~/.offlineimap.py
+
+[Account ap4y]
+localrepository = Local
+remoterepository = Remote
+
+[Repository Local]
+type = Maildir
+localfolders = ~/Maildir
+
+[Repository Remote]
+type = IMAP
+remotehost = ap4y.me
+remoteuser = mail@ap4y.me
+remotepasseval = get_pass()
+ssl = yes
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+maxconnections = 1
+realdelete = no
