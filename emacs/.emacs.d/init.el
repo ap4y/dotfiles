@@ -1,5 +1,5 @@
 ;; Enable cask
-(require 'cask "/usr/share/cask/cask.el")
+(require 'cask "/home/ap4y/.cask/cask.el")
 (cask-initialize)
 
 (defvar emacs-config-dir (file-name-directory load-file-name)
