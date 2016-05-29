@@ -13,6 +13,8 @@ fi
 
 # Fonts
 xset +fp /usr/share/fonts/local
+xset +fp /usr/local/share/fonts
+xset +fp /home/ap4y/.fonts
 xset fp rehash
 
 # Mouse Acceleration Settings
@@ -28,8 +30,11 @@ xset fp rehash
 xcalib -d :0 ~/.color/icc/macbook.icc
 xcalib -d :1 ~/.color/icc/dell_u2515h.icc
 
+# Screen brightness
+xbacklight -set 50
+
 # Composite manager
-compton -b
+# compton -b
 
 # Background
 sh ~/.fehbg
@@ -38,5 +43,4 @@ sh ~/.fehbg
 urxvtd -q -f -o &
 
 # start wm
-sxhkd &
-exec bspwm
+exec cwm
