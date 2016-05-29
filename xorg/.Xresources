@@ -1,9 +1,7 @@
 #include "/home/ap4y/.colors/ocean"
 
 !! urxvt
-#define normal xft:Source Code Pro:size=9:antialias=false, \,
-               xft:Source Han Sans JP:antialias=false, \
-               xft:Symbola
+#define normal xft:Source Code Pro:size=9:antialias=true
 
 URxvt.font:           normal
 URxvt.boldFont:       normal
@@ -20,12 +18,12 @@ URXvt.tabbed.reopen-on-close: yes
 
 URxvt.perl-ext-common: default,matcher
 URxvt.matcher.button:  1
-URxvt.url-launcher:    /usr/bin/vimb
+URxvt.url-launcher:    /usr/local/bin/vimb
 
 !! fonts
 Xft.dpi:        96
 Xft.antialias:  1
 Xft.rgba:       rgb
-Xft.hinting:    1
+Xft.hinting:    0
 xft.hintstyle:  hintslight
-Xft.lcdfilter:  lcddefault
+Xft.lcdfilter:  lcdlight
