@@ -42,11 +42,11 @@ export PATH=$GOPATH/bin:$PATH
 export PATH=$HOME/.cask/bin:$PATH
 
 # dircolors
-eval $(dircolors -b $HOME/.config/dircolors)
+# eval $(dircolors -b $HOME/.config/dircolors)
 
 # aliases
-alias ls='ls -h --color=auto'
-alias rm='rm -iv'
+# alias ls='ls -h --color=auto'
+# alias rm='rm -iv'
 
 # colored pager
 export LESS=-R
