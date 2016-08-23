@@ -10,8 +10,8 @@
 ;; font
 (if (featurep 'ns)
     (progn
-      (set-face-attribute 'default nil :font "Source Code Pro-14")
-      (set-frame-font "Source Code Pro-14" nil t))
+      (set-face-attribute 'default nil :font "Source Code Pro-12")
+      (set-frame-font "Source Code Pro-12" nil t))
   (progn
     (set-face-attribute 'default nil :font "Source Code Pro-9")
     (set-frame-font "Source Code Pro-9")))
