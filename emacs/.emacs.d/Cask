@@ -28,6 +28,7 @@
 (depends-on "alert")
 (depends-on "clang-format")
 (depends-on "elfeed")
+(depends-on "yasnippet")
 
 ;; minor modes
 (depends-on "nyan-mode")
@@ -42,7 +43,7 @@
 (depends-on "yaml-mode")
 (depends-on "web-mode")
 (depends-on "scss-mode")
-(depends-on "swift-mode")
+(depends-on "swift-mode" :git "https://github.com/ap4y/swift-mode")
 (depends-on "dockerfile-mode")
 
 ;; themes
