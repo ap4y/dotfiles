@@ -69,7 +69,7 @@
     (interactive (company-begin-backend 'company-swift))
     (prefix (and (memq major-mode company-swift-modes)
                  (not (company-in-string-or-comment))
-                 (company-grab-symbol)))
+                 (company-grab-symbol-cons "\\.\\|(" 1)))
     (candidates (company-swift--candidates arg))
     (meta (company-swift--meta arg))
     (post-completion (company-swift--expand arg))
