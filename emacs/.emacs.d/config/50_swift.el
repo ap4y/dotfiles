@@ -54,8 +54,13 @@
   (substring-no-properties candidate))
 
 (defun company-swift--expand (candidate)
-  (let ((template (get-text-property 0 'meta candidate)))
-    (yas-expand-snippet template (- (point) (length candidate)) (point))))
+  (let ((template (get-text-property 0 'meta candidate))
+        (start (- (point) (length candidate))))
+
+    (if (string-prefix-p "?" template)
+        (setq start (- start 1)))
+
+    (yas-expand-snippet template start (point))))
 
 (defun company-swift (command &optional arg &rest ignored)
   "`company-mode' completion back-end for sourcekittendaemon."
