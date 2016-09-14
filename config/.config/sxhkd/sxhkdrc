@@ -5,9 +5,9 @@
 super + alt + Escape
 	pkill panel; bspc quit
 
-# Close window
+# Close node
 super + w
-	bspc window -c
+	bspc node -c
 
 # Toggle monocle
 super + t
@@ -19,36 +19,36 @@ super + t
 
 # Toggle tile
 super + {a,s,f}
-	bspc window -t {private,sticky,fullscreen}
+	bspc node focused -t {private,sticky,fullscreen}
 
-# Focus last window/desktop
+# Focus last node/desktop
 super + {grave,Tab}
-	bspc {window,desktop} -f last
+	bspc {node,desktop} -f last
 
-# Swap last window/desktop
+# Swap last node/desktop
 super + apostrophe
-	bspc window -s last
+	bspc node -s last
 
 # super + {o,i}
 # 	bspc control --record-history off; \
-# 	bspc window {older,newer} -f; \
+# 	bspc node {older,newer} -f; \
 # 	bspc control --record-history on
 
-# Move window into last.manual
+# Move node into last.manual
 super + y
-	bspc window -w last.manual
+	bspc node -w last.manual
 
-# Move current window to largest space
+# Move current node to largest space
 super + m
-	bspc window -s biggest
+	bspc node -s biggest
 
-# Focus/swap window
+# Focus/swap node
 super + {_,shift + }{h,j,k,l}
-	bspc window -{f,s} {left,down,up,right}
+	bspc node -{f,s} {left,down,up,right}
 
-# Focus next/prev window
+# Focus next/prev node
 super + {n,p}
-	bspc window -f {next,prev}
+	bspc node -f {next,prev}
 
 # super + {comma,period}
 # 	bspc desktop -C {backward,forward}
@@ -57,28 +57,28 @@ super + {n,p}
 super + bracket{left,right}
 	bspc desktop -f {prev,next}
 
-# Presel window for splitting
+# Presel node for splitting
 super + ctrl + {h,j,k,l}
-	bspc window -p {left,down,up,right}
+	bspc node -p {left,down,up,right}
 
 # super + ctrl + {_,shift + }space
-# 	bspc {window -p cancel,desktop -c}
+# 	bspc {node -p cancel,desktop -c}
 
-# Resize window
+# Resize node
 super + alt + {h,j,k,l}
-	bspc window -e {left -10,down +10,up -10,right +10}
+	bspc node -e {left -10,down +10,up -10,right +10}
 
-# Resize window in opposite direction
+# Resize node in opposite direction
 super + alt + shift + {h,j,k,l}
-	bspc window -e {right -10,up +10,down -10,left +10}
+	bspc node -e {right -10,up +10,down -10,left +10}
 
-# Switch to window
+# Switch to node
 super + ctrl + {1-9}
-	bspc window -r 0.{1-9}
+	bspc node -r 0.{1-9}
 
-# Focus destop or move window to desktop
+# Focus destop or move node to desktop
 super + {_,shift + }{1-9,0}
-	bspc {desktop -f,window -d} ^{1-9,10}
+	bspc {desktop -f,node -d} ^{1-9,10}
 
 ~button1
 	bspc pointer -g focus
@@ -113,3 +113,4 @@ super+b
   
 super+c
   urxvtc -e weechat
+
