@@ -43,4 +43,5 @@ sh ~/.fehbg
 urxvtd -q -f -o &
 
 # start wm
-exec cwm
+sxhkd &
+exec bspwm
