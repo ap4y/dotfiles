@@ -1,6 +1,7 @@
 [user]
 	name = ap4y
-	email = lod@pisem.net
+	email = mail@ap4y.me
+	signingkey = 0D33E2D261667B50
 [core]
 	excludesfile = ~/.gitignore_global
 [apply]
@@ -16,3 +17,7 @@
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ar)%Creset' --abbrev-commit --date=relative
 [pull]
 	rebase = true
+[gpg]
+	program = gpg2
+[commit]
+	gpgsign = true
