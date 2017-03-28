@@ -48,5 +48,6 @@ setxkbmap -model pc105 -layout us,ru -option grp:win_space_toggle
 urxvtd -q -f -o &
 
 # start wm
-sxhkd &
-exec bspwm
+# sxhkd &
+# exec bspwm
+exec i3
