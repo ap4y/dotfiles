@@ -12,13 +12,13 @@ if [ -r "$bash_completion" ]; then
 fi
 unset bash_completion
 _git_prompt() {
-  local ref="$(command git symbolic-ref -q HEAD 2>/dev/null)"
-  if [ -n "$ref" ]; then
-    echo " (${ref#refs/heads/})"
-  fi
+    local ref="$(command git symbolic-ref -q HEAD 2>/dev/null)"
+    if [ -n "$ref" ]; then
+        echo " (${ref#refs/heads/})"
+    fi
 }
 
-PS1='\[$(tput setaf 0)\]\W$(_git_prompt)\[$(tput sgr0)\]\[$(tput setaf 1)\] » \[$(tput sgr0)\]'
+PS1='\[$(tput setaf 2)\]\W$(_git_prompt)\[$(tput sgr0)\]\[$(tput setaf 1)\] » \[$(tput sgr0)\]'
 
 # ruby 2 path
 export PATH=$HOME/.gem/ruby/2.3.0/bin:$PATH
