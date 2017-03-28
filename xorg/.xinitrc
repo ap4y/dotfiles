@@ -27,14 +27,10 @@ xset fp rehash
 [[ -f ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
 
 # color profile
-xcalib -d :0 ~/.color/icc/macbook.icc
-xcalib -d :1 ~/.color/icc/dell_u2515h.icc
-
-# Screen brightness
-xbacklight -set 50
+xcalib ~/.color/icc/xps_15.icm
 
 # Composite manager
-# compton -b
+compton -b
 
 # Background
 sh ~/.fehbg
