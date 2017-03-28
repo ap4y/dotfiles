@@ -8,7 +8,8 @@ export PATH
 
 bash_completion="/usr/share/bash-completion/bash_completion"
 if [ -r "$bash_completion" ]; then
-  source "$bash_completion"
+    source "$bash_completion"
+    source $HOME/.bin/totp_completion
 fi
 unset bash_completion
 _git_prompt() {
