@@ -43,6 +43,7 @@ eval $(dircolors -b $HOME/.config/dircolors)
 # aliases
 alias ls='ls -h --color=auto'
 alias rm='rm -iv'
+alias gpg='gpg2'
 
 # colored pager
 export LESS=-R
@@ -53,3 +54,14 @@ export LESS_TERMCAP_mb=$(printf '\e[1;32m')
 export LESS_TERMCAP_md=$(printf '\e[1;34m')
 export LESS_TERMCAP_us=$(printf '\e[1;32m')
 export LESS_TERMCAP_so=$(printf '\e[1;44;1m')
+
+# Start the gpg-agent if not already running
+if ! pgrep -x -u "${USER}" gpg-agent >/dev/null 2>&1; then
+    gpg-connect-agent /bye >/dev/null 2>&1
+fi
+
+# Set SSH to use gpg-agent
+unset SSH_AGENT_PID
+if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
+    export SSH_AUTH_SOCK="/home/ap4y/.gnupg/S.gpg-agent.ssh"
+fi

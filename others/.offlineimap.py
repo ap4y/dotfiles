@@ -2,4 +2,4 @@
 from subprocess import check_output
 
 def get_pass():
-    return check_output("gpg -dq ~/.offlineimappass.gpg", shell=True).strip("\n")
+    return check_output("gpg2 -dq ~/.offlineimappass.gpg", shell=True).strip("\n")
