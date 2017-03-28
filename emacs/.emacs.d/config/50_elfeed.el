@@ -1,11 +1,7 @@
 (setq elfeed-feeds
       '(("http://rubyweekly.com/rss" dev)
-        ("http://lwn.net/headlines/rss" linux)
-        ("http://garbage.fm/episodes.rss" bsd)
         ("http://www.dragonflydigest.com/feed" bsd)
-        ("http://undeadly.org/cgi?action=rss" bsd)
         ("http://golangweekly.com/rss" dev)
         ("http://javascriptweekly.com/rss" dev)
         ("http://iosdevweekly.com/issues.rss" dev)
-        ("https://lobste.rs/rss" dev)
         ))
