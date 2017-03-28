@@ -1,3 +1,5 @@
+(require 'go-dlv)
+
 ;; tabs settings
 (setq-default tab-width 2)
 
@@ -8,6 +10,7 @@
     (define-key map (kbd "C-c m") 'go-test-current-file)
     (define-key map (kbd "C-c .") 'go-test-current-test)
     (define-key map (kbd "C-c s") 'go-run)
+    (define-key map (kbd "C-c \\") 'ff-find-other-file)
     (define-key map (kbd "C-h f") 'godoc-at-point))
 
   ;; Prefer goimports to gofmt if installed
@@ -20,6 +23,7 @@
 
   ;; stop whitespace being highlighted
   (whitespace-toggle-options '(tabs))
+  (setq whitespace-line-column 120)
 
   ;; Company mode settings
   (set (make-local-variable 'company-backends) '(company-go))
