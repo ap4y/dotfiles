@@ -13,10 +13,12 @@
       (set-face-attribute 'default nil :font "Source Code Pro-12")
       (set-frame-font "Source Code Pro-12" nil t))
   (progn
-    (set-face-attribute 'default nil :font "Source Code Pro-9")
-    (set-frame-font "Source Code Pro-9")))
+    (set-face-attribute 'default nil :font "Iosevka Medium-10")
+    (set-frame-font "Iosevka Medium-10")
+))
 ;; theme
-(load-theme 'base16-ocean-dark t)
+(add-to-list 'custom-theme-load-path "~/.config/schemegen/configs")
+(load-theme 'base16-ap4y-dark t)
 
 ;; highlight the current line
 (global-hl-line-mode +1)
