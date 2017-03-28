@@ -1,13 +1,13 @@
-#include "/home/ap4y/.colors/ocean"
+#include "/home/ap4y/.config/schemegen/configs/ap4y"
 
 !! urxvt
-#define normal xft:Source Code Pro:size=9:antialias=true
+#define commonFont xft:Iosevka Medium:size=10:antialias=true
 
-URxvt.font:           normal
-URxvt.boldFont:       normal
-URxvt.italicFont:     normal
-URxvt.bolditalicFont: normal
-URxvt.letterSpace:    -1
+URxvt.font:           commonFont
+URxvt.boldFont:       commonFont
+URxvt.italicFont:     commonFont
+URxvt.bolditalicFont: commonFont
+!! URxvt.letterSpace:    -1
 URxvt.internalBorder: 15
 
 URxvt.depth:                  32
@@ -23,7 +23,20 @@ URxvt.url-launcher:    /usr/local/bin/vimb
 !! fonts
 Xft.dpi:        96
 Xft.antialias:  1
+Xft.autohint:   0
 Xft.rgba:       rgb
-Xft.hinting:    0
-xft.hintstyle:  hintslight
-Xft.lcdfilter:  lcdlight
+Xft.hinting:    1
+xft.hintstyle:  hintfull
+Xft.lcdfilter:  lcddefault
+
+!! rofi
+rofi.width: 900
+rofi.padding: 400
+rofi.fullscreen: true
+rofi.terminal: st
+rofi.lines: 9
+rofi.font: Iosevka Medium 20
+rofi.color-window: argb:ee2B303B, argb:AA181818, #1818181
+rofi.color-normal: argb:00BF616A, #8FA1B3, argb:00BF616A, argb:00BF616A, #BF616A
+rofi.separator-style: none
+rofi.scrollbar-width: 0
