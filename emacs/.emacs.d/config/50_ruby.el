@@ -17,6 +17,8 @@
 (add-to-list 'auto-mode-alist '("Appraisals\\'" . ruby-mode))
 
 (defun ruby-mode-defaults ()
-  (subword-mode +1))
+  (subword-mode +1)
+  (projectile-rails-global-mode)
+  (setq minitest-default-command '("rake" "test")))
 
 (add-hook 'ruby-mode-hook 'ruby-mode-defaults)

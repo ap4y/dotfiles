@@ -33,7 +33,8 @@
 
 ;; minor modes
 (depends-on "nyan-mode")
-(depends-on "rspec-mode")
+(depends-on "minitest")
+(depends-on "projectile-rails")
 (depends-on "company")
 (depends-on "rainbow-mode")
 
