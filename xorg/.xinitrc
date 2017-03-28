@@ -39,6 +39,15 @@ xbacklight -set 50
 # Background
 sh ~/.fehbg
 
+# Redshift
+redshift -l -36.84846:174.763332 -m randr:preserve=1 &
+
+# auto lock
+xautolock -time 10 -locker slock &
+
+# keyboard layout
+setxkbmap -model pc105 -layout us,ru -option grp:win_space_toggle
+
 # urxvt daemon
 urxvtd -q -f -o &
 
