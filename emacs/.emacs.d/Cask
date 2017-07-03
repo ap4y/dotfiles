@@ -21,16 +21,19 @@
 (depends-on "smex")
 (depends-on "magit")
 (depends-on "undo-tree")
+
 (depends-on "company-go")
 (depends-on "go-eldoc")
 (depends-on "gotest")
 (depends-on "go-dlv")
+
 (depends-on "git-timemachine")
 (depends-on "alert")
 (depends-on "clang-format")
 (depends-on "elfeed")
 (depends-on "yasnippet")
 
+(depends-on "yari")
 ;; minor modes
 (depends-on "nyan-mode")
 (depends-on "minitest")
@@ -39,7 +42,6 @@
 (depends-on "rainbow-mode")
 
 ;; major modes
-(depends-on "rust-mode")
 (depends-on "go-mode")
 (depends-on "js2-mode")
 (depends-on "yaml-mode")
@@ -47,5 +49,7 @@
 (depends-on "scss-mode")
 (depends-on "swift-mode" :git "https://github.com/ap4y/swift-mode")
 (depends-on "dockerfile-mode")
+(depends-on "ledger-mode")
 
 ;; themes
+(depends-on "tao-theme")
