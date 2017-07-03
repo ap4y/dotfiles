@@ -32,8 +32,8 @@ bindsym $mod+Return exec urxvtc
 bindsym $mod+w kill
 
 # Set colors
-set $fg #c5c0c4
-set $bg #4c6d60
+set $fg #BABCC6
+set $bg #907789
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec rofi -show run
@@ -142,6 +142,7 @@ for_window [class="^.*"] border normal 0
 
 smart_borders on
 gaps inner 25
+gaps outer 25
 
 # Toggle sticky windows
 # bindsym $mod+e sticky toggle
