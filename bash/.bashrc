@@ -22,7 +22,7 @@ _git_prompt() {
 PS1='\[$(tput setaf 2)\]\W$(_git_prompt)\[$(tput sgr0)\]\[$(tput setaf 1)\] » \[$(tput sgr0)\]'
 
 # ruby 2 path
-export PATH=$HOME/.gem/ruby/2.3.0/bin:$PATH
+export PATH=$HOME/.gem/ruby/2.4.0/bin:$PATH
 
 # homebrew path
 export PATH=/usr/local/bin:$PATH
