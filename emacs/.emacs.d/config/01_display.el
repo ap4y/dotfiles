@@ -17,8 +17,7 @@
     (set-frame-font "Iosevka Medium-10")
 ))
 ;; theme
-(add-to-list 'custom-theme-load-path "~/.config/schemegen/configs")
-(load-theme 'base16-ap4y-dark t)
+(load-theme 'tao-yang t)
 
 ;; highlight the current line
 (global-hl-line-mode +1)
