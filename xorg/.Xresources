@@ -1,5 +1,3 @@
-#include "/home/ap4y/.config/schemegen/configs/ap4y"
-
 !! urxvt
 #define commonFont xft:Iosevka Medium:size=10:antialias=true
 
