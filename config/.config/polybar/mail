@@ -1,0 +1,5 @@
+#!/bin/bash
+
+offlineimap &> /dev/null
+mu index &> /dev/null
+echo $(($(ls -l ~/Maildir/INBOX/new | wc -l)-1))
