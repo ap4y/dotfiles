@@ -1,3 +1,5 @@
+(package-initialize)
+
 ;; Enable cask
 (require 'cask "/home/ap4y/.cask/cask.el")
 (cask-initialize)
