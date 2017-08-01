@@ -17,6 +17,7 @@ xset fp rehash
 
 # Mouse Acceleration Settings
 # xset m 0 0
+xinput --set-prop 'Logitech M570' "libinput Accel Speed" -0.5
 
 # Load Xresources
 [ -f ~/.Xresources ] && xrdb -merge ~/.Xresources
@@ -37,10 +38,10 @@ compton -b
 sh ~/.fehbg
 
 # Redshift
-redshift -l -36.84846:174.763332 -m randr:preserve=1 &
+# redshift -l -36.84846:174.763332 -m randr:preserve=1 &
 
 # auto lock
-xautolock -time 10 -locker slock &
+# xautolock -time 10 -locker slock &
 
 # keyboard layout
 setxkbmap -model pc105 -layout us,ru -option grp:win_space_toggle
