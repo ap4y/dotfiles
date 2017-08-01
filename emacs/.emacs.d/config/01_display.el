@@ -53,3 +53,7 @@
 
 ;; nyan-mode
 ;; (nyan-mode)
+
+;; fix easy-mark selection
+(custom-set-faces
+ '(easy-kill-selection ((t (:inherit region)))))

@@ -85,10 +85,6 @@
 (require 'browse-kill-ring)
 (browse-kill-ring-default-keybindings)
 
-;; easy-kill
-(global-set-key [remap kill-ring-save] 'easy-kill)
-(global-set-key [remap mark-sexp] 'easy-mark)
-
 ;; automatically save buffers associated with files on buffer switch
 ;; and on windows switch
 (defmacro advise-commands (advice-name commands class &rest body)
@@ -142,3 +138,6 @@ The body of the advice is in BODY."
 
 ;; Set some common auto-modes
 (add-to-list 'auto-mode-alist '("\\.service\\'" . conf-mode))
+
+;; enable winner mode
+(winner-mode 1)

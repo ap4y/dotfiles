@@ -9,6 +9,20 @@
 (global-set-key (kbd "C-c j") 'top-join-line)          ;; Join lines
 (global-set-key (kbd "C-c k") 'custom-kill-whole-line) ;; Kill line
 
+;; windmove
+(global-set-key (kbd "C-x k") 'windmove-up)
+(global-set-key (kbd "C-x l") 'windmove-down)
+(global-set-key (kbd "C-x ;") 'windmove-right)
+(global-set-key (kbd "C-x j") 'windmove-left)
+
+;; winner
+(global-set-key (kbd "C-c l") 'winner-undo)
+(global-set-key (kbd "C-c ;") 'winner-redo)
+
+;; easy-kill
+;; (global-set-key [remap kill-ring-save] 'easy-kill)
+;; (global-set-key [remap mark-sexp] 'easy-mark)
+
 ;; Adaptive beginning of the line
 (global-set-key [remap move-beginning-of-line] 'custom-move-beginning-of-line)
 
