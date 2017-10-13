@@ -4,4 +4,5 @@
         ("http://golangweekly.com/rss" dev)
         ("http://javascriptweekly.com/rss" dev)
         ("http://iosdevweekly.com/issues.rss" dev)
+        ("https://newsletter.nixers.net/feed.xml" linux)
         ))
