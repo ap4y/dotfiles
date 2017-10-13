@@ -4,6 +4,10 @@
 (require 'erc-spelling)
 (require 'erc-autoaway)
 (require 'erc-sasl "../scripts/erc-sasl.el")
+(require 'weechat)
+
+;; erc buffer behavior
+(setq erc-join-buffer 'bury)
 
 ;; Interpret mIRC-style color commands in IRC chats
 (setq erc-interpret-mirc-color t)
@@ -53,6 +57,13 @@
          (lambda (x) (and (erc-server-buffer-p x) x))
          (buffer-list))))
 
+(defun start-irc ()
+  "Connect to IRC?"
+  (interactive)
+  (when (y-or-n-p "Do you want to start IRC? ")
+    ;; (erc-tls :server "irc.freenode.net" :port 6697 :nick "ap4y")
+    (erc-tls :server "ap4y.me" :port 6698 :nick "ap4y")))
+
 (defun stop-irc ()
   "Disconnects from all irc servers"
   (interactive)
@@ -61,10 +72,8 @@
     (with-current-buffer buffer
       (erc-quit-server "Asta la vista"))))
 
-(setq erc-nick "ap4y")
 (setq erc-autojoin-channels-alist
-      '(("freenode.net" "#ruby-lang" "#swift-lang" "#voidlinux" "#RubyOnRails" "#go-nuts")
-        ("irc.eu.darenet.org")))
+      '(("freenode.net" "#ruby-lang" "#openbsd" "#voidlinux" "#go-nuts")))
 (setq erc-hide-list '("JOIN" "PART" "QUIT" "MODE"))
 
 ;; alert in fringe

@@ -35,6 +35,9 @@
 
 (depends-on "yari")
 
+;; irc
+(depends-on "weechat")
+
 ;; exwm
 (depends-on "exwm")
 (depends-on "password-store")
