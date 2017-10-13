@@ -33,7 +33,10 @@
 (depends-on "elfeed")
 (depends-on "yasnippet")
 
+;; ruby dev
 (depends-on "yari")
+(depends-on "chruby")
+(depends-on "prodigy")
 
 ;; irc
 (depends-on "weechat")
@@ -59,6 +62,7 @@
 (depends-on "swift-mode" :git "https://github.com/ap4y/swift-mode")
 (depends-on "dockerfile-mode")
 (depends-on "ledger-mode")
+(depends-on "enh-ruby-mode")
 
 ;; themes
 (depends-on "tao-theme")
