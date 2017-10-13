@@ -152,8 +152,9 @@ gaps outer 25
 # We then use pango markup to force i3 to print with the desired font.
 # This gives us large titlebars with a small font. :P
 font pango:tewi 15
-for_window [class=".*"] title_format "<span font='tewi 9'> > %title</span>"
+for_window [class=".*"] title_format "<span font='tewi 8'> > %title</span>"
 
 bindsym $mod+e exec emacsclient -c
 
 exec_always --no-startup-id $HOME/.bin/bar
+exec compton --config ~/.config/compton.conf -b
