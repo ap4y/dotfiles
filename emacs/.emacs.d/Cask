@@ -34,6 +34,12 @@
 (depends-on "yasnippet")
 
 (depends-on "yari")
+
+;; exwm
+(depends-on "exwm")
+(depends-on "password-store")
+(depends-on "buffer-move")
+
 ;; minor modes
 (depends-on "nyan-mode")
 (depends-on "minitest")
@@ -53,3 +59,4 @@
 
 ;; themes
 (depends-on "tao-theme")
+(depends-on "spacemacs-theme")

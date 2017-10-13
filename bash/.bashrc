@@ -1,6 +1,7 @@
 export CLICOLOR=1
 export HISTCONTROL=ignoredups
-export EDITOR=~/.bin/edit
+export VISUAL=emacsclient
+export EDITOR="$VISUAL"
 
 PATH=~/.bin:"$PATH"
 PATH=bin:"$PATH"

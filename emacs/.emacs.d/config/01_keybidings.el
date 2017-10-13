@@ -20,8 +20,8 @@
 (global-set-key (kbd "C-c ;") 'winner-redo)
 
 ;; easy-kill
-;; (global-set-key [remap kill-ring-save] 'easy-kill)
-;; (global-set-key [remap mark-sexp] 'easy-mark)
+(global-set-key [remap kill-ring-save] 'easy-kill)
+(global-set-key [remap mark-sexp] 'easy-mark)
 
 ;; Adaptive beginning of the line
 (global-set-key [remap move-beginning-of-line] 'custom-move-beginning-of-line)

@@ -17,7 +17,8 @@
     (set-frame-font "Iosevka Medium-10")
 ))
 ;; theme
-(load-theme 'tao-yang t)
+(load-theme 'spacemacs-light t)
+;; (load-theme 'tao-yang t)
 
 ;; highlight the current line
 (global-hl-line-mode +1)

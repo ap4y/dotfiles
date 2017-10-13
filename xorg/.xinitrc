@@ -17,7 +17,7 @@ xset fp rehash
 
 # Mouse Acceleration Settings
 # xset m 0 0
-xinput --set-prop 'Logitech M570' "libinput Accel Speed" -0.5
+xinput --set-prop 12 "libinput Accel Speed" -0.5
 
 # Load Xresources
 [ -f ~/.Xresources ] && xrdb -merge ~/.Xresources
@@ -26,16 +26,20 @@ xinput --set-prop 'Logitech M570' "libinput Accel Speed" -0.5
 [ -f ~/.Xmodmap ] && xmodmap ~/.Xmodmap
 
 # Restore styles
-wal -i ~/wall-2.jpg
+# wal -i ~/wall-2.jpg
 
 # color profile
 # xcalib ~/.color/icc/xps_15.icm
 
 # Composite manager
-compton -b
+# compton -b
 
 # Background
 sh ~/.fehbg
+
+# set dpi
+# xrandr --dpi 117
+xrandr --dpi 96
 
 # Redshift
 # redshift -l -36.84846:174.763332 -m randr:preserve=1 &
@@ -49,7 +53,5 @@ setxkbmap -model pc105 -layout us,ru -option grp:win_space_toggle
 # urxvt daemon
 urxvtd -q -f -o &
 
-# start wm
-# sxhkd &
-# exec bspwm
-exec i3
+emacs --daemon -f exwm-enable
+exec emacsclient -c

@@ -141,3 +141,6 @@ The body of the advice is in BODY."
 
 ;; enable winner mode
 (winner-mode 1)
+
+;; use ssh with tramp
+(setq tramp-default-method "ssh")
