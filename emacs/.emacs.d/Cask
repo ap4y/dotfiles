@@ -30,6 +30,8 @@
 (depends-on "git-timemachine")
 (depends-on "elfeed")
 
+(depends-on "clang-format")
+
 ;; ruby dev
 (depends-on "yari")
 (depends-on "chruby")

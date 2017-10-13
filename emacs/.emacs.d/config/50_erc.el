@@ -76,21 +76,6 @@
       '(("freenode.net" "#ruby-lang" "#openbsd" "#voidlinux" "#go-nuts")))
 (setq erc-hide-list '("JOIN" "PART" "QUIT" "MODE"))
 
-;; alert in fringe
-(alert-add-rule :status   '(buried visible idle)
-                :severity '(moderate high urgent)
-                :mode     'erc-mode
-                :persistent
-                #'(lambda (info)
-                    ;; If the buffer is buried, or the user has been
-                    ;; idle for `alert-reveal-idle-time' seconds,
-                    ;; make this alert persistent.  Normally, alerts
-                    ;; become persistent after
-                    ;; `alert-persist-idle-time' seconds.
-                    (memq (plist-get info :status) '(buried idle)))
-                :style 'fringe
-                :continue t)
-
 ;; Dynamically fill buffers
 (add-hook 'window-configuration-change-hook
           '(lambda ()

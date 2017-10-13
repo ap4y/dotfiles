@@ -19,10 +19,10 @@
 (setq inhibit-startup-screen t)
 
 ;; for m-x shell-command
-(setq shell-file-name "/bin/bash")
+(setq shell-file-name (executable-find "bash"))
 
 ;; for m-x shell
-(setq explicit-shell-file-name "/bin/bash")
+(setq explicit-shell-file-name (executable-find "bash"))
 
 ;; encoding settings
 (set-language-environment      "English")
