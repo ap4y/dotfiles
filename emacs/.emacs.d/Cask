@@ -16,7 +16,7 @@
 (depends-on "easy-kill")
 (depends-on "git-gutter-fringe+")
 (depends-on "rainbow-delimiters")
-(depends-on "ido-ubiquitous")
+(depends-on "ido-completing-read+")
 (depends-on "flx-ido")
 (depends-on "smex")
 (depends-on "magit")
