@@ -4,8 +4,6 @@
 (require 'exwm-config)
 (exwm-config-ido)
 
-;; force tiling
-(setq exwm-manage-force-tiling t)
 ;; (setq exwm-workspace-show-all-buffers t)
 ;; (setq exwm-layout-show-all-buffers t)
 
