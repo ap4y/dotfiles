@@ -38,8 +38,7 @@ xinput --set-prop 12 "libinput Accel Speed" -0.5
 sh ~/.fehbg
 
 # set dpi
-# xrandr --dpi 117
-xrandr --dpi 96
+xrandr --dpi 117
 
 # Redshift
 # redshift -l -36.84846:174.763332 -m randr:preserve=1 &
