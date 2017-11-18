@@ -1,0 +1,67 @@
+#!/usr/bin/env bash
+
+font="${BAR_FONT:-"-*-tewi-*"}"
+icon="${BAR_ICON:-"-*-siji-*"}"
+height="${BAR_HEIGHT:-36}"
+
+get_workspaces() {
+    desktop=$(xdotool get_desktop)
+    workspaces=(     )
+    for idx in 0 1 2 3
+    do
+        if [[ "$idx" == $desktop ]]
+        then printf "%s" "  ${workspaces[idx]}  "
+        else printf "%s" "%{F${color8:-#F0F0F0}}  ${workspaces[idx]}  %{F-}"
+        fi
+    done
+}
+
+get_window() {
+    printf "%.75s\\n" "$(xdotool getwindowfocus getwindowname)"
+}
+
+get_date() {
+    printf "%s\\n" "$(date +"%a %d %b - %l:%M %p")"
+}
+
+get_kb_layout() {
+    printf "%s\\n" "$(xset -q | grep LED | awk '$10=="00000000"{print " us "} $10=="00000010"{print " ru "}')"
+}
+
+get_mail() {
+    printf "%s\\n" "$(($(ls -la ~/Maildir/INBOX/new | wc -l)-3))"
+}
+
+get_song() {
+    printf "%.100s\\n" "$(mpc current -f '%albumartist% - %title%')"
+}
+
+icon() {
+    printf "%s\\n" "%{F${color1:-#F0F0F0}}${1}%{F-}"
+}
+
+main() {
+    . "${HOME}/.cache/wal/colors.sh"
+
+    while :; do
+        workspaces="$(get_workspaces)"
+        window="$(icon "") $(get_window)"
+        song="$(icon "") $(get_song)"
+        date="$(get_date)"
+        mail="$(icon "") $(get_mail)"
+        xkb="$(icon "") $(get_kb_layout)"
+
+        printf "%s%s%s\\n" \
+               "%{l}   ${workspaces}  |  ${window}" \
+               "%{c}${song}" \
+               "%{r}${mail}  |  ${xkb}  |  ${date}    "
+        sleep 1
+    done |\
+
+    lemonbar -b -g "x${height}" \
+             -B "${color0:-#000000}" -F "${color7:-#F0F0F0}"\
+             -n "bar" -f "$font" -f "$icon"
+}
+
+
+main "$@"

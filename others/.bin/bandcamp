@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+mpc clear
+mpc add $(youtube-dl -g $1)
+mpc play

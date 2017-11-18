@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+while :; do
+      offlineimap
+      mu index
+      sleep 300
+done
