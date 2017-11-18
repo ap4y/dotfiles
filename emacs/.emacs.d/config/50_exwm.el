@@ -4,6 +4,8 @@
 (require 'exwm-config)
 (exwm-config-ido)
 
+;; force tiling
+;; (setq exwm-manage-force-tiling nil)
 ;; (setq exwm-workspace-show-all-buffers t)
 ;; (setq exwm-layout-show-all-buffers t)
 
@@ -57,8 +59,7 @@
             (xcb:+request exwm--connection
                 (make-instance 'xcb:ewmh:set-_NET_DESKTOP_NAMES
                                :window exwm--root :data "term\0browser\0file\0etc"))
-            (xcb:flush exwm--connection)
-            (start-process-shell-command "" nil "killall polybar; polybar ap4y")))
+            (xcb:flush exwm--connection)))
 
 (dotimes (i 4)
   (exwm-input-set-key (kbd (format "s-M-%d" (+ i 1)))
@@ -87,3 +88,12 @@
    ([?\C-w] . ?\C-x)
    ([?\M-w] . ?\C-c)
    ([?\C-y] . ?\C-v)))
+
+;; multi-monitor
+(require 'exwm-randr)
+(add-hook 'exwm-randr-screen-change-hook
+          (lambda ()
+            (start-process-shell-command "xrandr" nil "xrandr --output DP1 --auto --primary")
+            (start-process-shell-command "bar" nil "pkill -9 -fx 'bash /home/ap4y/.bin/lbar'; lbar")
+            (start-process-shell-command "mail" nil "pkill -9 -fx 'sh /home/ap4y/.bin/mail'; mail")))
+(exwm-randr-enable)
