@@ -40,10 +40,11 @@ export PATH=$GOPATH/bin:$PATH
 export PATH=$HOME/.cask/bin:$PATH
 
 # dircolors
-eval $(dircolors -b $HOME/.config/dircolors)
+# eval $(dircolors -b $HOME/.config/dircolors)
 
 # aliases
-alias ls='ls -h --color=auto'
+# alias ls='ls -h --color=auto'
+alias ls='colorls -h'
 alias rm='rm -iv'
 alias gpg='gpg2'
 
