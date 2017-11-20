@@ -17,7 +17,6 @@ xset fp rehash
 
 # Mouse Acceleration Settings
 # xset m 0 0
-xinput --set-prop 12 "libinput Accel Speed" -0.5
 
 # Load Xresources
 [ -f ~/.Xresources ] && xrdb -merge ~/.Xresources
