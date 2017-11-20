@@ -18,7 +18,6 @@
 ))
 ;; theme
 (load-theme 'spacemacs-light t)
-;; (load-theme 'tao-yang t)
 
 ;; highlight the current line
 (global-hl-line-mode +1)
@@ -46,15 +45,15 @@
                                           (abbreviate-file-name (buffer-file-name))
                                         "%b"))))
 
-;; disable modeline
-(setq-default mode-line-format nil)
+;; modeline
+(require 'spaceline-config)
+(spaceline-spacemacs-theme)
+(setq-default powerline-default-separator 'wave)
+(spaceline-toggle-minor-modes-off)
+(spaceline-compile)
 
 ;; window margins
 (set-frame-parameter nil 'internal-border-width 15)
 
 ;; nyan-mode
 ;; (nyan-mode)
-
-;; fix easy-mark selection
-(custom-set-faces
- '(easy-kill-selection ((t (:inherit region)))))
