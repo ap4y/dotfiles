@@ -11,15 +11,6 @@ Repeated invocations toggle between the two most recently open buffers."
   (interactive)
   (switch-to-buffer (other-buffer (current-buffer) 1)))
 
-(defun recentf-ido-find-file ()
-  "Find a recent file using ido."
-  (interactive)
-  (let ((file (ido-completing-read "Choose recent file: "
-                                   (-map 'abbreviate-file-name recentf-list)
-                                   nil t)))
-    (when file
-      (find-file file))))
-
 (defun rename-buffer-and-file ()
   "Rename current buffer and if the buffer is visiting a file, rename it too."
   (interactive)
@@ -37,13 +28,6 @@ Repeated invocations toggle between the two most recently open buffers."
   "Join the current line with the line beneath it."
   (interactive)
   (delete-indentation 1))
-
-(defun auto-save-command ()
-  "Save the current buffer."
-  (when (and buffer-file-name
-             (buffer-modified-p (current-buffer))
-             (file-writable-p buffer-file-name))
-    (save-buffer)))
 
 (defun custom-move-beginning-of-line (arg)
   "Move point back to indentation of beginning of line.

@@ -1,21 +1,15 @@
-(defun enable-local-comment-auto-fill ()
-  (set (make-local-variable 'comment-auto-fill-only-comments) t))
-
-;; show the name of the current function definition in the modeline
-(require 'which-func)
-(which-function-mode 1)
+(use-package aggressive-indent
+  :ensure t
+  :commands aggressive-indent-mode)
 
 (defun prog-mode-defaults ()
-  "Default coding hook, useful with any programming language."
-  (when (executable-find ispell-program-name)
-    (flyspell-prog-mode))
+  (aggressive-indent-mode)
+  (company-mode)
+  (flycheck-mode)
+  (flyspell-prog-mode)
+  (which-function-mode 1)
   (smartparens-mode +1)
   (enable-whitespace-mode)
-  (enable-local-comment-auto-fill))
-
+  (git-gutter+-mode)
+  (setq comment-auto-fill-only-comments t))
 (add-hook 'prog-mode-hook 'prog-mode-defaults)
-
-;; enable on-the-fly syntax checking
-(if (fboundp 'global-flycheck-mode)
-    (global-flycheck-mode +1)
-  (add-hook 'prog-mode-hook 'flycheck-mode))

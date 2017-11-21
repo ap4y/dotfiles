@@ -1,29 +1,22 @@
-;; (add-to-list 'auto-mode-alist '("\\.rake\\'" . ruby-mode))
-;; (add-to-list 'auto-mode-alist '("Rakefile\\'" . ruby-mode))
-;; (add-to-list 'auto-mode-alist '("\\.gemspec\\'" . ruby-mode))
-;; (add-to-list 'auto-mode-alist '("\\.ru\\'" . ruby-mode))
-;; (add-to-list 'auto-mode-alist '("Gemfile\\'" . ruby-mode))
-;; (add-to-list 'auto-mode-alist '("Guardfile\\'" . ruby-mode))
-;; (add-to-list 'auto-mode-alist '("Capfile\\'" . ruby-mode))
-;; (add-to-list 'auto-mode-alist '("\\.thor\\'" . ruby-mode))
-;; (add-to-list 'auto-mode-alist '("\\.rabl\\'" . ruby-mode))
-;; (add-to-list 'auto-mode-alist '("Thorfile\\'" . ruby-mode))
-;; (add-to-list 'auto-mode-alist '("Vagrantfile\\'" . ruby-mode))
-;; (add-to-list 'auto-mode-alist '("\\.jbuilder\\'" . ruby-mode))
-;; (add-to-list 'auto-mode-alist '("Podfile\\'" . ruby-mode))
-;; (add-to-list 'auto-mode-alist '("\\.podspec\\'" . ruby-mode))
-;; (add-to-list 'auto-mode-alist '("Puppetfile\\'" . ruby-mode))
-;; (add-to-list 'auto-mode-alist '("Berksfile\\'" . ruby-mode))
-;; (add-to-list 'auto-mode-alist '("Appraisals\\'" . ruby-mode))
-(add-to-list 'auto-mode-alist
-             '("\\(?:\\.rb\\|ru\\|rake\\|thor\\|jbuilder\\|gemspec\\|podspec\\|/\\(?:Gem\\|Rake\\|Cap\\|Thor\\|Vagrant\\|Guard\\|Pod\\)file\\)\\'" . enh-ruby-mode))
+(use-package yari
+  :ensure t
+  :commands yari)
 
-(defun ruby-mode-defaults ()
-  (require 'chruby)
+(use-package chruby
+  :ensure t
+  :commands chruby-use)
 
-  (subword-mode +1)
-  (projectile-rails-global-mode)
-  (setq minitest-default-command '("rake" "test")))
+(use-package ruby-mode
+  :mode "\\(?:\\.rb\\|ru\\|rake\\|jbuilder\\|gemspec\\|podspec\\|Gemfile\\)\\'"
+  :bind (:map ruby-mode-map
+              ("C-c m" . ruby-test-run)
+              ("C-c ." . ruby-test-run-at-point)
+              ("C-c /" . ruby-test-toggle-implementation-and-specification))
+  :preface
+  (use-package ruby-test-mode
+    :ensure t)
 
-(add-hook 'enh-ruby-mode-hook 'ruby-mode-defaults)
-(remove-hook 'enh-ruby-mode-hook 'erm-define-faces)
+  (defun ruby-mode-defaults ()
+    (subword-mode +1))
+  :config
+  (add-hook 'ruby-mode-hook 'ruby-mode-defaults))

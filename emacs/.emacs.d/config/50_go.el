@@ -1,37 +1,45 @@
-(require 'go-dlv)
+(use-package go-eldoc
+  :ensure t
+  :commands godoc-at-point)
 
-;; tabs settings
-(setq-default tab-width 2)
+(use-package go-mode
+  :ensure t
+  :mode :mode "\\.go\\'"
+  :bind (:map go-mode-map
+              ("C-c a" . go-test-current-project)
+              ("C-c m" . go-test-current-file)
+              ("C-c ." . go-test-current-test)
+              ("C-c s" . go-run)
+              ("C-c /" . ff-find-other-file)
+              ("C-h f" . godoc-at-point))
+  :preface
+  (defun go-mode-defaults ()
+    ;; Prefer goimports to gofmt if installed
+    (let ((goimports (executable-find "goimports")))
+      (when goimports
+        (setq gofmt-command goimports)))
 
-(defun go-mode-defaults ()
-  ;; Add to default go-mode key bindings
-  (let ((map go-mode-map))
-    (define-key map (kbd "C-c a") 'go-test-current-project)
-    (define-key map (kbd "C-c m") 'go-test-current-file)
-    (define-key map (kbd "C-c .") 'go-test-current-test)
-    (define-key map (kbd "C-c s") 'go-run)
-    (define-key map (kbd "C-c \\") 'ff-find-other-file)
-    (define-key map (kbd "C-h f") 'godoc-at-point))
+    ;; gofmt on save
+    (add-hook 'before-save-hook 'gofmt-before-save nil t)
 
-  ;; Prefer goimports to gofmt if installed
-  (let ((goimports (executable-find "goimports")))
-    (when goimports
-      (setq gofmt-command goimports)))
+    ;; stop whitespace being highlighted
+    (whitespace-toggle-options '(tabs))
+    (setq whitespace-line-column 120)
 
-  ;; gofmt on save
-  (add-hook 'before-save-hook 'gofmt-before-save nil t)
+    ;; Company mode settings
+    (set (make-local-variable 'company-backends) '(company-go))
 
-  ;; stop whitespace being highlighted
-  (whitespace-toggle-options '(tabs))
-  (setq whitespace-line-column 120)
+    ;; El-doc for Go
+    (go-eldoc-setup)
 
-  ;; Company mode settings
-  (set (make-local-variable 'company-backends) '(company-go))
+    ;; CamelCase aware editing operations
+    (subword-mode +1))
+  :config
+  (use-package company-go
+    :ensure t)
 
-  ;; El-doc for Go
-  (go-eldoc-setup)
+  (use-package go-test
+    :ensure t)
 
-  ;; CamelCase aware editing operations
-  (subword-mode +1))
-
-(add-hook 'go-mode-hook 'go-mode-defaults)
+  (add-hook 'go-mode-hook 'go-mode-defaults)
+  (setq-default tab-width 2))

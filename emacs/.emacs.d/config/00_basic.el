@@ -82,9 +82,6 @@
 (defadvice other-frame (before other-frame-now activate)
   (when buffer-file-name (save-buffer)))
 
-;; sensible undo
-(global-undo-tree-mode)
-
 ;; diminish keeps the modeline tidy
 (require 'diminish)
 
@@ -122,5 +119,51 @@
 ;; disable all dialogs
 (setq use-dialog-box nil)
 
-;; smooth scrolling
-(smooth-scrolling-mode 1)
+(use-package rainbow-mode
+  :ensure t
+  :commands rainbow-mode)
+
+(use-package rainbow-delimiters
+  :ensure t
+  :commands rainbow-delimiters-mode)
+
+(use-package undo-tree
+  :ensure t
+  :config
+  (global-undo-tree-mode))
+
+(use-package smooth-scrolling
+  :ensure t
+  :config
+  (smooth-scrolling-mode 1))
+
+(use-package ledger-mode
+  :ensure t
+  :mode "\\.ledger\\'")
+
+(use-package password-store
+  :ensure t
+  :commands (password-store-copy password-store-generate))
+
+(use-package buffer-move
+  :ensure t
+  :bind (("s-J" . buf-move-left)
+         ("s-K" . buf-move-down)
+         ("s-L" . buf-move-up)
+         ("s-:" . buf-move-right)))
+
+(use-package fringe-helper
+  :ensure t)
+
+(use-package windmove
+  :bind (("C-x k" . windmove-down)
+         ("C-x l" . windmove-up)
+         ("C-x ;" . windmove-right)
+         ("C-x j" . windmove-left)))
+
+(use-package winner
+  :bind (("C-c l" . winner-undo)
+         ("C-c ;" . winner-redo)))
+
+(use-package ibuffer
+  :bind ("C-x C-b" . ibuffer))

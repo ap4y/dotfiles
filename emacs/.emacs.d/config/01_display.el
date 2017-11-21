@@ -15,16 +15,22 @@
   (progn
     (set-face-attribute 'default nil :font "Iosevka Medium-10")
     (set-frame-font "Iosevka Medium-10")
-))
+    ))
+
 ;; theme
-(load-theme 'spacemacs-light t)
+(use-package spacemacs-theme
+  :ensure t
+  :defer t
+  :init
+  (load-theme 'spacemacs-light t))
 
 ;; highlight the current line
 (global-hl-line-mode +1)
 
-(require 'volatile-highlights)
-(volatile-highlights-mode t)
-(diminish 'volatile-highlights-mode)
+(use-package volatile-highlights
+  :ensure t
+  :config
+  (volatile-highlights-mode t))
 
 ;; mode line settings
 (line-number-mode t)
@@ -46,14 +52,14 @@
                                         "%b"))))
 
 ;; modeline
-(require 'spaceline-config)
-(spaceline-spacemacs-theme)
-(setq-default powerline-default-separator 'wave)
-(spaceline-toggle-minor-modes-off)
-(spaceline-compile)
+(use-package spaceline
+  :ensure t
+  :config
+  (require 'spaceline-config)
+  (spaceline-spacemacs-theme)
+  (setq-default powerline-default-separator 'wave)
+  (spaceline-toggle-minor-modes-off)
+  (spaceline-compile))
 
 ;; window margins
 (set-frame-parameter nil 'internal-border-width 15)
-
-;; nyan-mode
-;; (nyan-mode)

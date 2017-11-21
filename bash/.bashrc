@@ -36,8 +36,6 @@ alias ec='emacsclient -c'
 export GOPATH=$HOME/golang
 export PATH=$GOPATH/bin:$PATH
 
-# cask
-export PATH=$HOME/.cask/bin:$PATH
 
 # dircolors
 # eval $(dircolors -b $HOME/.config/dircolors)
