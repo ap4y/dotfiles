@@ -45,9 +45,6 @@ xrandr --dpi 117
 # auto lock
 # xautolock -time 10 -locker slock &
 
-# keyboard layout
-setxkbmap -model pc105 -layout us,ru -option grp:win_space_toggle
-
 # urxvt daemon
 urxvtd -q -f -o &
 
