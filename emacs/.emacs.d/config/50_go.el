@@ -38,7 +38,7 @@
   (use-package company-go
     :ensure t)
 
-  (use-package go-test
+  (use-package gotest
     :ensure t)
 
   (add-hook 'go-mode-hook 'go-mode-defaults)

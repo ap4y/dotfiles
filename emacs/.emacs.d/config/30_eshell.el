@@ -1,5 +1,6 @@
 (use-package eshell
   :commands (eshell eshell-command)
+  :bind (("C-x m" . eshell))
   :config
   (setq eshell-prompt-function (lambda nil
                                  (concat

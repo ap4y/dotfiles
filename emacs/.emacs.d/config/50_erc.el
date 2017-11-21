@@ -1,55 +1,36 @@
 (use-package erc
   :commands start-irc
-  :preface
-  (defun filter-server-buffers ()
-    (delq nil
-          (mapcar
-           (lambda (x) (and (erc-server-buffer-p x) x))
-           (buffer-list))))
-
-  (defun start-irc ()
-    "Connect to IRC?"
-    (interactive)
-    (when (y-or-n-p "Do you want to start IRC? ")
-      ;; (erc-tls :server "irc.freenode.net" :port 6697 :nick "ap4y")
-      (erc-tls :server "ap4y.me" :port 6698 :nick "ap4y")))
-
-  (defun stop-irc ()
-    "Disconnects from all irc servers"
-    (interactive)
-    (dolist (buffer (filter-server-buffers))
-      (message "Server buffer: %s" (buffer-name buffer))
-      (with-current-buffer buffer
-        (erc-quit-server "Asta la vista"))))
-
-  (defun erc-login ()
-    "Perform user authentication at the IRC server."
-    (erc-log (format "login: nick: %s, user: %s %s %s :%s"
-                     (erc-current-nick)
-                     (user-login-name)
-                     (or erc-system-name (system-name))
-                     erc-session-server
-                     erc-session-user-full-name))
-    (if erc-session-password
-        (erc-server-send (format "PASS %s" erc-session-password))
-      (message "Logging in without password"))
-    (when (and (featurep 'erc-sasl) (erc-sasl-use-sasl-p))
-      (erc-server-send "CAP REQ :sasl"))
-    (erc-server-send (format "NICK %s" (erc-current-nick)))
-    (erc-server-send
-     (format "USER %s %s %s :%s"
-             ;; hacked - S.B.
-             (if erc-anonymous-login erc-email-userid (user-login-name))
-             "0" "*"
-             erc-session-user-full-name))
-    (erc-update-mode-line))
-
   :config
   (require 'erc-log)
   (require 'erc-notify)
   (require 'erc-spelling)
   (require 'erc-autoaway)
-  (require 'erc-sasl "../scripts/erc-sasl.el")
+  (use-package erc-sasl
+    :load-path "scripts/erc-sasl.el"
+    :config
+    (add-to-list 'erc-sasl-server-regexp-list "irc\\.freenode\\.net")
+
+    (defun erc-login ()
+      "Perform user authentication at the IRC server."
+      (erc-log (format "login: nick: %s, user: %s %s %s :%s"
+                       (erc-current-nick)
+                       (user-login-name)
+                       (or erc-system-name (system-name))
+                       erc-session-server
+                       erc-session-user-full-name))
+      (if erc-session-password
+          (erc-server-send (format "PASS %s" erc-session-password))
+        (message "Logging in without password"))
+      (when (and (featurep 'erc-sasl) (erc-sasl-use-sasl-p))
+        (erc-server-send "CAP REQ :sasl"))
+      (erc-server-send (format "NICK %s" (erc-current-nick)))
+      (erc-server-send
+       (format "USER %s %s %s :%s"
+               ;; hacked - S.B.
+               (if erc-anonymous-login erc-email-userid (user-login-name))
+               "0" "*"
+               erc-session-user-full-name))
+      (erc-update-mode-line)))
 
   ;; erc buffer behavior
   (setq erc-join-buffer 'bury)
@@ -108,5 +89,23 @@
   ;; Make erc tracking come after everything else
   (setq erc-track-position-in-mode-line 'after-modes)
 
-  ;; Enable SASL for freenode
-  (add-to-list 'erc-sasl-server-regexp-list "irc\\.freenode\\.net"))
+  (defun filter-server-buffers ()
+    (delq nil
+          (mapcar
+           (lambda (x) (and (erc-server-buffer-p x) x))
+           (buffer-list))))
+
+  (defun start-irc ()
+    "Connect to IRC?"
+    (interactive)
+    (when (y-or-n-p "Do you want to start IRC? ")
+      ;; (erc-tls :server "irc.freenode.net" :port 6697 :nick "ap4y")
+      (erc-tls :server "ap4y.me" :port 6698 :nick "ap4y")))
+
+  (defun stop-irc ()
+    "Disconnects from all irc servers"
+    (interactive)
+    (dolist (buffer (filter-server-buffers))
+      (message "Server buffer: %s" (buffer-name buffer))
+      (with-current-buffer buffer
+        (erc-quit-server "Asta la vista")))))
