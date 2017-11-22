@@ -13,10 +13,10 @@
               ("C-c ." . ruby-test-run-at-point)
               ("C-c /" . ruby-test-toggle-implementation-and-specification))
   :preface
-  (use-package ruby-test-mode
-    :ensure t)
-
   (defun ruby-mode-defaults ()
     (subword-mode +1))
+  :init
+  (use-package ruby-test-mode
+    :ensure t)
   :config
   (add-hook 'ruby-mode-hook 'ruby-mode-defaults))
