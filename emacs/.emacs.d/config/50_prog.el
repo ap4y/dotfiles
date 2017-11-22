@@ -1,3 +1,7 @@
+(use-package heroku
+  :ensure t
+  :commands heroku-run)
+
 (use-package aggressive-indent
   :ensure t
   :commands aggressive-indent-mode)

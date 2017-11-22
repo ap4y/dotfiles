@@ -4,14 +4,14 @@
 
 (use-package go-mode
   :ensure t
-  :mode :mode "\\.go\\'"
-  :bind (:map go-mode-map
-              ("C-c a" . go-test-current-project)
-              ("C-c m" . go-test-current-file)
-              ("C-c ." . go-test-current-test)
-              ("C-c s" . go-run)
-              ("C-c /" . ff-find-other-file)
-              ("C-h f" . godoc-at-point))
+  :mode "\\.go\\'"
+  :bind (("C-c a" . go-test-current-project)
+         :map go-mode-map
+         ("C-c m" . go-test-current-file)
+         ("C-c ." . go-test-current-test)
+         ("C-c s" . go-run)
+         ("C-c /" . ff-find-other-file)
+         ("C-h f" . godoc-at-point))
   :preface
   (defun go-mode-defaults ()
     ;; Prefer goimports to gofmt if installed

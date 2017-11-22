@@ -8,7 +8,7 @@
          ("C-c f" . counsel-recentf)
          ("C-c i" . counsel-imenu)
          ("C-c g" . counsel-git)
-         ("C-c a" . counsel-ag)
+         ;; ("C-c a" . counsel-ag)
          ("C-c v" . counsel-push-view)
          ("C-c V" . counsel-pop-view)
          ("C-x b" . ivy-switch-buffer))

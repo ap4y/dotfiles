@@ -167,3 +167,7 @@
 
 (use-package ibuffer
   :bind ("C-x C-b" . ibuffer))
+
+(use-package ag
+  :ensure t
+  :commands ag)
