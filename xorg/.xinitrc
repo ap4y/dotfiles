@@ -25,7 +25,7 @@ xset fp rehash
 [ -f ~/.Xmodmap ] && xmodmap ~/.Xmodmap
 
 # Restore styles
-# wal -i ~/wall-2.jpg
+wal -i ~/wall-2.jpg
 
 # color profile
 # xcalib ~/.color/icc/xps_15.icm
