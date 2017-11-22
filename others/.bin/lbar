@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env dash
 
 font="${BAR_FONT:-"-*-tewi-*"}"
 icon="${BAR_ICON:-"-*-siji-*"}"
@@ -6,12 +6,13 @@ height="${BAR_HEIGHT:-36}"
 
 get_workspaces() {
     desktop=$(xdotool get_desktop)
-    workspaces=(     )
+    workspaces="   "
     for idx in 0 1 2 3
     do
-        if [[ "$idx" == $desktop ]]
-        then printf "%s" "  ${workspaces[idx]}  "
-        else printf "%s" "%{F${color8:-#F0F0F0}}  ${workspaces[idx]}  %{F-}"
+        workspace=$(echo $workspaces | awk '{ split($0, string, " "); print string['$(($idx+1))']; }' )
+        if [ "$idx" -eq "$desktop" ]
+        then printf "%s" "  $workspace  "
+        else printf "%s" "%{F${color8:-#F0F0F0}}  $workspace  %{F-}"
         fi
     done
 }

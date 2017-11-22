@@ -64,11 +64,11 @@
               (xcb:flush exwm--connection)))
 
   (dotimes (i 4)
-    (exwm-input-set-key (kbd (format "s-M-%d" (+ i 1)))
+    (exwm-input-set-key (kbd (format "S-<f%d>" (+ i 1)))
                         `(lambda ()
                            (interactive)
                            (exwm-workspace-move-window ,i)))
-    (exwm-input-set-key (kbd (format "s-%d" (+ i 1)))
+    (exwm-input-set-key (kbd (format "<f%d>" (+ i 1)))
                         `(lambda ()
                            (interactive)
                            (exwm-workspace-switch-create ,i)
@@ -96,6 +96,6 @@
   (add-hook 'exwm-randr-screen-change-hook
             (lambda ()
               (start-process-shell-command "xrandr" nil "xrandr --output DP1 --auto --primary")
-              (start-process-shell-command "bar" nil "pkill -9 -fx 'bash /home/ap4y/.bin/lbar'; lbar")
+              (start-process-shell-command "bar" nil "pkill -9 -fx 'dash /home/ap4y/.bin/lbar'; lbar")
               (start-process-shell-command "mail" nil "pkill -9 -fx 'sh /home/ap4y/.bin/mail'; mail")))
   (exwm-randr-enable))
