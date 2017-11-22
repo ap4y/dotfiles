@@ -1,4 +1,5 @@
 (use-package git-gutter-fringe+
+  :ensure t
   :config
   (fringe-helper-define 'git-gutter-fr+-added nil
     "........"
