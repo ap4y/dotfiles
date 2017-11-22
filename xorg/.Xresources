@@ -1,3 +1,5 @@
+#include "/home/ap4y/.colors/spacemacs"
+
 !! urxvt
 #define commonFont xft:Iosevka Medium:size=10:antialias=true
 
@@ -28,13 +30,6 @@ xft.hintstyle:  hintslight
 Xft.lcdfilter:  lcddefault
 
 !! rofi
-rofi.width: 900
-rofi.padding: 400
-rofi.fullscreen: true
-rofi.terminal: st
-rofi.lines: 9
 rofi.font: Iosevka Medium 20
-rofi.color-window: argb:ee2B303B, argb:AA181818, #1818181
-rofi.color-normal: argb:00BF616A, #8FA1B3, argb:00BF616A, argb:00BF616A, #BF616A
 rofi.separator-style: none
 rofi.scrollbar-width: 0
