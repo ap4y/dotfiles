@@ -1,3 +1,10 @@
+(use-package alert
+  :ensure t
+  :commands alert
+  :config
+  (setq alert-default-style 'libnotify)
+  (setq alert-default-icon ""))
+
 (use-package erc
   :commands start-irc
   :preface
@@ -29,13 +36,10 @@
   (require 'erc-match)
 
   ;; notification settings
-  (use-package notify
-    :load-path "scripts")
-
   (setq erc-pals '("j0li"))
   (defun erc-global-notify (match-type nick message)
     "Notify when a message is recieved."
-    (notify nick message :urgency "normal"))
+    (alert message :title nick))
   (add-hook 'erc-text-matched-hook 'erc-global-notify)
 
   ;; erc buffer behavior
