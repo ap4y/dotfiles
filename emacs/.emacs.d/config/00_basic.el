@@ -24,10 +24,16 @@
 (setq inhibit-startup-screen t)
 
 ;; for m-x shell-command
-(setq shell-file-name (executable-find "bash"))
+(if (eq system-type "berkeley-unix")
+    (setq shell-file-name (executable-find "ksh"))
+  (setq shell-file-name (executable-find "bash")))
+
 
 ;; for m-x shell
-(setq explicit-shell-file-name (executable-find "bash"))
+(if (eq system-type "berkeley-unix")
+    (setq explicit-shell-file-name (executable-find "ksh"))
+  (setq shell-file-name (executable-find "bash")))
+
 
 ;; encoding settings
 (set-language-environment      "English")
