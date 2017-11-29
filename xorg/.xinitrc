@@ -50,3 +50,6 @@ urxvtd -q -f -o &
 
 emacs --daemon -f exwm-enable
 exec emacsclient -c
+# start mail fetcher
+mail &
+

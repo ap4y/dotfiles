@@ -96,6 +96,5 @@
   (add-hook 'exwm-randr-screen-change-hook
             (lambda ()
               (start-process-shell-command "xrandr" nil "xrandr --output DP1 --auto --primary")
-              (start-process-shell-command "bar" nil "pkill -9 -fx 'dash /home/ap4y/.bin/lbar'; lbar")
-              (start-process-shell-command "mail" nil "pkill -9 -fx 'sh /home/ap4y/.bin/mail'; mail")))
+              (start-process-shell-command "bar" nil "lbar")))
   (exwm-randr-enable))

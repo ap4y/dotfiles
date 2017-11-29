@@ -44,6 +44,8 @@ icon() {
 main() {
     . "${HOME}/.cache/wal/colors.sh"
 
+    pkill lemonbar
+
     while :; do
         workspaces="$(get_workspaces)"
         window="$(icon "") $(get_window)"
