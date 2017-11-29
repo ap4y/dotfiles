@@ -132,11 +132,6 @@
   :config
   (global-undo-tree-mode))
 
-(use-package smooth-scrolling
-  :ensure t
-  :config
-  (smooth-scrolling-mode 1))
-
 (use-package ledger-mode
   :ensure t
   :mode "\\.ledger\\'")

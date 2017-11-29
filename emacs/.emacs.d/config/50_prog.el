@@ -2,12 +2,7 @@
   :ensure t
   :commands heroku-run)
 
-(use-package aggressive-indent
-  :ensure t
-  :commands aggressive-indent-mode)
-
 (defun prog-mode-defaults ()
-  (aggressive-indent-mode)
   (company-mode)
   (flycheck-mode)
   (flyspell-prog-mode)
