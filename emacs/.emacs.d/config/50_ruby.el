@@ -6,6 +6,10 @@
   :ensure t
   :commands chruby-use)
 
+(use-package inf-ruby
+  :ensure t
+  :commands (inf-ruby inf-ruby-console-auto))
+
 (use-package ruby-mode
   :mode "\\(?:\\.rb\\|ru\\|rake\\|jbuilder\\|gemspec\\|podspec\\|Gemfile\\)\\'"
   :bind (:map ruby-mode-map
