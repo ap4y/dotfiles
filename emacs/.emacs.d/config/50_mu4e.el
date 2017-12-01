@@ -10,17 +10,17 @@
 
   (require 'smtpmail)
   (setq message-send-mail-function 'smtpmail-send-it
-        smtpmail-stream-type 'starttls
         user-full-name "Arthur Evstifeev"
         user-mail-address "mail@ap4y.me"
         smtpmail-default-smtp-server "ap4y.me"
         smtpmail-smtp-server "ap4y.me"
-        smtpmail-smtp-service 25)
+        smtpmail-smtp-service 465
+        smtpmail-stream-type  'ssl)
 
   (setq message-kill-buffer-on-exit t)
+  ;; (add-hook 'message-send-hook 'mml-secure-message-sign-pgpmime)
 
   (setq mu4e-view-prefer-html t)
   (setq mu4e-html2text-command "w3m -T text/html")
   (add-to-list 'mu4e-view-actions
-               '("ViewInBrowser" . mu4e-action-view-in-browser) t)
-  (add-hook 'message-send-hook 'mml-secure-message-sign-pgpmime))
+               '("ViewInBrowser" . mu4e-action-view-in-browser) t))
