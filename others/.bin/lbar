@@ -58,7 +58,7 @@ main() {
                "%{l}   ${workspaces}  |  ${window}" \
                "%{c}${song}" \
                "%{r}${mail}  |  ${xkb}  |  ${date}    "
-        sleep 1
+        sleep 0.1
     done |\
 
     lemonbar -b -g "x${height}" \
