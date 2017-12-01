@@ -48,8 +48,7 @@ xrandr --dpi 117
 # urxvt daemon
 urxvtd -q -f -o &
 
-emacs --daemon -f exwm-enable
-exec emacsclient -c
 # start mail fetcher
 mail &
 
+exec emacs --eval '(exwm-enable)'
