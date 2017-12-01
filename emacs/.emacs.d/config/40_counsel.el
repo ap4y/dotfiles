@@ -13,9 +13,12 @@
          ("C-c V" . counsel-pop-view)
          ("C-x b" . ivy-switch-buffer))
   :config
+  (use-package flx
+    :ensure t)
+
   (ivy-mode 1)
   (setq ivy-use-virtual-buffers t)
   (setq ivy-count-format "%d/%d ")
   (setq enable-recursive-minibuffers t)
   (setq ivy-re-builders-alist
-        '((t . ivy--regex-plus))))
+        '((t . ivy--regex-fuzzy))))
