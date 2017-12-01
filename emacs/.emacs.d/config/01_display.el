@@ -62,4 +62,8 @@
   (spaceline-compile))
 
 ;; window margins
-(set-frame-parameter nil 'internal-border-width 15)
+(defun adjust-window-margins ()
+  (set-frame-parameter nil 'internal-border-width 15))
+
+(add-hook 'window-configuration-change-hook #'adjust-window-margins)
+(adjust-window-margins)
