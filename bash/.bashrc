@@ -41,8 +41,7 @@ export PATH=$GOPATH/bin:$PATH
 # eval $(dircolors -b $HOME/.config/dircolors)
 
 # aliases
-# alias ls='ls -h --color=auto'
-alias ls='colorls -h'
+alias ls='ls -h --color=auto'
 alias rm='rm -iv'
 alias gpg='gpg2'
 

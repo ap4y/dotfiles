@@ -1,5 +1,5 @@
 (use-package emacs-lisp-mode
-  :mode :mode "\\.el\\|Cask\\'"
+  :mode "\\.el\\|Cask\\'"
   :preface
   (defun elisp-mode-defaults ()
     (smartparens-strict-mode +1)
