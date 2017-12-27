@@ -21,4 +21,5 @@
   (setq ivy-count-format "%d/%d ")
   (setq enable-recursive-minibuffers t)
   (setq ivy-re-builders-alist
-        '((t . ivy--regex-fuzzy))))
+      '((swiper . ivy--regex-plus)
+        (t      . ivy--regex-fuzzy))))
