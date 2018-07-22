@@ -37,7 +37,7 @@ wal -i ~/wall-2.jpg
 sh ~/.fehbg
 
 # set dpi
-xrandr --dpi 117
+# xrandr --dpi 117
 
 # Redshift
 # redshift -l -36.84846:174.763332 -m randr:preserve=1 &
@@ -48,7 +48,15 @@ xrandr --dpi 117
 # urxvt daemon
 urxvtd -q -f -o &
 
+# keyboard layout
+setxkbmap -model pc105 -layout us,ru -option grp:win_space_toggle
+
 # start mail fetcher
 mail &
 
+# start mpd
+mpd &
+
+# emacs --daemon -f exwm-enable
+# exec emacsclient -c
 exec emacs --eval '(exwm-enable)'
