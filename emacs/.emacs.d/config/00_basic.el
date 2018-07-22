@@ -172,3 +172,8 @@
 (use-package ag
   :ensure t
   :commands ag)
+
+;; Support for Emacs pinentry.
+(setq epa-pinentry-mode 'loopback)
+(when (require 'pinentry nil t)
+  (pinentry-start))
