@@ -142,7 +142,9 @@
 (use-package password-store
   :ensure t
   :commands (password-store-copy password-store-generate)
-  :bind (("C-x p" . password-store-copy)))
+  :bind (("C-x p" . password-store-copy))
+  :config
+  (setq password-store-password-length 10))
 
 (use-package buffer-move
   :ensure t
