@@ -19,8 +19,7 @@
     (interactive)
     (when (y-or-n-p "Do you want to start IRC? ")
       ;; (erc-tls :server "irc.freenode.net" :port 6697 :nick "ap4y")
-      (erc-tls :server "ap4y.me" :port 6698 :nick "ap4y")
-      (erc-tls :server "alpineshark.irc.slack.com" :port 6697 :nick "ap4y")))
+      (erc-tls :server "ap4y.me" :port 6698 :nick "ap4y/ap4y")))
 
   (defun stop-irc ()
     "Disconnects from all irc servers"
