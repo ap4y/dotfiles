@@ -12,10 +12,9 @@
   (setq message-send-mail-function 'smtpmail-send-it
         user-full-name "Arthur Evstifeev"
         user-mail-address "mail@ap4y.me"
-        smtpmail-default-smtp-server "ap4y.me"
-        smtpmail-smtp-server "ap4y.me"
-        smtpmail-smtp-service 465
-        smtpmail-stream-type  'ssl)
+        smtpmail-smtp-server "cloud.ap4y.me"
+        smtpmail-smtp-service 587
+        smtpmail-stream-type  'starttls)
 
   (setq message-kill-buffer-on-exit t)
   ;; (add-hook 'message-send-hook 'mml-secure-message-sign-pgpmime)
