@@ -4,25 +4,36 @@
   :config
   (prodigy-define-service
     :name "MySQL container"
-    :command "docker"
-    :args '("run" "--rm" "--net" "host" "-e" "MYSQL_ROOT_PASSWORD=root" "mysql"))
+    :sudo t
+    :command "rkt"
+    :args '("--insecure-options=image" "run" "--net=host" "docker://mysql" "--environment=MYSQL_ROOT_PASSWORD=root"))
 
   (prodigy-define-service
     :name "Postgres container"
-    :command "docker"
-    :args '("run" "--rm" "--net" "host" "postgres"))
+    :sudo t
+    :command "rkt"
+    :args '("--insecure-options=image" "run" "--net=host" "docker://postgres"))
 
   (prodigy-define-service
     :name "Redis container"
-    :command "docker"
-    :args '("run" "--rm" "--net" "host" "redis"))
+    :sudo t
+    :command "rkt"
+    :args '("--insecure-options=image" "run" "--net=host" "--interactive" "docker://redis"))
 
   (prodigy-define-service
     :name "ETCD container"
-    :command "docker"
-    :args '("run" "--rm" "--net" "host" "microbox/etcd" "-name" "localhost"))
+    :sudo t
+    :command "rkt"
+    :args '("--insecure-options=image" "run" "--net=host" "docker://microbox/etcd" "--" "-name" "localhost"))
+
+  (prodigy-define-service
+    :name "ETCD v3 container"
+    :sudo t
+    :command "rkt"
+    :args '("--insecure-options=image" "run" "--net=host" "quay.io/coreos/etcd"))
 
   (prodigy-define-service
     :name "ES container"
-    :command "docker"
-    :args '("run" "--rm" "--net" "host" "elasticsearch:1.6")))
+    :sudo t
+    :command "rkt"
+    :args '("--insecure-options=image" "run" "--net=host" "docker://elasticsearch:2.4")))
