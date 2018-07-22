@@ -88,9 +88,6 @@
 (defadvice other-frame (before other-frame-now activate)
   (when buffer-file-name (save-buffer)))
 
-;; diminish keeps the modeline tidy
-(require 'diminish)
-
 ;; saveplace remembers your location in a file when saving files
 (require 'saveplace)
 (setq save-place-file (expand-file-name "saveplace" custom-savefile-dir))
