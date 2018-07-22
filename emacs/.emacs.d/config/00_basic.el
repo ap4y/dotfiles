@@ -177,3 +177,8 @@
 (setq epa-pinentry-mode 'loopback)
 (when (require 'pinentry nil t)
   (pinentry-start))
+
+;; Display time in mode line
+(setq display-time-format "%a %d %b %H:%M")
+(setq display-time-default-load-average nil)
+(display-time-mode 1)
