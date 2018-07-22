@@ -17,7 +17,7 @@
     :ensure t)
 
   (ivy-mode 1)
-  (setq ivy-use-virtual-buffers t)
+  (setq ivy-use-virtual-buffers nil)
   (setq ivy-count-format "%d/%d ")
   (setq enable-recursive-minibuffers t)
   (setq ivy-re-builders-alist
