@@ -1,3 +1,2 @@
 #!/usr/bin/env bash
-oathtool --totp --base32 "$(pass $1 | head -n 1)" | xclip -selection clipboard
-echo "Copied totp for $1 to clipboard."
+oathtool --totp --base32 "$(pass $1 | head -n 1)"
