@@ -1,18 +1,17 @@
 export CLICOLOR=1
 export HISTCONTROL=ignoredups
-export VISUAL=emacsclient
+export VISUAL='emacsclient -a "" -c'
 export EDITOR="$VISUAL"
 
-PATH=~/.bin:"$PATH"
-PATH=bin:"$PATH"
-export PATH
+# user scripts
+export PATH=$HOME/.bin:$PATH
 
-bash_completion="/usr/share/bash-completion/bash_completion"
-if [ -r "$bash_completion" ]; then
-    source "$bash_completion"
-    source $HOME/.bin/totp_completion
-fi
-unset bash_completion
+# bash_completion="/usr/share/bash-completion/bash_completion"
+# if [ -r "$bash_completion" ]; then
+#     source "$bash_completion"
+#     source $HOME/.bin/totp_completion
+# fi
+# unset bash_completion
 _git_prompt() {
     local ref="$(command git symbolic-ref -q HEAD 2>/dev/null)"
     if [ -n "$ref" ]; then
@@ -23,20 +22,13 @@ _git_prompt() {
 PS1='\[$(tput setaf 2)\]\W$(_git_prompt)\[$(tput sgr0)\]\[$(tput setaf 1)\] » \[$(tput sgr0)\]'
 
 # ruby 2 path
-source $HOME/.bin/share/chruby/chruby.sh
-chruby ruby-2.3.5
-
-# homebrew path
-export PATH=/usr/local/bin:$PATH
-
-# emacs
-alias e='emacsclient -t'
-alias ec='emacsclient -c'
+export PATH=$HOME/.gem/ruby/2.5.0/bin:$PATH
+# source $HOME/.bin/share/chruby/chruby.sh
+# chruby ruby-2.3.5
 
 # golang
 export GOPATH=$HOME/golang
 export PATH=$GOPATH/bin:$PATH
-
 
 # dircolors
 # eval $(dircolors -b $HOME/.config/dircolors)
@@ -45,6 +37,8 @@ export PATH=$GOPATH/bin:$PATH
 alias ls='ls -h --color=auto'
 alias rm='rm -iv'
 alias gpg='gpg2'
+alias e='emacsclient -t'
+alias ec='emacsclient -c'
 
 # colored pager
 export LESS=-R
