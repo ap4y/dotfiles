@@ -182,3 +182,6 @@
 (setq display-time-format "%a %d %b %H:%M")
 (setq display-time-default-load-average nil)
 (display-time-mode 1)
+
+;; start server
+(server-start)
