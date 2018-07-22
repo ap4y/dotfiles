@@ -22,6 +22,8 @@
   (setq eshell-history-size (* 10 1024))
   (setq eshell-hist-ignoredups t)
 
+  (push 'eshell-tramp eshell-modules-list)
+
   (setq ap4y/eshell-truncate-timer
         (run-with-idle-timer 5 t #'ap4y/truncate-eshell-buffers)))
 
