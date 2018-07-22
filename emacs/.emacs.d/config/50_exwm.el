@@ -6,6 +6,9 @@
   (require 'exwm-config)
   (exwm-config-ido)
 
+  ;; auto-hide minibuffer
+  ;; (setq exwm-workspace-minibuffer-position 'bottom)
+
   ;; force tiling
   ;; (setq exwm-manage-force-tiling nil)
   ;; (setq exwm-workspace-show-all-buffers t)
@@ -17,7 +20,7 @@
               (exwm-workspace-rename-buffer exwm-class-name)))
   (add-hook 'exwm-update-title-hook
             (lambda ()
-              (exwm-workspace-rename-buffer exwm-class-name)))
+              (exwm-workspace-rename-buffer exwm-title)))
 
   ;; toggle passthrough
   (defun toggle-exwm-input-line-mode-passthrough ()
@@ -71,13 +74,24 @@
     (exwm-input-set-key (kbd (format "<f%d>" (+ i 1)))
                         `(lambda ()
                            (interactive)
-                           (exwm-workspace-switch-create ,i)
-                           (set-frame-parameter nil 'internal-border-width 15))))
+                           (exwm-workspace-switch-create ,i))))
 
   (exwm-input-set-key (kbd "s-d")
                       (lambda (command)
                         (interactive (list (read-shell-command "~ » ")))
                         (start-process-shell-command command nil command)))
+
+  (exwm-input-set-key (kbd "s-<return>")
+                      (lambda () (interactive)
+                        (start-process-shell-command "" nil "urxvtc")))
+
+  (exwm-input-set-key (kbd "<XF86AudioLowerVolume>")
+                      (lambda () (interactive)
+                        (start-process-shell-command "" nil "pactl set-sink-volume 0 -5%")))
+
+  (exwm-input-set-key (kbd "<XF86AudioRaiseVolume>")
+                      (lambda () (interactive)
+                        (start-process-shell-command "" nil "pactl set-sink-volume 0 +5%")))
 
   ;; Set up emacs emulation bindings for line mode.
   (exwm-input-set-simulation-keys
@@ -91,10 +105,21 @@
      ([?\M-w] . ?\C-c)
      ([?\C-y] . ?\C-v)))
 
+  (dolist (k '(XF86AudioLowerVolume
+               XF86AudioRaiseVolume
+               XF86AudioMute
+               XF86AudioPlay
+               XF86AudioStop
+               XF86AudioPrev
+               XF86AudioNext
+               ?\s-r))
+    (cl-pushnew k exwm-input-prefix-keys))
+
   ;; multi-monitor
   (require 'exwm-randr)
   (add-hook 'exwm-randr-screen-change-hook
             (lambda ()
               (start-process-shell-command "xrandr" nil "xrandr --output DP1 --auto --primary")
-              (start-process-shell-command "bar" nil "lbar")))
+              ;; (start-process-shell-command "bar" nil "lbar")
+              ))
   (exwm-randr-enable))
