@@ -28,35 +28,39 @@ xset fp rehash
 wal -i ~/wall-2.jpg
 
 # color profile
-# xcalib ~/.color/icc/xps_15.icm
+# xcalib ~/.color/icc/dell_u2515h.icc
 
 # Composite manager
 # compton -b
 
+# set dpi
+xrandr --dpi 117
+xrandr --output DP-0 --auto --rotate left --output HDMI-0 --auto --left-of DP-0
+
 # Background
 sh ~/.fehbg
-
-# set dpi
-# xrandr --dpi 117
 
 # Redshift
 # redshift -l -36.84846:174.763332 -m randr:preserve=1 &
 
 # auto lock
-# xautolock -time 10 -locker slock &
+xautolock -time 5 -locker slock &
+xautolock -time 10 -locker 'sudo zzz' &
 
 # urxvt daemon
-urxvtd -q -f -o &
+# urxvtd -q -f -o &
 
 # keyboard layout
 setxkbmap -model pc105 -layout us,ru -option grp:win_space_toggle
 
 # start mail fetcher
-mail &
+# mail &
 
 # start mpd
 mpd &
 
 # emacs --daemon -f exwm-enable
 # exec emacsclient -c
-exec emacs --eval '(exwm-enable)'
+# exec emacs --eval '(exwm-enable)'
+# exec i3
+exec tdm --xstart

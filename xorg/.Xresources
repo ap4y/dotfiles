@@ -1,5 +1,5 @@
 !! urxvt
-#define commonFont xft:Iosevka Medium:size=10:antialias=true
+#define commonFont xft:Iosevka:size=10:antialias=true
 
 URxvt.font:           commonFont
 URxvt.boldFont:       commonFont
