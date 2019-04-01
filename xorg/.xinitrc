@@ -44,8 +44,9 @@ sh ~/.fehbg
 # redshift -l -36.84846:174.763332 -m randr:preserve=1 &
 
 # auto lock
-xautolock -time 5 -locker slock &
-xautolock -time 10 -locker 'sudo zzz' &
+xautolock -detectsleep -secure -noclose \
+          -time 5 -locker 'pkill -9 scdaemon; i3lock-fancy -n -- scrot -z' \
+          -killtime 10 -killer 'sudo zzz; pasuspender /bin/true' &
 
 # urxvt daemon
 # urxvtd -q -f -o &
