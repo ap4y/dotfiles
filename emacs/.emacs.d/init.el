@@ -51,7 +51,8 @@
         winum
         yaml-mode
         yari
-        yasnippet))
+        yasnippet
+        zoom))
 
 ;; fetch the list of packages available
 (unless (file-exists-p package-user-dir)
@@ -189,6 +190,9 @@
 (setq epa-pinentry-mode 'loopback)
 (when (require 'pinentry nil t)
   (pinentry-start))
+(defun pinentry-emacs (desc prompt ok error)
+  (let ((str (read-passwd (concat (replace-regexp-in-string "%22" "\"" (replace-regexp-in-string "%0A" "\n" desc)) prompt ": "))))
+    str))
 
 ;; Display time in mode line
 (setq display-time-format "%a %d %b %H:%M")
@@ -228,6 +232,12 @@
 (use-package winner
   :bind (("C-c l" . winner-undo)
          ("C-c ;" . winner-redo)))
+
+(use-package zoom
+  :bind ("C-x +" . zoom)
+  :config
+  (custom-set-variables
+   '(zoom-size '(0.618 . 0.618))))
 
 (use-package winum
   :config
@@ -901,10 +911,11 @@
 (use-package company
   :commands company-mode
   :config
-  (setq company-idle-delay 0.5)
+  (global-set-key (kbd "TAB") #'company-indent-or-complete-common)
+  (setq company-idle-delay nil)
   (setq company-tooltip-limit 10)
   (setq company-minimum-prefix-length 2)
-  (setq company-tooltip-flip-when-above t))
+  (setq company-tooltip-flip-when-above nil))
 
 ;;;; format-all
 (use-package format-all
@@ -918,7 +929,7 @@
               ("M-p" . flycheck-previous-error))
   :config
   ;; disable checkers
-  (setq-default flycheck-disabled-checkers '(go-megacheck go-errcheck go-unconvert go-gofmt go-golint go-vet))
+  (setq-default flycheck-disabled-checkers '(go-megacheck go-errcheck go-unconvert go-gofmt go-vet))
 
   ;; because git-gutter is in the left fringe
   (setq flycheck-indication-mode 'right-fringe)
