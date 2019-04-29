@@ -768,7 +768,7 @@
     (interactive)
     (when (y-or-n-p "Do you want to start IRC? ")
       ;; (erc-tls :server "irc.freenode.net" :port 6697 :nick "ap4y")
-      (erc-tls :server "ap4y.me" :port 6698 :nick "ap4y/ap4y")))
+      (erc :server "ap4y.me" :port 6697 :nick "ap4y")))
 
   (defun stop-irc ()
     "Disconnects from all irc servers"
@@ -837,7 +837,8 @@
   (setq erc-server-coding-system '(utf-8 . utf-8))
 
   (setq erc-autojoin-channels-alist
-        '(("freenode.net" "#ruby-lang" "#openbsd" "#voidlinux" "#go-nuts")))
+        '(("freenode.net" "#ruby-lang" "#openbsd" "#voidlinux" "#go-nuts")
+          ("ap4y.me" "#thelounge")))
   (setq erc-hide-list '("JOIN" "PART" "QUIT" "MODE"))
 
   ;; Dynamically fill buffers

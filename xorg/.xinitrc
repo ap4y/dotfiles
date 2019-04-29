@@ -30,26 +30,17 @@ wal -i ~/wall-2.jpg
 # color profile
 # xcalib ~/.color/icc/dell_u2515h.icc
 
-# Composite manager
-# compton -b
-
 # set dpi
 xrandr --dpi 117
-xrandr --output DP-0 --auto --rotate left --output HDMI-0 --auto --left-of DP-0
+xrandr --output DisplayPort-1 --auto --rotate left --output HDMI-A-0 --auto --left-of DisplayPort-1 --primary
 
 # Background
 sh ~/.fehbg
-
-# Redshift
-# redshift -l -36.84846:174.763332 -m randr:preserve=1 &
 
 # auto lock
 xautolock -detectsleep -secure -noclose \
           -time 5 -locker 'pkill -9 scdaemon; i3lock-fancy -n -- scrot -z' \
           -killtime 10 -killer 'sudo zzz; pasuspender /bin/true' &
-
-# urxvt daemon
-# urxvtd -q -f -o &
 
 # keyboard layout
 setxkbmap -model pc105 -layout us,ru -option grp:win_space_toggle
@@ -60,8 +51,6 @@ setxkbmap -model pc105 -layout us,ru -option grp:win_space_toggle
 # start mpd
 mpd &
 
-# emacs --daemon -f exwm-enable
-# exec emacsclient -c
 # exec emacs --eval '(exwm-enable)'
 # exec i3
 exec tdm --xstart
