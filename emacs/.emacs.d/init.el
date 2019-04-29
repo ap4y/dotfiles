@@ -8,14 +8,15 @@
 (setq ap4y/package-list
       '(ag
         alert
-        ;; all-the-icons
-        ;; all-the-icons-ivy
-        ;; all-the-icons-dired
+        all-the-icons
+        all-the-icons-ivy
+        all-the-icons-dired
         avy
         buffer-move
         company
         counsel
         doom-modeline
+        doom-themes
         dumb-jump
         eglot
         elfeed
@@ -280,27 +281,27 @@
 (set-frame-font "Iosevka-10")
 
 ;;;; all-the-icons
-;; (use-package all-the-icons
-;;   :config
-;;   (use-package all-the-icons-ivy
-;;     :init
-;;     (setq all-the-icons-ivy-file-commands
-;;           '(counsel-find-file counsel-fzf counsel-ag))
-;;     :config
-;;     (all-the-icons-ivy-setup))
+(use-package all-the-icons
+  :config
+  (use-package all-the-icons-ivy
+    :init
+    (setq all-the-icons-ivy-file-commands
+          '(counsel-find-file counsel-fzf counsel-ag))
+    :config
+    (all-the-icons-ivy-setup))
 
-;;   (use-package all-the-icons-dired
-;;     :preface
-;;     (defun dired-mode-setup ()
-;;       (font-lock-mode 0)
-;;       (all-the-icons-dired-mode))
-;;     :init
-;;     (add-hook 'dired-mode-hook 'dired-mode-setup)))
+  (use-package all-the-icons-dired
+    :preface
+    (defun dired-mode-setup ()
+      (font-lock-mode 0)
+      (all-the-icons-dired-mode))
+    :init
+    (add-hook 'dired-mode-hook 'dired-mode-setup)))
 
 ;;;; Color theme
-(use-package nord-theme
+(use-package doom-themes
   :config
-  (load-theme 'nord t))
+  (load-theme 'doom-nord t))
 
 ;;;; Highlight
 (global-hl-line-mode +1)
