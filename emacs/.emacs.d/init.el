@@ -583,7 +583,7 @@
 
   ;; multi-monitor
   (require 'exwm-randr)
-  (setq exwm-randr-workspace-output-plist '(3 "HDMI-0" 0 "DP-0" 1 "DP-0" 2 "DP-0"))
+  (setq exwm-randr-workspace-output-plist '(3 "HDMI-A-0" 0 "DisplayPort-1" 1 "DisplayPort-1" 2 "DisplayPort-1"))
   (add-hook 'exwm-randr-screen-change-hook
             (lambda ()
               ;; (start-process-shell-command "xrandr" nil "xrandr --output DP-0 --auto --primary")
