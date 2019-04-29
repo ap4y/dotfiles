@@ -987,7 +987,7 @@
              whitespace-mode
              whitespace-mode)
   :config
-  (setq whitespace-line-column 80)
+  (setq whitespace-line-column 120)
   (setq whitespace-style '(face tabs empty trailing lines-tail)))
 
 ;;;; projectile
