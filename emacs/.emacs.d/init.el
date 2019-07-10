@@ -691,40 +691,14 @@
     :port 3000)
 
   (prodigy-define-service
-    :name "MySQL container"
-    :sudo t
-    :command "rkt"
-    :args '("--insecure-options=image" "run" "--net=host" "docker://mysql" "--environment=MYSQL_ROOT_PASSWORD=root"))
-
-  (prodigy-define-service
     :name "Postgres container"
-    :sudo t
-    :command "rkt"
-    :args '("--insecure-options=image" "run" "--net=host" "docker://postgres"))
+    :command "docker"
+    :args '("run" "--rm" "-p" "5432:5432" "postgres"))
 
   (prodigy-define-service
     :name "Redis container"
-    :sudo t
-    :command "rkt"
-    :args '("--insecure-options=image" "run" "--net=host" "--interactive" "docker://redis"))
-
-  (prodigy-define-service
-    :name "ETCD container"
-    :sudo t
-    :command "rkt"
-    :args '("--insecure-options=image" "run" "--net=host" "docker://microbox/etcd" "--" "-name" "localhost"))
-
-  (prodigy-define-service
-    :name "ETCD v3 container"
-    :sudo t
-    :command "rkt"
-    :args '("--insecure-options=image" "run" "--net=host" "quay.io/coreos/etcd"))
-
-  (prodigy-define-service
-    :name "ES container"
-    :sudo t
-    :command "rkt"
-    :args '("--insecure-options=image" "run" "--net=host" "docker://elasticsearch:2.4")))
+    :command "docker"
+    :args '("run" "--rm" "-p" "6379:6379" "redis")))
 
 ;;;; mu4e
 (use-package mu4e
