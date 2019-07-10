@@ -22,7 +22,6 @@
         elfeed
         expand-region
         exwm
-        format-all
         flycheck
         flx
         fringe-helper
@@ -42,6 +41,7 @@
         projectile
         rainbow-delimiters
         rainbow-mode
+        reformatter
         rjsx-mode
         ruby-test-mode
         scrollkeeper
@@ -919,9 +919,29 @@
   (setq company-minimum-prefix-length 2)
   (setq company-tooltip-flip-when-above nil))
 
-;;;; format-all
-(use-package format-all
-  :commands (format-all-buffer format-all-mode))
+;;;; reformatter
+(use-package reformatter
+  :config
+  (reformatter-define format-ruby
+    :group 'formatter
+    :program "rufo"
+    :args '("--simple-exit"))
+  (reformatter-define format-ruby-prettier
+    :group 'formatter
+    :program "prettier"
+    :args '("--parser" "ruby" "--stdin"))
+  (reformatter-define format-css
+    :group 'formatter
+    :program "prettier"
+    :args '("--parser" "css" "--stdin"))
+  (reformatter-define format-js
+    :group 'formatter
+    :program "prettier"
+    :args '("--parser" "babel" "--stdin"))
+  (reformatter-define format-html
+    :group 'formatter
+    :program "prettier"
+    :args '("--parser" "html" "--stdin")))
 
 ;;;; flycheck
 (use-package flycheck
@@ -1044,7 +1064,7 @@
   (defun ap4y/ruby-mode-defaults ()
     (subword-mode +1)
 
-    (add-hook 'before-save-hook 'format-all-buffer nil t))
+    (add-hook 'before-save-hook 'format-ruby-prettier nil t))
   :init
   (use-package ruby-test-mode)
   :config
@@ -1107,7 +1127,7 @@
     (js2-imenu-extras-mode +1)
     (subword-mode)
 
-    (add-hook 'before-save-hook 'format-all-buffer nil t))
+    (add-hook 'before-save-hook 'format-js nil t))
   :config
   (add-hook 'js2-mode-hook 'ap4y/js-mode-defaults)
   (setq js2-basic-offset 2))
@@ -1131,7 +1151,8 @@
   :preface
   (defun ap4y/css-mode-defaults ()
     (rainbow-mode +1)
-    (run-hooks 'ap4y/prog-mode-defaults))
+    (run-hooks 'ap4y/prog-mode-defaults)
+    (add-hook 'before-save-hook 'format-css nil t))
   :config
   (add-hook 'css-mode-hook 'ap4y/css-mode-defaults)
   (setq css-indent-offset 2)
