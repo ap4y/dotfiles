@@ -12,10 +12,10 @@ localfolders = ~/Maildir
 
 [Repository Remote]
 type = IMAP
-remotehost = cloud.ap4y.me
+remotehost = nas
 remoteuser = ap4y
 remotepasseval = get_pass()
-ssl = yes
+ssl = no
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 maxconnections = 3
 realdelete = no
