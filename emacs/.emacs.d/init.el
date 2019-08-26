@@ -579,6 +579,16 @@
                ?\s-r))
     (cl-pushnew k exwm-input-prefix-keys))
 
+  ;; KDE fixes
+  (setq exwm-manage-configurations
+        '(
+          ((equal exwm-class-name "krunner")
+           managed nil)
+          ((equal exwm-class-name "plasmashell")
+           managed nil)
+          ))
+  (setq exwm-workspace-switch-create-limit 10)
+
   ;; multi-monitor
   (require 'exwm-randr)
   (setq exwm-randr-workspace-output-plist '(3 "HDMI-A-0" 4 "HDMI-A-0" 0 "DisplayPort-1" 1 "DisplayPort-1" 2 "DisplayPort-1"))
