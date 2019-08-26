@@ -542,14 +542,17 @@
                            (interactive)
                            (exwm-workspace-switch-create ,i))))
 
+  ;; (exwm-input-set-key (kbd "s-d")
+  ;;                     (lambda (command)
+  ;;                       (interactive (list (read-shell-command "~ » ")))
+  ;;                       (start-process-shell-command command nil command)))
   (exwm-input-set-key (kbd "s-d")
-                      (lambda (command)
-                        (interactive (list (read-shell-command "~ » ")))
-                        (start-process-shell-command command nil command)))
+                      (lambda () (interactive)
+                        (start-process-shell-command "" nil "krunner")))
 
   (exwm-input-set-key (kbd "s-<return>")
                       (lambda () (interactive)
-                        (start-process-shell-command "" nil "alacritty")))
+                        (start-process-shell-command "" nil "konsole")))
 
   (exwm-input-set-key (kbd "<XF86AudioLowerVolume>")
                       (lambda () (interactive)
@@ -702,7 +705,7 @@
 ;;;; mu4e
 (use-package mu4e
   :commands mu4e
-  :load-path "/usr/share/emacs/site-lisp/mu4e"
+  :load-path "/usr/share/emacs/site-lisp/mu"
   :config
   (setq mu4e-sent-folder "/Sent")
   (setq mu4e-drafts-folder "/Drafts")

@@ -2,5 +2,3 @@
 
 # Get the aliases and functions
 [ -f $HOME/.bashrc ] && . $HOME/.bashrc
-
-tdm --disable-xrunning-check
