@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=XSession
+Exec=env KDEWM=/usr/bin/emacs /usr/bin/startkde
+TryExec=/usr/bin/startkde
+DesktopNames=KDE
+Name=Plasma (EXWM)
+Comment=Plasma by KDE with EXWM
+X-KDE-PluginInfo-Version=5.15.5

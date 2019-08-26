@@ -1,0 +1,4 @@
+sys-kernel/linux-firmware linux-fw-redistributable no-source-code
+www-client/google-chrome google-chrome
+app-office/upwork ODESK
+games-util/steam-launcher ValveSteamLicense
