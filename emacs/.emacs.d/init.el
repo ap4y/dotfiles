@@ -34,7 +34,6 @@
         js2-mode
         ledger-mode
         magit
-        nord-theme
         outshine
         password-store
         prodigy
