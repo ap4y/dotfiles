@@ -44,7 +44,6 @@
         reformatter
         rjsx-mode
         ruby-test-mode
-        scrollkeeper
         smartparens
         use-package
         web-mode
@@ -458,10 +457,6 @@
 (use-package expand-region
   :bind (("C-=" . er/expand-region)
          ("C--" . er/contract-region)))
-
-(use-package scrollkeeper
-  :bind (([remap scroll-down-command] . scrollkeeper-contents-down)
-         ([remap scroll-up-command] . scrollkeeper-contents-up)))
 
 ;;; EXWM
 (use-package exwm
