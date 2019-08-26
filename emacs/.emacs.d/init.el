@@ -680,22 +680,19 @@
   :commands prodigy
   :config
   (prodigy-define-service
-    :name "Knowlabel app"
-    :cwd "/home/ap4y/git/knowlabel_app"
-    :path "/home/ap4y/git/knowlabel_app/bin"
-    :command "rails"
-    :args '("s")
-    :port 3000)
+    :name "Devdocs"
+    :command "podman"
+    :args '("--cgroup-manager" "cgroupfs" "run" "--rm" "--net" "host" "devdocs"))
 
   (prodigy-define-service
-    :name "Postgres container"
-    :command "docker"
-    :args '("run" "--rm" "-p" "5432:5432" "postgres"))
+    :name "Postgres"
+    :command "podman"
+    :args '("--cgroup-manager" "cgroupfs" "run" "--rm" "--net" "host" "postgres"))
 
   (prodigy-define-service
-    :name "Redis container"
-    :command "docker"
-    :args '("run" "--rm" "-p" "6379:6379" "redis")))
+    :name "Redis"
+    :command "podman"
+    :args '("--cgroup-manager" "cgroupfs" "run" "--rm" "--net" "host" "redis")))
 
 ;;;; mu4e
 (use-package mu4e
