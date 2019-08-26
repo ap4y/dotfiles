@@ -1155,6 +1155,7 @@
          ("C-c h r e" . devdocs-lookup-react)
          ("C-c h r n" . devdocs-lookup-react_native))
   :config
+  (setq devdocs-base-url "http://localhost:9292")
   (setq devdocs-subjects '(("Go" "go") ("JavaScript" "javascript")
                            ("Ruby on Rails" "rails") ("React" "react")
                            ("React Native" "react_native")
