@@ -714,7 +714,8 @@
   (setq mu4e-drafts-folder "/Drafts")
   (setq mu4e-trash-folder "/Trash")
 
-  (setq mu4e-get-mail-command "offlineimap")
+  (setq mu4e-get-mail-command "mbsync ap4y")
+  (setq mu4e-change-filenames-when-moving t)
 
   (require 'smtpmail)
   (setq message-send-mail-function 'smtpmail-send-it
