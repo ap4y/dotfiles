@@ -6,7 +6,7 @@ export EDITOR="$VISUAL"
 # user scripts
 export PATH=$HOME/.bin:$PATH
 
-# ruby 2 path
+# ruby path
 export PATH=$HOME/.gem/ruby/2.6.0/bin:$PATH
 
 # golang
@@ -14,6 +14,8 @@ export GOPATH=$HOME/golang
 export PATH=$GOPATH/bin:$PATH
 export GO111MODULE=on
 
+# pip path
+export PATH=$HOME/.local/bin:$PATH
 
 # aliases
 alias ls='ls -h --color=auto'
