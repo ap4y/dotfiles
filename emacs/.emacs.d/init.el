@@ -1239,3 +1239,7 @@
   :bind (("C-x p" . password-store-copy))
   :config
   (setq password-store-password-length 30))
+
+(when (and (getenv "KDEWM")
+           (string-match-p (regexp-quote "emacs") (getenv "KDEWM")))
+  (exwm-enable))
