@@ -20,7 +20,7 @@
         doom-modeline
         doom-themes
         dumb-jump
-        eglot
+        ;; eglot
         elfeed
         expand-region
         exwm
@@ -35,6 +35,8 @@
         inf-ruby
         js2-mode
         ledger-mode
+        lsp-ui
+        lsp-mode
         magit
         outshine
         password-store
@@ -1031,10 +1033,16 @@
   (define-key projectile-mode-map (kbd "C-c C-p") 'projectile-command-map))
 
 ;;;; eglot
-(use-package eglot
-  :commands (eglot-ensure eglot)
-  :bind (:map eglot-mode-map
-              ("M-g h" . eglot-help-at-point)))
+;; (use-package eglot
+;;   :commands (eglot-ensure eglot)
+;;   :bind (:map eglot-mode-map
+;;               ("M-g h" . eglot-help-at-point)))
+;;;; lsp-mode
+(use-package lsp-mode
+  :commands lsp
+  :config (setq lsp-prefer-flymake nil))
+(use-package lsp-ui
+  :commands lsp-ui-mode)
 ;;;; prog-mode
 (defun ap4y/prog-mode-defaults ()
   (yas-minor-mode)
