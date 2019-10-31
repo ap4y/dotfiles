@@ -40,6 +40,8 @@
         magit
         outshine
         password-store
+        pytest
+        pyvenv
         prodigy
         projectile
         rainbow-delimiters
@@ -953,7 +955,10 @@
   (reformatter-define format-html
     :group 'formatter
     :program "prettier"
-    :args '("--parser" "html" "--stdin")))
+    :args '("--parser" "html" "--stdin"))
+  (reformatter-define format-python
+    :group 'formatter
+    :program "yapf"))
 
 ;;;; flycheck
 (use-package flycheck
@@ -1133,6 +1138,20 @@
 ;;;;; eldoc
 (use-package go-eldoc
   :commands godoc-at-point)
+
+;;;; python
+(defun ap4y/python-mode-defaults ()
+  ;; format on save
+  (add-hook 'before-save-hook 'format-python nil t))
+(add-hook 'python-mode-hook 'ap4y/python-mode-defaults)
+(use-package pyvenv
+  :commands pyvenv-activate)
+(use-package pytest
+  :bind (:map python-mode-map
+              ("C-c a" . pytest-all)
+              ("C-c m" . pytest-module)
+              ("C-c ." . pytest-one)
+              ("C-c /" . ff-find-other-file)))
 
 ;;;; javascript
 (use-package js2-mode
