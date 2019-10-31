@@ -1238,4 +1238,4 @@
   :commands (password-store-copy password-store-generate)
   :bind (("C-x p" . password-store-copy))
   :config
-  (setq password-store-password-length 10))
+  (setq password-store-password-length 30))
