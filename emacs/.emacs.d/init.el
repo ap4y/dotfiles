@@ -13,6 +13,8 @@
         all-the-icons-dired
         avy
         buffer-move
+        circe
+        circe-notifications
         company
         counsel
         doom-modeline
@@ -729,6 +731,37 @@
   (setq mu4e-html2text-command "w3m -T text/html")
   (add-to-list 'mu4e-view-actions
                '("ViewInBrowser" . mu4e-action-view-in-browser) t))
+
+;;;; Circe
+(use-package circe
+  :commands circe
+  :preface
+  (defun ap4y/circe-get-password (host &optional user)
+    "Return password for HOST and USER."
+    (let ((match (car (auth-source-search :host host :user user))))
+      (if match
+          (let ((secret (plist-get match :secret)))
+            (if (functionp secret)
+                (funcall secret)
+              secret))
+        (error "Password not found for %S" params))))
+  :config
+  (setq circe-default-nick "ap4y")
+  (setq circe-reduce-lurker-spam t)
+  (setq-default circe-sasl-username "ap4y")
+  (setq-default circe-nickserv-nick "ap4y")
+  (setq-default circe-sasl-password #'ap4y/circe-get-password)
+  (setq-default circe-nickserv-password #'ap4y/circe-get-password)
+
+  (setq circe-network-options
+        '(("Freenode"
+           :tls t
+           :port 6697
+           :channels ("#ruby" "#openbsd" "#gentoo" "#go-nuts" "#emacs")))))
+
+(use-package circe-notifications
+  :after circe
+  :hook ((circe-server-connected . enable-circe-notifications)))
 
 ;;;; ERC
 ;;;;; Core settings
