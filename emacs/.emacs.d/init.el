@@ -1,6 +1,8 @@
 ;;; Setup package system
 (require 'package)
 (setq package-enable-at-startup nil)
+(setq package-quickstart-refresh t)
+(setq package-user-dir (expand-file-name "packages" user-emacs-directory))
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (package-initialize)
 
@@ -80,9 +82,19 @@
 ;; custom themes folder
 (add-to-list 'custom-theme-load-path (expand-file-name "themes" user-emacs-directory))
 
-;; reduce the frequency of garbage collection by making it happen on
-;; each 50MB of allocated data (the default is on every 0.76MB)
-(setq gc-cons-threshold 100000000)
+;; The GC can easily double startup time, so we suppress it at startup
+;; by turning up gc-cons-threshold (and perhaps gc-cons-percentage)
+;; temporarily
+(setq gc-cons-threshold most-positive-fixnum ; 2^61 bytes
+      gc-cons-percentage 0.6)
+;; However, it is important to reset it eventually. Not doing so will
+;; cause garbage collection freezes during long-term interactive
+;; use. Conversely, a gc-cons-threshold that is too small will cause
+;; stuttering. We use 16mb as our default.
+(add-hook 'emacs-startup-hook
+  (lambda ()
+    (setq gc-cons-threshold 16777216 ; 16mb
+          gc-cons-percentage 0.1)))
 
 ;; warn when opening files bigger than 100MB
 (setq large-file-warning-threshold 100000000)
@@ -282,7 +294,6 @@
 
 ;;;; Typography
 (set-face-attribute 'default nil :font "Iosevka-10")
-(set-frame-font "Iosevka-10")
 
 ;;;; all-the-icons
 (use-package all-the-icons
