@@ -709,7 +709,7 @@
   (prodigy-define-service
     :name "Postgres"
     :command "podman"
-    :args '("--cgroup-manager" "cgroupfs" "run" "--rm" "--net" "host" "postgres"))
+    :args '("--cgroup-manager" "cgroupfs" "run" "--rm" "--net" "host" "-e" "POSTGRES_HOST_AUTH_METHOD=trust" "postgres"))
 
   (prodigy-define-service
     :name "Redis"
