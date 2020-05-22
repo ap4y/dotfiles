@@ -1,0 +1,17 @@
+IMAPStore remote-ap4y
+Host cloud.ap4y.me
+User ap4y
+PassCmd "pass ap4y.me/mail"
+SSLType IMAPS
+
+MaildirStore local-ap4y
+Subfolders Verbatim
+Path ~/.mail/ap4y/
+Inbox ~/.mail/ap4y/INBOX
+
+Channel ap4y
+Master :remote-ap4y:
+Slave :local-ap4y:
+Patterns * !archive !Notes
+Create Both
+SyncState *
