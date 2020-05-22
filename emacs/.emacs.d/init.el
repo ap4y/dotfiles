@@ -637,6 +637,9 @@
         '((swiper . ivy--regex-plus)
           (t      . ivy--regex-fuzzy))))
 
+;;; Evil
+(use-package evil) ;; only use evil-local-mode
+
 ;;; System
 ;;;; Eshell
 (use-package eshell
@@ -1067,6 +1070,7 @@
   (git-gutter-mode)
   (setq comment-auto-fill-only-comments t)
   (display-line-numbers-mode)
+  (evil-local-mode)
   (add-hook 'before-save-hook 'whitespace-cleanup nil t))
 (add-hook 'prog-mode-hook 'ap4y/prog-mode-defaults)
 
