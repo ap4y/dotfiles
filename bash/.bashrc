@@ -7,7 +7,7 @@ export EDITOR="$VISUAL"
 export PATH=$HOME/.bin:$PATH
 
 # ruby path
-export PATH=$HOME/.gem/ruby/2.6.0/bin:$PATH
+export PATH=$HOME/.gem/ruby/2.7.0/bin:$PATH
 
 # golang
 export GOPATH=$HOME/golang
