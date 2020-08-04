@@ -17,6 +17,7 @@
         buffer-move
         circe
         circe-notifications
+        clipetty
         company
         counsel
         doom-modeline
@@ -231,6 +232,10 @@
 ;; better delimiters hightling
 (use-package rainbow-delimiters
   :commands rainbow-delimiters-mode)
+
+;; copy paste from terminal
+(use-package clipetty
+  :hook (after-init . global-clipetty-mode))
 
 ;; fringe glyphs
 (use-package fringe-helper)
