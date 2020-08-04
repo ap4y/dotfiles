@@ -1078,6 +1078,7 @@
   (setq comment-auto-fill-only-comments t)
   (display-line-numbers-mode)
   (evil-local-mode)
+  (evil-escape-mode)
   (add-hook 'before-save-hook 'whitespace-cleanup nil t))
 (add-hook 'prog-mode-hook 'ap4y/prog-mode-defaults)
 
