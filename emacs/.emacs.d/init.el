@@ -554,13 +554,15 @@
   ;;                     (lambda (command)
   ;;                       (interactive (list (read-shell-command "~ » ")))
   ;;                       (start-process-shell-command command nil command)))
-  (exwm-input-set-key (kbd "s-d")
+  (exwm-input-set-key (kbd "s-d") 'counsel-linux-app)
+
+  (exwm-input-set-key (kbd "s-l")
                       (lambda () (interactive)
-                        (start-process-shell-command "" nil "krunner")))
+                        (start-process-shell-command "" nil "loginctl suspend")))
 
   (exwm-input-set-key (kbd "s-<return>")
                       (lambda () (interactive)
-                        (start-process-shell-command "" nil "konsole")))
+                        (start-process-shell-command "" nil "alacritty")))
 
   (exwm-input-set-key (kbd "<XF86AudioLowerVolume>")
                       (lambda () (interactive)
@@ -603,9 +605,10 @@
   (setq exwm-workspace-switch-create-limit 10)
 
   ;; multi-monitor
-  (require 'exwm-randr)
-  (setq exwm-randr-workspace-output-plist '(3 "HDMI-A-0" 4 "HDMI-A-0" 0 "DisplayPort-1" 1 "DisplayPort-1" 2 "DisplayPort-1"))
-  (exwm-randr-enable))
+  ;; (require 'exwm-randr)
+  ;; (setq exwm-randr-workspace-output-plist '(3 "HDMI-A-0" 4 "HDMI-A-0" 0 "DisplayPort-1" 1 "DisplayPort-1" 2 "DisplayPort-1"))
+  ;; (exwm-randr-enable)
+  )
 
 ;;; Ivy
 (use-package counsel
