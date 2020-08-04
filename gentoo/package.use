@@ -10,7 +10,7 @@ media-plugins/alsa-plugins pulseaudio
 # misc
 app-crypt/gnupg smartcard
 dev-lang/python sqlite
-app-editors/emacs-vcs xft
+app-editors/emacs xft libxml2 json harfbuzz
 dev-lang/ruby -berkdb -gdbm -rdoc
 net-mail/mu emacs
 dev-db/postgresql -server
@@ -18,9 +18,16 @@ sys-libs/ncurses -gpm
 app-arch/p7zip -kde -wxwidgets
 kde-apps/gwenview raw
 kde-apps/kio-extras mtp
+media-sound/cmus cue -mp4 -alsa -aac -vorbis
+app-i18n/fcitx -enchant
+app-i18n/mozc fcitx4 -gui -handwriting-tegaki
+
+# qemu
+app-arch/zstd abi_x86_32
 
 # video
 media-libs/mesa video_cards_radeonsi abi_x86_32
+media-libs/libglvnd abi_x86_32
 x11-libs/libdrm video_cards_radeon
 
 # steam

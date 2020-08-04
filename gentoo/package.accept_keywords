@@ -3,13 +3,20 @@ sys-kernel/gentoo-sources ~amd64
 
 # misc
 media-fonts/iosevka ~amd64
-kde-misc/colord-kde ~amd64
-app-editors/emacs-vcs ~amd64
+app-editors/emacs ~amd64
 dev-lang/go ~amd64
 net-mail/mu ~amd64
-app-office/upwork ~amd64
 sys-apps/yarn ~amd64
 media-gfx/displaycal ~amd64
+app-emulation/qemu ~amd64
+games-util/gamemode ~amd64
+x11-misc/xcalib ~amd64
+
+# nodejs
+net-libs/nodejs ~amd64
+net-dns/c-ares ~amd64
+dev-libs/libuv ~amd64
+net-libs/nghttp2 ~amd64
 
 # steam
 media-libs/mesa ~amd64
@@ -23,8 +30,8 @@ dev-lang/ruby ~amd64
 dev-ruby/bundler ~amd64
 dev-ruby/rake ~amd64
 virtual/rubygems ~amd64
-app-eselect/eselect-ruby ~amd64
 dev-ruby/rubygems ~amd64
+app-eselect/eselect-ruby ~amd64
 dev-ruby/net-telnet ~amd64
 dev-ruby/test-unit ~amd64
 dev-ruby/power_assert ~amd64
@@ -36,3 +43,15 @@ dev-ruby/minitest ~amd64
 app-emulation/conmon ~amd64
 app-emulation/libpod ~amd64
 app-emulation/slirp4netns ~amd64
+sys-fs/fuse-overlayfs ~amd64
+net-libs/libslirp ~amd64
+app-emulation/crun ~amd64
+net-misc/cni-plugins ~amd64
+
+# zfs
+sys-fs/zfs ~amd64
+sys-fs/zfs-kmod ~amd64
+
+# vfio
+app-emulation/qemu ~amd64
+app-emulation/libvirt ~amd64
