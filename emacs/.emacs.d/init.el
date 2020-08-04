@@ -8,8 +8,7 @@
 
 ;; install required packages
 (setq ap4y/package-list
-      '(ag
-        alert
+      '(alert
         all-the-icons
         all-the-icons-ivy
         all-the-icons-dired
@@ -273,10 +272,6 @@
 ;; code navigation
 (use-package ibuffer
   :bind ("C-x C-b" . ibuffer))
-
-;; better version of grep
-(use-package ag
-  :commands ag)
 
 ;; unique buffer name
 (use-package uniquify
@@ -622,7 +617,7 @@
          ("C-c f" . counsel-recentf)
          ("C-c i" . counsel-imenu)
          ("C-c g" . counsel-git)
-         ("C-c C-s" . counsel-ag)
+         ("C-c C-s" . counsel-rg)
          ("C-c p f" . counsel-fzf)
          ("C-c v" . counsel-push-view)
          ("C-c V" . counsel-pop-view)
