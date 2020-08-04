@@ -25,6 +25,8 @@
         ;; eglot
         elfeed
         expand-region
+        evil
+        evil-escape
         exwm
         flycheck
         flx
@@ -459,11 +461,6 @@
                                 (yank)
                                 (indent-region (region-beginning) (region-end))))
 
-;; jump to lines/chars faster
-(use-package avy
-  :bind (("M-g l" . avy-goto-line)
-         ("M-g c" . avy-goto-char-timer)))
-
 ;; jump to definition
 (use-package dumb-jump
   :bind (("M-g j" . dumb-jump-go)
@@ -638,7 +635,14 @@
           (t      . ivy--regex-fuzzy))))
 
 ;;; Evil
-(use-package evil) ;; only use evil-local-mode
+(use-package evil ;; only use evil-local-mode
+  :commands (evil-local-mode))
+(use-package evil-escape
+  :commands (evil-escape)
+  :config
+  (global-set-key (kbd "C-c C-g") 'evil-escape)
+  (setq-default evil-escape-key-sequence "aa")
+  (setq-default evil-escape-delay 0.2))
 
 ;;; System
 ;;;; Eshell
