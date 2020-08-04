@@ -16,7 +16,9 @@ xset +fp /home/ap4y/.fonts
 xset fp rehash
 
 # Mouse Acceleration Settings
-# xset m 0 0
+xinput set-button-map 'Kensington Expert Mouse' 1 3 1 4 5 6 7 3 9
+xinput set-prop 'Kensington Expert Mouse' 'libinput Accel Speed' 1
+imwheel -d &
 
 # Load Xresources
 [ -f ~/.Xresources ] && xrdb -merge ~/.Xresources
@@ -24,33 +26,43 @@ xset fp rehash
 # Load Xmodmap
 [ -f ~/.Xmodmap ] && xmodmap ~/.Xmodmap
 
-# Restore styles
-wal -i ~/wall-2.jpg
-
 # color profile
-# xcalib ~/.color/icc/dell_u2515h.icc
+xcalib ~/.config/icc/dell_u2515h.icc
 
 # set dpi
 xrandr --dpi 117
-xrandr --output DisplayPort-1 --auto --rotate left --output HDMI-A-0 --auto --left-of DisplayPort-1 --primary
-
-# Background
-sh ~/.fehbg
+# xrandr --output DisplayPort-1 --auto --rotate left --output HDMI-A-0 --auto --left-of DisplayPort-1 --primary
 
 # auto lock
-xautolock -detectsleep -secure -noclose \
-          -time 5 -locker 'pkill -9 scdaemon; i3lock-fancy -n -- scrot -z' \
-          -killtime 10 -killer 'sudo zzz; pasuspender /bin/true' &
+xset s blank
+xset s 180
+xset dpms 0 240 300
+xss-lock -- /usr/bin/i3lock -c 3b4252 &
 
 # keyboard layout
-setxkbmap -model pc105 -layout us,ru -option grp:win_space_toggle
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+# setxkbmap -model pc105 -layout us -option grp:win_space_toggle
+fcitx &
 
-# start mail fetcher
-# mail &
+# notifications
+dunst &
 
-# start mpd
-mpd &
+# background
+~/.fehbg &
 
-# exec emacs --eval '(exwm-enable)'
-# exec i3
-exec tdm --xstart
+session=${1:-exwm}
+
+case $session in
+    exwm              ) exec dbus-launch --sh-syntax --exit-with-session emacs --eval '(exwm-enable)';;
+    openbox           ) exec dbus-launch --sh-syntax --exit-with-session openbox-session;;
+    canvas            )
+        sxhkd &
+        picom --experimental-backends &
+        lbar &
+        exec dbus-launch --sh-syntax --exit-with-session /home/ap4y/git/canvas/canvas
+        ;;
+    # No known session, try to run it as command
+    *                 ) exec $1;;
+esac

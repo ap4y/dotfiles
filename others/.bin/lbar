@@ -1,69 +1,65 @@
-#!/usr/bin/env dash
+#!/usr/bin/env bash
 
-font="${BAR_FONT:-"-*-tewi-*"}"
-icon="${BAR_ICON:-"-*-siji-*"}"
-height="${BAR_HEIGHT:-36}"
+font="${BAR_FONT:-"-*-tamzen-medium-*-15-*"}"
+height="${BAR_HEIGHT:-25}"
 
-get_workspaces() {
-    desktop=$(xdotool get_desktop)
-    workspaces="   "
-    for idx in 0 1 2 3
+get_workspace() {
+    workspace=$(canvasctl current_workspace)
+    case ${workspace} in
+        "1") color="#d08770";;
+        "2") color="#ebcb8b";;
+        "3") color="#a3be8c";;
+        "4") color="#b48ead";;
+    esac
+    printf "%s" "%{U${color}+u}Workspace $workspace%{U-}"
+}
+
+get_buffers() {
+    buffers=$(canvasctl list_buffers)
+    current=$(canvasctl current_buffer)
+    canvasctl list_buffers | while read -r line
     do
-        workspace=$(echo $workspaces | awk '{ split($0, string, " "); print string['$(($idx+1))']; }' )
-        if [ "$idx" -eq "$desktop" ]
-        then printf "%s" "  $workspace  "
-        else printf "%s" "%{F${color8:-#F0F0F0}}  $workspace  %{F-}"
+        color="#d8dee9"
+        if [ "${line}" = "${current}" ]; then
+            color="#8fbcbb"
         fi
+        printf "  %s  " "%{U${color}+u}${line}%{U-}"
     done
 }
 
-get_window() {
-    printf "%.75s\\n" "$(xdotool getwindowfocus getwindowname)"
-}
-
 get_date() {
-    printf "%s\\n" "$(date +"%a %d %b - %l:%M %p")"
-}
-
-get_kb_layout() {
-    printf "%s\\n" "$(xset -q | grep LED | awk '$10=="00000000"{print " us "} $10=="00000010"{print " ru "}')"
+    printf "%s\\n" "%{U#5e81ac+u}$(date +"%A, %k:%M")%{U-}"
 }
 
 get_mail() {
-    printf "%s\\n" "$(($(ls -la ~/Maildir/INBOX/new | wc -l)-3))"
+    mailbox=(~/.mail/ap4y/INBOX/new/*)
+    printf "%s\\n" "${#mailbox[@]}"
 }
 
 get_song() {
     printf "%.100s\\n" "$(mpc current)"
 }
 
-icon() {
-    printf "%s\\n" "%{F${color1:-#F0F0F0}}${1}%{F-}"
-}
-
 main() {
-    . "${HOME}/.cache/wal/colors.sh"
+    # . "${HOME}/.cache/wal/colors.sh"
 
     pkill lemonbar
 
     while :; do
-        workspaces="$(get_workspaces)"
-        window="$(icon "") $(get_window)"
-        song="$(icon "") $(get_song)"
+        workspace="$(get_workspace)"
+        buffers="$(get_buffers)"
         date="$(get_date)"
-        mail="$(icon "") $(get_mail)"
-        xkb="$(icon "") $(get_kb_layout)"
 
-        printf "%s%s%s\\n" \
-               "%{l}   ${workspaces}  |  ${window}" \
-               "%{c}${song}" \
-               "%{r}${mail}  |  ${xkb}  |  ${date}    "
-        sleep 0.1
+        printf "%s%s%s  \\n" \
+               "%{l}${workspace}" \
+               "%{c}${buffers}" \
+               "%{r}${date}"
+        sleep 1
     done |\
 
-    lemonbar -b -g "x${height}" \
-             -B "${color0:-#000000}" -F "${color7:-#F0F0F0}"\
-             -n "bar" -f "$font" -f "$icon"
+    lemonbar -b -g "x${height}+16+15" \
+             -u 2 -F "#4c566a"\
+             -n "bar" -f "$font"
 }
 
 
