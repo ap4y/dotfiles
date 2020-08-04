@@ -318,7 +318,7 @@
 ;;;; Color theme
 (use-package doom-themes
   :config
-  (load-theme 'doom-nord t))
+  (load-theme 'doom-nord-light t))
 
 ;;;; Highlight
 (global-hl-line-mode +1)
