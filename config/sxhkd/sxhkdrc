@@ -1,0 +1,56 @@
+# super + h
+#   ~/Downloads/hk/start.sh
+
+super + Return
+  alacritty
+
+super + r
+  rofi -show run
+
+super + e
+  alacritty --title emacs -e sh -c 'TERM=xterm-24bit emacsclient -t --socket-name=/tmp/emacs1000/server'
+
+super + l
+  loginctl suspend
+
+super + m
+  alacritty -e cmus
+
+super + w
+  alacritty --title chat -e weechat
+
+super + p
+  pcmanfm
+
+super + b
+  /home/ap4y/git/canvas/canvasctl switch_buffer $(/home/ap4y/git/canvas/canvasctl list_buffers | rofi -dmenu)
+
+super + s
+  /home/ap4y/git/canvas/canvasctl split_frame
+
+super + {1-4}
+	/home/ap4y/git/canvas/canvasctl switch_workspace {1-4}
+
+super + shift + {1-4}
+	/home/ap4y/git/canvas/canvasctl send_to_workspace {1-4}
+
+super + Tab
+  /home/ap4y/git/canvas/canvasctl cycle_buffers
+
+super + q
+  /home/ap4y/git/canvas/canvasctl kill_buffer
+
+super + o
+  /home/ap4y/git/canvas/canvasctl other_frame
+
+super + 0
+  /home/ap4y/git/canvas/canvasctl delete_frame
+
+super + f
+  /home/ap4y/git/canvas/canvasctl fullscreen_frame
+
+super + c
+  /home/ap4y/git/canvas/canvasctl toggle_concentration
+
+super + i
+  /home/ap4y/git/canvas/canvasctl toggle_floating

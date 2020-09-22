@@ -1,0 +1,7 @@
+configuration {
+    theme: "slate";
+    width: 30;
+    lines: 5;
+    columns: 1;
+    font: "Iosevka 10";
+}
