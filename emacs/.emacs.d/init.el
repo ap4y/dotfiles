@@ -1,77 +1,18 @@
-;;; Setup package system
-(require 'package)
-(setq package-enable-at-startup nil)
-(setq package-quickstart-refresh t)
-(setq package-user-dir (expand-file-name "packages" user-emacs-directory))
-(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
-(package-initialize)
-
-;; install required packages
-(setq ap4y/package-list
-      '(alert
-        all-the-icons
-        all-the-icons-ivy
-        all-the-icons-dired
-        avy
-        buffer-move
-        circe
-        circe-notifications
-        clipetty
-        company
-        counsel
-        doom-modeline
-        doom-themes
-        dumb-jump
-        ;; eglot
-        elfeed
-        expand-region
-        evil
-        evil-escape
-        exwm
-        flycheck
-        flx
-        fringe-helper
-        git-gutter-fringe
-        git-timemachine
-        go-eldoc
-        go-mode
-        gotest
-        inf-ruby
-        js2-mode
-        ledger-mode
-        lsp-ui
-        lsp-mode
-        magit
-        outshine
-        password-store
-        pytest
-        pyvenv
-        prodigy
-        projectile
-        rainbow-delimiters
-        rainbow-mode
-        reformatter
-        rjsx-mode
-        ruby-test-mode
-        smartparens
-        use-package
-        web-mode
-        undo-tree
-        winum
-        yaml-mode
-        yari
-        yasnippet
-        zoom))
-
-;; fetch the list of packages available
-(unless (file-exists-p package-user-dir)
-  (package-refresh-contents))
-
-;; install the missing packages
-(dolist (package ap4y/package-list)
-  (unless (package-installed-p package)
-    (message "Installing %s" package)
-    (package-install package)))
+;;; Setup straight.el
+(setq straight-check-for-modifications '(check-on-save find-when-checking))
+(defvar bootstrap-version)
+(let ((bootstrap-file
+       (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
+      (bootstrap-version 5))
+  (unless (file-exists-p bootstrap-file)
+    (with-current-buffer
+        (url-retrieve-synchronously
+         "https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
+         'silent 'inhibit-cookies)
+      (goto-char (point-max))
+      (eval-print-last-sexp)))
+  (load bootstrap-file nil 'nomessage))
+(setq straight-use-package-by-default 't)
 
 ;;; Emacs tweaks
 ;; custom savedir
@@ -275,6 +216,7 @@
 
 ;; unique buffer name
 (use-package uniquify
+  :straight nil
   :config
   (setq uniquify-buffer-name-style 'forward)
   (setq uniquify-separator "/")
@@ -694,6 +636,7 @@
 
 ;;;; Dired
 (use-package dired
+  :straight nil
   :bind ("C-x C-j" . dired-jump)
   :init
   (load "dired-x")
@@ -884,6 +827,7 @@
 
 ;;;;; SASL
 (use-package erc-sasl
+  :straight nil
   :load-path "scripts"
   :commands erc-login
   :preface
@@ -1084,6 +1028,7 @@
 
 ;;;; elisp
 (use-package emacs-lisp-mode
+  :straight nil
   :mode "\\.el\\|Cask\\'"
   :preface
   (defun ap4y/elisp-mode-defaults ()
@@ -1226,6 +1171,7 @@
 
 ;;;; Makefile
 (use-package makefile-mode
+  :straight nil
   :mode "Makefile\\'"
   :preface
   (defun ap4y/makefile-mode-defaults ()
@@ -1236,6 +1182,7 @@
 
 ;;;; devdocs
 (use-package devdocs-lookup
+  :straight nil
   :load-path "scripts"
   :bind (("C-c h g" . devdocs-lookup-go)
          ("C-c h j" . devdocs-lookup-javascript)
