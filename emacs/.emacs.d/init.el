@@ -685,7 +685,7 @@
   (setq message-send-mail-function 'smtpmail-send-it
         user-full-name "Arthur Evstifeev"
         user-mail-address "mail@ap4y.me"
-        smtpmail-smtp-server "cloud.ap4y.me"
+        smtpmail-smtp-server "mail.ap4y.me"
         smtpmail-smtp-service 587
         smtpmail-stream-type  'starttls)
 
