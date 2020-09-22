@@ -52,7 +52,7 @@ dunst &
 # background
 ~/.fehbg &
 
-session=${1:-exwm}
+session=${1:-canvas}
 
 case $session in
     exwm              ) exec dbus-launch --sh-syntax --exit-with-session emacs --eval '(exwm-enable)';;
