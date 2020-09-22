@@ -237,7 +237,7 @@
 (blink-cursor-mode 0)
 
 ;;;; Typography
-(set-face-attribute 'default nil :font "Iosevka-10")
+(set-face-attribute 'default nil :font "Tamzen-10")
 
 ;;;; all-the-icons
 (use-package all-the-icons
