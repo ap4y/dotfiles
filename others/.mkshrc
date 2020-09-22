@@ -1,9 +1,9 @@
 export CLICOLOR=1
 export HISTCONTROL=ignoredups
 export HISTFILE=~/.mksh_history
-export VISUAL='emacsclient -a "" -c'
-export EDITOR="$VISUAL"
-export TERM=xterm-256color
+# export VISUAL='emacsclient -a "" -c'
+# export EDITOR="$VISUAL"
+export EDITOR="emacs"
 
 PS1='$(tput setaf 1)$(pwd | rev | cut -d/ -f1 | rev)$(tput sgr0)$(tput setaf 2) » $(tput sgr0)'
 
@@ -25,6 +25,7 @@ export PATH=$HOME/.local/bin:$PATH
 alias ls='ls -h --color=auto'
 alias rm='rm -iv'
 alias gpg='gpg2'
+alias e="emacsclient -t --socket-name=/tmp/emacs1000/server"
 
 # fzf settings
 export FZF_DEFAULT_COMMAND='fd --type file --follow --hidden --exclude .git'
