@@ -260,7 +260,10 @@
 ;;;; Color theme
 (use-package doom-themes
   :config
-  (load-theme 'doom-nord-light t))
+  (let ((client (getenv "SSH_CLIENT")))
+    (if (and client (string-match-p "192.168.3.142" client))
+        (load-theme 'doom-nord t)
+      (load-theme 'doom-nord-light t))))
 
 ;;;; Highlight
 (global-hl-line-mode +1)
@@ -586,7 +589,7 @@
   :commands (evil-escape)
   :config
   (global-set-key (kbd "C-c C-g") 'evil-escape)
-  (setq-default evil-escape-key-sequence "aa")
+  (setq-default evil-escape-key-sequence "fd")
   (setq-default evil-escape-delay 0.2))
 
 ;;; System
@@ -813,7 +816,7 @@
   (setq erc-server-coding-system '(utf-8 . utf-8))
 
   (setq erc-autojoin-channels-alist
-        '(("freenode.net" "#ruby-lang" "#openbsd" "#voidlinux" "#go-nuts")
+        '(("freenode.net" "#ruby" "#openbsd" "#gentoo" "#go-nuts")
           ("ap4y.me" "#thelounge")))
   (setq erc-hide-list '("JOIN" "PART" "QUIT" "MODE"))
 
