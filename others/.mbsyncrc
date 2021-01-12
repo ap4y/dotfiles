@@ -1,7 +1,7 @@
 IMAPStore remote-ap4y
 Host mail.ap4y.me
 User ap4y
-PassCmd "pass ap4y.me/mail"
+PassCmd "pass show ap4y.me/mail"
 SSLType IMAPS
 
 MaildirStore local-ap4y
