@@ -1,66 +1,86 @@
 #!/usr/bin/env bash
 
 font="${BAR_FONT:-"-*-tamzen-medium-*-15-*"}"
-height="${BAR_HEIGHT:-25}"
+height="${BAR_HEIGHT:-30}"
 
 get_workspace() {
-    workspace=$(canvasctl current_workspace)
-    case ${workspace} in
-        "1") color="#d08770";;
-        "2") color="#ebcb8b";;
-        "3") color="#a3be8c";;
-        "4") color="#b48ead";;
-    esac
-    printf "%s" "%{U${color}+u}Workspace $workspace%{U-}"
+	local current
+	local label
+
+	current=$(canvasctl current_workspace)
+	for idx in {1..4}; do
+		color="#d8dee9"
+		if [ "$idx" = "$current" ]; then
+			color="#d08770"
+		fi
+
+		case ${idx} in
+		"1") label="mine" ;;
+		"2") label="work" ;;
+		"3") label="misc" ;;
+		"4") label="game" ;;
+		esac
+		printf "%s " "%{U$color+u}$label%{U-}%{-u}"
+	done
 }
 
 get_buffers() {
-    buffers=$(canvasctl list_buffers)
-    current=$(canvasctl current_buffer)
-    canvasctl list_buffers | while read -r line
-    do
-        color="#d8dee9"
-        if [ "${line}" = "${current}" ]; then
-            color="#8fbcbb"
-        fi
-        printf "  %s  " "%{U${color}+u}${line}%{U-}"
-    done
+	local buffers current color
+
+	buffers=$(canvasctl list_buffers)
+	current=$(canvasctl current_buffer)
+	canvasctl list_buffers | while read -r line; do
+		color="#d8dee9"
+		if [ "$line" = "$current" ]; then
+			color="#5e81ac"
+		fi
+		printf "  %s  " "%{U$color+u}$line%{U-}%{-u}"
+	done
 }
 
 get_date() {
-    printf "%s\\n" "%{U#5e81ac+u}$(date +"%A, %k:%M")%{U-}"
+	local date
+
+	date=$(date +"%A, %k:%M")
+	printf "%s\\n" "%{U#81a1c1+u}$date%{U-}%{-u}"
 }
 
 get_mail() {
-    mailbox=(~/.mail/ap4y/INBOX/new/*)
-    printf "%s\\n" "${#mailbox[@]}"
+	local mailbox color
+
+	mailbox=$(mu find g:new not g:list m:/Inbox | wc -l)
+	color="#bf616a"
+	if [ "$mailbox" == "0" ]; then
+		color="#81a1c1"
+	fi
+
+	printf "%s  \\n" "%{U$color+u}Inbox: $mailbox%{U-}%{-u}"
 }
 
 get_song() {
-    printf "%.100s\\n" "$(mpc current)"
+	printf "%.100s\\n" "$(mpc current)"
 }
 
 main() {
-    # . "${HOME}/.cache/wal/colors.sh"
+	# . "${HOME}/.cache/wal/colors.sh"
 
-    pkill lemonbar
+	pkill lemonbar
 
-    while :; do
-        workspace="$(get_workspace)"
-        buffers="$(get_buffers)"
-        date="$(get_date)"
+	while :; do
+		workspace="$(get_workspace)"
+		buffers="$(get_buffers)"
+		date="$(get_date)"
+		mail="$(get_mail)"
 
-        printf "%s%s%s  \\n" \
-               "%{l}${workspace}" \
-               "%{c}${buffers}" \
-               "%{r}${date}"
-        sleep 1
-    done |\
-
-    lemonbar -b -g "x${height}+16+15" \
-             -u 2 -F "#4c566a"\
-             -n "bar" -f "$font"
+		printf "%s%s%s\\n" \
+			"%{l}$workspace" \
+			"%{c}$buffers" \
+			"%{r}$mail${date}"
+		sleep 1
+	done |
+		lemonbar -b -g "3380x${height}+30+20" \
+			-u 5 -B "#fbfbfc" -F "#4c566a" \
+			-n "bar" -f "$font"
 }
-
 
 main "$@"

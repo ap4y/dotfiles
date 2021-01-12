@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 while :; do
-      offlineimap
-      mu index
+      mbsync -a > /dev/null
+      mu index > /dev/null
       sleep 300
 done
