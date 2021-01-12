@@ -3,5 +3,5 @@ configuration {
     width: 30;
     lines: 5;
     columns: 1;
-    font: "Iosevka 10";
+    font: "Tamzen 10";
 }
