@@ -388,7 +388,7 @@
   <!-- <menu id="apps-net-menu"/> -->
   <item label="Firefox">
     <action name="Execute">
-      <command>firefox-bin</command>
+      <command>firefox</command>
       <startupnotify>
         <enabled>yes</enabled>
         <wmclass>Firefox</wmclass>
@@ -398,9 +398,9 @@
   <!-- <menu id="apps-office-menu"/> -->
   <!-- <menu id="apps-multimedia-menu"/> -->
   <!-- <menu id="apps-term-menu"/> -->
-  <item label="Konsole">
+  <item label="alacritty">
     <action name="Execute">
-      <command>konsole</command>
+      <command>alacritty</command>
       <startupnotify>
         <enabled>yes</enabled>
       </startupnotify>
