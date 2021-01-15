@@ -27,9 +27,8 @@ get_workspace() {
 get_buffers() {
 	local buffers current color
 
-	buffers=$(canvasctl list_buffers)
 	current=$(canvasctl current_buffer)
-	canvasctl list_buffers | while read -r line; do
+	canvasctl list_buffers | sort | while read -r line; do
 		color="#d8dee9"
 		if [ "$line" = "$current" ]; then
 			color="#5e81ac"
