@@ -12,6 +12,7 @@ Inbox ~/.mail/ap4y/INBOX
 Channel ap4y
 Master :remote-ap4y:
 Slave :local-ap4y:
-Patterns * !archive !Notes
-Create Both
+Patterns * !Notes
+Create Slave
+Expunge Both
 SyncState *
