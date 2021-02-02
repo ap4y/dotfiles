@@ -4,6 +4,8 @@
 #
 # Executed by startx (run your window manager from here)
 
+session=${1:-canvas}
+
 if [ -d /etc/X11/xinit/xinitrc.d ]; then
 	for f in /etc/X11/xinit/xinitrc.d/*; do
 		[ -x "$f" ] && . "$f"
@@ -31,7 +33,7 @@ if [ "$(hostname)" = "ap4y-laptop" ]; then
 	xinput set-prop 13 "libinput Tapping Enabled" 1
 	xinput set-prop 13 "libinput Natural Scrolling Enabled" 1
 	xbacklight -set 20
-else
+elif [ "$session" != "game" ]; then
 	# Mouse Acceleration Settings
 	xinput set-button-map 'Kensington Expert Mouse' 1 3 1 4 5 6 7 3 9
 	xinput set-prop 'Kensington Expert Mouse' 'libinput Accel Speed' 1
@@ -50,9 +52,6 @@ else
 	export XMODIFIERS=@im=fcitx
 	# setxkbmap -model pc105 -layout us -option grp:win_space_toggle
 	fcitx &
-
-	# background
-	mpd &
 fi
 
 # notifications
@@ -61,8 +60,6 @@ dunst &
 # background
 ~/.fehbg &
 mail &
-
-session=${1:-canvas}
 
 case $session in
 exwm) exec emacs --eval '(exwm-enable)' ;;
@@ -73,6 +70,9 @@ canvas)
 	lbar &
 	exec /home/ap4y/git/canvas/canvas
 	;;
+game)
+	xrandr --output HDMI-0 --mode 3840x2160 --rate 60 --scale 0.5
+	exec openbox ;;
 # No known session, try to run it as command
 *) exec "$1" ;;
 esac
