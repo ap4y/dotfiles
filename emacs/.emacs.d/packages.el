@@ -19,6 +19,8 @@
         elfeed
         evil
         flycheck
+        go-mode
+        gotest
         git-timemachine
         js2-mode
         ledger-mode
@@ -27,7 +29,8 @@
         reformatter
         ruby-test-mode
         use-package
-        web-mode))
+        web-mode
+        yaml-mode))
 
 (dolist (package ap4y/package-list)
   (unless (package-installed-p package)

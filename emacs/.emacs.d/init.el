@@ -98,6 +98,9 @@ Passes ARG to command `kill-whole-line' when provided."
   :group 'formatter
   :program "prettier"
   :args '("--parser" "html" "--stdin"))
+(reformatter-define format-go
+  :group 'formatter
+  :program "goimports")
 (reformatter-define format-python
   :group 'formatter
   :program "yapf")
@@ -142,8 +145,8 @@ Passes ARG to command `kill-whole-line' when provided."
               ("C-c /" . ruby-test-toggle-implementation-and-specification))
   :preface
   (defun ap4y/ruby-mode-defaults ()
-    (subword-mode +1)
-    (add-hook 'before-save-hook 'format-ruby nil t))
+    (format-ruby-on-save-mode)
+    (subword-mode +1))
   :config
   (add-hook 'ruby-mode-hook 'ap4y/ruby-mode-defaults))
 
@@ -152,11 +155,31 @@ Passes ARG to command `kill-whole-line' when provided."
   :mode "\\.js\\'"
   :preface
   (defun ap4y/js-mode-defaults ()
-    (subword-mode +1)
-    (add-hook 'before-save-hook 'format-js nil t))
+    (setq js2-basic-offset 2)
+    (format-js-on-save-mode)
+    (subword-mode +1))
   :config
-  (add-hook 'js2-mode-hook 'ap4y/js-mode-defaults)
-  (setq js2-basic-offset 2))
+  (add-hook 'js2-mode-hook 'ap4y/js-mode-defaults))
+
+;;;; golang
+(use-package gotest
+  :commands (go-test-current-project go-test-current-file go-test-current-test))
+(use-package go-mode
+  :mode "\\.go\\'"
+  :bind (:map go-mode-map
+              ("C-c a" . go-test-current-project)
+              ("C-c m" . go-test-current-file)
+              ("C-c ." . go-test-current-test)
+              ("C-c s" . go-run)
+              ("C-c /" . ff-find-other-file)
+              ("C-h f" . godoc-at-point))
+  :preface
+  (defun ap4y/go-mode-defaults ()
+    (setq-default tab-width 2)
+    (format-go-on-save-mode)
+    (subword-mode +1))
+  :config
+  (add-hook 'go-mode-hook 'ap4y/go-mode-defaults))
 
 ;;;; web-mode
 (use-package web-mode
@@ -167,6 +190,15 @@ Passes ARG to command `kill-whole-line' when provided."
     (setq web-mode-code-indent-offset 2))
   :config
   (add-hook 'web-mode-hook 'ap4y/web-mode-defaults))
+
+;;;; yaml
+(use-package yaml-mode
+  :mode "\\.ya?ml\\'"
+  :preface
+  (defun ap4y/yaml-mode-defaults ()
+    (subword-mode +1))
+  :config
+  (add-hook 'yaml-mode-hook 'ap4y/yaml-mode-defaults))
 
 ;;;; eshell
 (use-package eshell
