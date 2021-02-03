@@ -28,9 +28,3 @@ alias rm='rm -iv'
 
 # fzf settings
 export FZF_DEFAULT_COMMAND='fd --type file --follow --hidden --exclude .git'
-
-# Set SSH to use gpg-agent
-# unset SSH_AGENT_PID
-# if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
-# 	export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
-# fi
