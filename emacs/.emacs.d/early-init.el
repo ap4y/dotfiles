@@ -30,7 +30,7 @@
 (add-to-list 'default-frame-alist '(font . "Tamzen-11"))
 (set-face-attribute 'default nil :font "Tamzen-11")
 
-(add-to-list 'load-path (expand-file-name "elpa/doom-themes-20210113.1858" user-emacs-directory))
+(add-to-list 'load-path (expand-file-name "themes/doom-themes" user-emacs-directory))
 (require 'doom-one-theme)
 (require 'doom-themes-ext-visual-bell)
 (load-theme 'doom-one t)
