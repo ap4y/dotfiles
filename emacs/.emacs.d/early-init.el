@@ -29,12 +29,11 @@
 (add-to-list 'default-frame-alist '(internal-border-width . 15))
 (add-to-list 'default-frame-alist '(font . "Tamzen-11"))
 (set-face-attribute 'default nil :font "Tamzen-11")
+(fringe-mode 0)
 
-(add-to-list 'load-path (expand-file-name "themes/doom-themes" user-emacs-directory))
-(require 'doom-one-theme)
-(require 'doom-themes-ext-visual-bell)
-(load-theme 'doom-one t)
-(doom-themes-visual-bell-config)
+(add-to-list 'load-path (expand-file-name "themes" user-emacs-directory))
+(require 'base16-nord-light-theme)
+(load-theme 'base16-nord-light t)
 
 (provide 'early-init)
 ;;; early-init.el ends here

@@ -14,89 +14,45 @@ window:
 env:
   TERM: xterm-256color
 
-# Colors (Doom One)
-# colors:
-#   # Default colors
-#   primary:
-#     background: '0x282c34'
-#     foreground: '0xbbc2cf'
-
-#   # Normal colors
-#   normal:
-#     black:   '0x282c34'
-#     red:     '0xff6c6b'
-#     green:   '0x98be65'
-#     yellow:  '0xecbe7b'
-#     blue:    '0x51afef'
-#     magenta: '0xc678dd'
-#     cyan:    '0x46d9ff'
-#     white:   '0xbbc2cf'
-
+# Base16 NordLight 256 - alacritty color config
+# arcticicestudio
 colors:
+  # Default colors
   primary:
-    background: '0xe5e9f0'
-    foreground: '0x3B4252'
+    background: '0xeceff4'
+    foreground: '0x4c566a'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text: '0xe5e9f0'
-    cursor: '0x2E3440'
+    text: '0xeceff4'
+    cursor: '0x4c566a'
+
+  # Normal colors
   normal:
-    black: '0xF0F4FC'
-    red: '0x99324B'
-    green: '0x4F894C'
-    yellow: '0x9A7500'
-    blue: '0x5272AF'
-    magenta: '0x97365B'
-    cyan: '0x2C7088'
-    white: '0x3B4252'
+    black:   '0xeceff4'
+    red:     '0xbf616a'
+    green:   '0xa3be8c'
+    yellow:  '0xd08770'
+    blue:    '0x5e81ac'
+    magenta: '0xb48ead'
+    cyan:    '0x88c0d0'
+    white:   '0x4c566a'
+
+  # Bright colors
   bright:
-    black: '0xF0F4FC'
-    red: '0xAC4426'
-    green: '0x29838D'
-    yellow: '0xEBCB8B'
-    blue: '0x3B6EA8'
-    magenta: '0x842879'
-    cyan: '0x398EAC'
-    white: '0x2E3440'
+    black:   '0x8fbcbb'
+    red:     '0xbf616a'
+    green:   '0xa3be8c'
+    yellow:  '0xd08770'
+    blue:    '0x5e81ac'
+    magenta: '0xb48ead'
+    cyan:    '0x88c0d0'
+    white:   '0x8fbcbb'
 
-# Base16 Tomorrow 256 - alacritty color config
-# Chris Kempson (http://chriskempson.com)
-# colors:
-#   # Default colors
-#   primary:
-#     background: '0xffffff'
-#     foreground: '0x4d4d4c'
-
-#   # Colors the cursor will use if `custom_cursor_colors` is true
-#   cursor:
-#     text: '0xffffff'
-#     cursor: '0x4d4d4c'
-
-#   # Normal colors
-#   normal:
-#     black:   '0xffffff'
-#     red:     '0xc82829'
-#     green:   '0x718c00'
-#     yellow:  '0xeab700'
-#     blue:    '0x4271ae'
-#     magenta: '0x8959a8'
-#     cyan:    '0x3e999f'
-#     white:   '0x4d4d4c'
-
-#   # Bright colors
-#   bright:
-#     black:   '0x8e908c'
-#     red:     '0xc82829'
-#     green:   '0x718c00'
-#     yellow:  '0xeab700'
-#     blue:    '0x4271ae'
-#     magenta: '0x8959a8'
-#     cyan:    '0x3e999f'
-#     white:   '0x1d1f21'
-
-#   indexed_colors:
-#     - { index: 16, color: '0xf5871f' }
-#     - { index: 17, color: '0xa3685a' }
-#     - { index: 18, color: '0xe0e0e0' }
-#     - { index: 19, color: '0xd6d6d6' }
-#     - { index: 20, color: '0x969896' }
-#     - { index: 21, color: '0x282a2e' }
+  indexed_colors:
+    - { index: 16, color: '0xd08770' }
+    - { index: 17, color: '0x81a1c1' }
+    - { index: 18, color: '0xe5e9f0' }
+    - { index: 19, color: '0xd8dee9' }
+    - { index: 20, color: '0x2e3440' }
+    - { index: 21, color: '0x434c5e' }
