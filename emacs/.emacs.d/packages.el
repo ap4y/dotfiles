@@ -15,7 +15,6 @@
 (setq ap4y/package-list
       '(better-defaults
         counsel
-        doom-themes
         elfeed
         evil
         flycheck
