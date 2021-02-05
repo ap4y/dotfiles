@@ -11,6 +11,9 @@ window:
     x: 15
     y: 15
 
+env:
+  TERM: xterm-256color
+
 # Colors (Doom One)
 # colors:
 #   # Default colors
