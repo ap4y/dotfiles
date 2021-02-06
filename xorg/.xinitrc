@@ -55,9 +55,6 @@ elif [ "$session" != "game" ]; then
 	fcitx &
 fi
 
-# notifications
-dunst &
-
 # background
 ~/.fehbg &
 mail &
