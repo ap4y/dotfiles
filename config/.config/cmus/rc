@@ -1,0 +1,2 @@
+colorscheme base16-nord-light
+set output_plugin=alsa
