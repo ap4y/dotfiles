@@ -209,7 +209,7 @@ Passes ARG to command `kill-whole-line' when provided."
 (use-package dired
   :bind ("C-x C-j" . dired-jump)
   :config
-  (setq dired-listing-switches "-lXGh --group-directories-first"))
+  (setq dired-listing-switches "-lXh --group-directories-first"))
 
 ;;;; mu4e
 (use-package mu4e
