@@ -22,12 +22,12 @@
     :base07 "#8fbcbb"
     :base08 "#bf616a"
     :base09 "#d08770"
-    :base0A "#d08770"
+    :base0A "#bf616a"
     :base0B "#a3be8c"
-    :base0C "#88c0d0"
+    :base0C "#81a1c1"
     :base0D "#5e81ac"
     :base0E "#b48ead"
-    :base0F "#81a1c1")
+    :base0F "#88c0d0")
   "All colors for Base16 NordLight are defined here.")
 
 ;; Define the theme
