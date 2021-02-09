@@ -923,6 +923,23 @@ return the actual color value.  Otherwise return the value unchanged."
      (w3m-tab-unselected-unseen                    :foreground base03 :background base01)
      (w3m-tab-unselected-retrieving                :foreground base03 :background base01)
 
+;;;; web-mode
+     (web-mode-block-control-face                  :inherit font-lock-builtin-face)
+     (web-mode-block-delimiter-face                :inherit font-lock-builtin-face)
+     (web-mode-css-property-name-face              :inherit font-lock-type-face)
+     (web-mode-doctype-face                        :inherit font-lock-comment-face)
+     (web-mode-html-tag-face                       :inherit font-lock-function-name-face)
+     (web-mode-html-tag-bracket-face               :inherit font-lock-function-name-face)
+     (web-mode-html-attr-name-face                 :inherit font-lock-type-face)
+     (web-mode-html-attr-value-face                :inherit font-lock-string-face)
+     (web-mode-html-tag-bracket-face               :inherit font-lock-keyword-face)
+     (web-mode-json-key-face                       :inherit font-lock-string-face)
+     (web-mode-json-context-face                   :inherit font-lock-string-face)
+     (web-mode-keyword-face                        :inherit font-lock-keyword-face)
+     (web-mode-string-face                         :inherit font-lock-string-face)
+     (web-mode-symbol-face                         :inherit font-lock-constant-face)
+     (web-mode-type-face                           :inherit font-lock-type-face)
+
 ;;;; which-func-mode
      (which-func                                   :foreground base0D :background nil :weight bold)
 
