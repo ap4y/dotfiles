@@ -5,5 +5,3 @@ Xft.rgba:       rgb
 Xft.hinting:    1
 xft.hintstyle:  hintslight
 Xft.lcdfilter:  lcddefault
-
-Emacs.font: Tamzen-10

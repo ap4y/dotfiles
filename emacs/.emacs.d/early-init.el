@@ -27,8 +27,8 @@
 (setq inhibit-startup-screen t)       ;; scratch buffer on load
 
 (add-to-list 'default-frame-alist '(internal-border-width . 15))
-(add-to-list 'default-frame-alist '(font . "Tamzen-11"))
-(set-face-attribute 'default nil :font "Tamzen-11")
+(add-to-list 'default-frame-alist '(font . "Iosevka Term-10"))
+(set-face-attribute 'default nil :font "Iosevka Term-10")
 (fringe-mode 0)
 
 (add-to-list 'load-path (expand-file-name "themes" user-emacs-directory))
